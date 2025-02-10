@@ -84,9 +84,7 @@ const Projects = () => {
                 >
                   주요기능
                 </p>
-                <h1 className="w-full font-bold">
-                  개인 프로젝트 소개, React, tailwind 능력 향상
-                </h1>
+                <h1 className="w-full font-bold">스크롤 반응형, 다크모드</h1>
               </div>
               <div className="w-full flex flex-wrap text-[14px] pb-5">
                 <p
@@ -104,11 +102,14 @@ const Projects = () => {
                   <li className="px-2 py-1 bg-customGray text-white rounded-lg">
                     Tailwind
                   </li>
+                  <li className="px-2 py-1 bg-customGray text-white rounded-lg">
+                    Node.js
+                  </li>
                 </ul>
               </div>
               <div className="absolute top-[20px] right-[20px] flex gap-2">
                 <a
-                  href="https://github.com/Jonggu-code/Portfolio_youtube"
+                  href="https://github.com/Jonggu-code/Portfolio"
                   target="_blank"
                   className="logoLink w-full text-center"
                 >
