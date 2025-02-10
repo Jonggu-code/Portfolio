@@ -1,0 +1,35 @@
+.pointText {
+    font-size: 16px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+@keyframes textIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.text-in {
+    animation: textIn 0.5s ease-out forwards;
+}
+
+.text-d1 {
+    animation-delay: 0.1s;
+}
+
+.text-d2 {
+    animation-delay: 0.2s;
+}
+
+.text-d3 {
+    animation-delay: 0.4s;
+}
+.text-d4 {
+    animation-delay: 0.6s;
+}

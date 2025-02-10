@@ -1,0 +1,94 @@
+@keyframes contIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* 아래에서 올라오는 애니메이션 */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* 원래 위치로 돌아옴 */
+    }
+}
+@keyframes contUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-100px);
+    }
+}
+.cont-in {
+    animation: contIn 0.5s ease-out forwards;
+}
+.cont-up {
+    animation: contUp 2.4s ease-out forwards;
+}
+.cont-d1 {
+    animation-delay: 0.2s;
+}
+.cont-d2 {
+    animation-delay: 2s;
+}
+.cont-d3 {
+    animation-delay: 2.2s;
+}
+.cont-d4 {
+    animation-delay: 2.4s;
+}
+.cont-d5 {
+    animation-delay: 2.6s;
+}
+.cont-d6 {
+    animation-delay: 2.8s;
+}
+
+/* /////////////////////////////////////////////// */
+
+.iconCircle {
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+.iconCircle:hover {
+    background-color: #186ebd;
+}
+
+/* //////////////////////////// */
+
+.userMenu {
+    transition: all 0.2s;
+}
+.iconDark,
+.iconBasic,
+.ModeChange {
+    transition: all 0.3s;
+}
+.userMenu:hover > .iconDark,
+.userMenu:hover > .iconBasic {
+    fill: #186ebd;
+}
+
+/* //////////////////////////// */
+
+.conBox {
+    transform: translateY(10px);
+    transition: all 0.4s;
+}
+.conTxt {
+    opacity: 0;
+    transition: all 0.4s;
+}
+.conBox:hover {
+    transform: translateY(0px);
+}
+.conBox:hover > .conTxt {
+    opacity: 1;
+}

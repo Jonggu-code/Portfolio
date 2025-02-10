@@ -1,0 +1,39 @@
+.Introduce_basic {
+    background-color: #fff;
+}
+.Introduce_dark {
+    background-color: #0f172a;
+}
+.font_basic {
+    color: #000;
+}
+.font_dark {
+    color: #fff;
+}
+
+@keyframes slideInOut {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    40% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    99% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.animate-slide-in-out {
+    animation: slideInOut 2s ease-in-out 0s 1 forwards;
+}

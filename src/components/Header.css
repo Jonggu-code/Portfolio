@@ -1,0 +1,64 @@
+.header {
+    width: 100%;
+    height: 70px;
+    background: #0f172a;
+}
+/*/////////////////////////////////////  */
+
+.header_dark {
+    background: #0f172a;
+}
+.header_basic {
+    background: #fff;
+}
+.text_dark {
+    color: #6c87a1;
+}
+.text_basic {
+    color: #0f172a;
+}
+.active_sec {
+    color: #186ebd;
+}
+.def_sec {
+    color: #0f172a;
+}
+
+/* ///////////////////////////////// */
+
+.headItem:hover {
+    color: #186ebd;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+.headItem > span {
+    color: #186ebd;
+    margin-right: 6px;
+}
+.iconCircle {
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+.iconCircle:hover {
+    background-color: #186ebd;
+}
+
+/* //////////////////////////// */
+.userMenu {
+    transition: all 0.2s;
+}
+.iconDark,
+.iconBasic,
+.ModeChange {
+    transition: all 0.3s;
+}
+.userMenu > a:hover .iconDark,
+.userMenu > a:hover .iconBasic {
+    fill: #186ebd;
+}
+
+.ModeChange:hover {
+    transform: rotate(360deg);
+}
+
+/* /////////////////////////// */
