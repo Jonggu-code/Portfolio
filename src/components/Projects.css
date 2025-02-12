@@ -27,8 +27,8 @@ code {
 }
 
 .swiper-pagination {
-    position: relative;
-    top: 20px; /* 필요에 따라 위치를 위아래로 조정 */
+    position: absolute !important;
+    bottom: 45px !important; /* 필요에 따라 위치를 위아래로 조정 */
 }
 
 .swiper-pagination-container {
@@ -40,12 +40,12 @@ code {
 .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
-    background-color: #bbb; /* 기본 색상 */
+    background-color: #bbb !important; /* 기본 색상 */
     opacity: 0.6;
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #007bff;
+    background-color: #007bff !important;
     opacity: 1;
 }
 

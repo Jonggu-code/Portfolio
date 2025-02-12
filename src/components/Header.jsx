@@ -37,16 +37,15 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
         />
       </div>
       <div
-        className={`headMenu text-lg flex items-center gap-8 ${isDark ? "text_dark" : "text_basic"}`}
+        className={`headMenu text-lg flex items-center gap-[30px] ${isDark ? "text_dark" : "text_basic"}`}
       >
         <a
           href="#introduce"
           onClick={(e) =>
             handleNav(e, sectionRefs, "introduce", scrollToSection)
           }
-          className={`headItem opacity-0 fade-in delay-3 ${activeSection === "introduce" ? "active_sec" : isDark ? "text_dark" : "def_sec"}`}
+          className={`headItem opacity-0 fade-in delay-3 ${activeSection === "introduce" ? "active_sec" : " "}`}
         >
-          <span>01.</span>
           Intro
         </a>
         <a
@@ -54,7 +53,6 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           onClick={(e) => handleNav(e, sectionRefs, "about", scrollToSection)}
           className={`headItem opacity-0 fade-in delay-4 ${activeSection === "about" ? "active_sec" : " "}`}
         >
-          <span>02.</span>
           About
         </a>
         <a
@@ -62,7 +60,6 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           onClick={(e) => handleNav(e, sectionRefs, "skills", scrollToSection)}
           className={`headItem opacity-0 fade-in delay-5 ${activeSection === "skills" ? "active_sec" : " "}`}
         >
-          <span>03.</span>
           Skills
         </a>
         <a
@@ -72,7 +69,6 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           }
           className={`headItem opacity-0 fade-in delay-6 ${activeSection === "projects" ? "active_sec" : " "}`}
         >
-          <span>04.</span>
           Projects
         </a>
       </div>
@@ -80,12 +76,18 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
         <a
           href="#"
           title="Jonggu-code 이메일 주소"
-          className={`Email ${isDark ? "bg-customGray" : "bg-customDark"} iconCircle opacity-0 fade-in delay-7 w-[30px] h-[30px] flex justify-center items-center`}
+          className={`Email ${isDark ? "bg-customGray" : "bg-customGray"} iconCircle opacity-0 fade-in delay-7 w-[30px] h-[30px] flex justify-center items-center`}
           onClick={() => {
             copyEmail(email);
           }}
         >
-          <EmailIcon isDark={isDark} wid={20} hei={20} custom={"#fff"} />
+          <EmailIcon
+            isDark={isDark}
+            wid={20}
+            hei={20}
+            custom={"#fff"}
+            basic={"#333333"}
+          />
         </a>
         <a
           href="https://github.com/Jonggu-code"
@@ -93,7 +95,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           title="Jonggu-code GitHub Profile"
           className="Notion opacity-0 fade-in delay-8 w-9 h-9 flex justify-center items-center"
         >
-          <GitHubIcon isDark={isDark} wid={32} hei={32} />
+          <GitHubIcon isDark={isDark} wid={32} hei={32} fillColor={"#6c87a1"} />
         </a>
         <a
           href="https://jongstechblog.tistory.com/"
@@ -101,7 +103,12 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           title="종구's Tech Blog"
           className="Tistory opacity-0 fade-in delay-9 w-9 h-9 flex justify-center items-center"
         >
-          <TistoryIcon isDark={isDark} wid={28} hei={28} />
+          <TistoryIcon
+            isDark={isDark}
+            wid={28}
+            hei={28}
+            fillColor={"#6c87a1"}
+          />
         </a>
         <div
           className="ModeChange opacity-0 fade-in delay-10 w-9 h-9 flex justify-center items-center cursor-pointer"

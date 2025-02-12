@@ -1,7 +1,9 @@
 .pointText {
     font-size: 16px;
-    padding: 2px;
     border-radius: 4px;
+}
+.boxShadow {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes textIn {

@@ -12,10 +12,10 @@
     background: #fff;
 }
 .text_dark {
-    color: #6c87a1;
+    color: #fff;
 }
 .text_basic {
-    color: #0f172a;
+    color: #333333;
 }
 .active_sec {
     color: #186ebd;
@@ -25,7 +25,9 @@
 }
 
 /* ///////////////////////////////// */
-
+.headItem {
+    font-size: 18px;
+}
 .headItem:hover {
     color: #186ebd;
     transition: color 0.2s;

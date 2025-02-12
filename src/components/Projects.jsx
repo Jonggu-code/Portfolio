@@ -1,10 +1,10 @@
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "./Projects.css";
 import React, { useContext, useRef } from "react";
 import useScrollPosition from "../hooks/useScrollPosition";
 import { DarkModeContext } from "../util/DarkModeContext";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -18,12 +18,12 @@ const Projects = () => {
       className={`relative w-full p-10 h-max flex flex-wrap justify-center ${isDark ? "bg-customDark" : "bg-blue-300"}`}
     >
       <h1
-        className={`fade-target opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-customGray" : "text-customDark"} ${isScrolled ? "text-in text-d1" : ""}`}
+        className={`fade-target opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-white" : "text-customDark"} ${isScrolled ? "text-in text-d1" : ""}`}
       >
-        <span className="text-customBlue">04. </span>
+        <span className="text-customBlue">03. </span>
         Projects
       </h1>
-      <div className="BoxCheck w-full flex justify-center">
+      <div className="BoxCheck w-full flex justify-center leading-[1.6]">
         <div
           className={`SkillsMainBox opacity-0 shadow-lg break-keep relative p-6 w-[1000px] h-max rounded-2xl content-start bg-white mt-[90px] mb-[50px] flex flex-wrap ${isScrolled ? "text-in text-d2" : ""}`}
         >
@@ -113,7 +113,7 @@ const Projects = () => {
                   target="_blank"
                   className="logoLink w-full text-center"
                 >
-                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] shadow-md border flex flex-wrap items-centers justify-center">
+                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] border flex flex-wrap items-centers justify-center">
                     <svg
                       className="w-3/4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ const Projects = () => {
                   target="_blank"
                   className="logoLink w-full text-center"
                 >
-                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] shadow-md border flex flex-wrap items-centers justify-center">
+                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] border flex flex-wrap items-centers justify-center">
                     <svg
                       className="w-3/4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -246,7 +246,7 @@ const Projects = () => {
                   target="_blank"
                   className="logoLink w-full text-center"
                 >
-                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] shadow-md border flex flex-wrap items-centers justify-center">
+                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] border flex flex-wrap items-centers justify-center">
                     <svg
                       className="w-3/4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -262,7 +262,7 @@ const Projects = () => {
                   target="_blank"
                   className="logoLink w-full text-center"
                 >
-                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] shadow-md border flex flex-wrap items-centers justify-center">
+                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] border flex flex-wrap items-centers justify-center">
                     <svg
                       className="w-3/4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -385,7 +385,7 @@ const Projects = () => {
                   target="_blank"
                   className="logoLink w-full text-center"
                 >
-                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] shadow-md border flex flex-wrap items-centers justify-center">
+                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] border flex flex-wrap items-centers justify-center">
                     <svg
                       className="w-3/4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -401,7 +401,7 @@ const Projects = () => {
                   target="_blank"
                   className="logoLink w-full text-center"
                 >
-                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] shadow-md border flex flex-wrap items-centers justify-center">
+                  <div className="w-[45px] h-[45px] p-1 rounded-[30px] border flex flex-wrap items-centers justify-center">
                     <svg
                       className="w-3/4"
                       xmlns="http://www.w3.org/2000/svg"

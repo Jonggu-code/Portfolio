@@ -40,15 +40,15 @@ const Introduce = () => {
               <h1
                 className={`opacity-0 text-2xl pb-1 w-full h-max fade-in delay-11 ${isDark ? "font_dark" : "font_basic"}`}
               >
-                안녕하세요. <strong>프론트엔드</strong> 개발자
+                안녕하세요.
               </h1>
               <h2
                 className={`opacity-0 w-full text-2xl whitespace-pre-wrap pb-10 fade-in delay-11 ${isDark ? "font_dark" : "font_basic"}`}
               >
-                <strong className="opacity-0 fade-in delay-11">박종찬</strong>{" "}
-                입니다.
+                <strong>프론트엔드</strong> 개발자 {""}
+                <strong>박종찬</strong> 입니다.
               </h2>
-              <h3 className="opacity-0 text-[30px] font-black text-customBlue break-keep pb-10 fade-in delay-12">
+              <h3 className="opacity-0 text-[24px] font-black text-customBlue break-keep pb-10 fade-in delay-12">
                 "개발자는 사랑하는 사람에게 코딩으로 만든 <br />
                 소프트웨어 꽃다발을 선물하는 사람입니다."
               </h3>

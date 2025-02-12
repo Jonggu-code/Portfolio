@@ -12,6 +12,7 @@ module.exports = {
                 customGray: "#6c87a1",
                 customSky: "#71b1ff",
                 pointText: "rgb(135 160 184)",
+                basicFont: "#333333",
             },
         },
     },

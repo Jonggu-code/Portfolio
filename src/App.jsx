@@ -46,7 +46,7 @@ function App() {
 
   return (
     <DarkModeProvider>
-      <div className="App font-sans">
+      <div className="App">
         <Header
           activeSection={activeSection}
           scrollToSection={scrollToSection}

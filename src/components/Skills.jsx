@@ -13,9 +13,9 @@ const Skills = () => {
       className={`relative w-full p-10 h-[870px] flex justify-center ${isDark ? "bg-customDark" : "bg-blue-200"}`}
     >
       <h1
-        className={`fade-target opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-customGray" : "text-customDark"} ${isScrolled ? "text-in text-d1" : ""}`}
+        className={`fade-target opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-white" : "text-customDark"} ${isScrolled ? "text-in text-d1" : ""}`}
       >
-        <span className="text-customBlue">03. </span>
+        <span className="text-customBlue">02. </span>
         Skills
       </h1>
       <div
