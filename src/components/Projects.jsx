@@ -31,7 +31,7 @@ const Projects = () => {
           <h2 className="w-full text-gray-500">
             2025.01.03 - 2025.01.14 (1인 개발)
           </h2>
-          <div className="projectBox w-full h-max flex">
+          <div className="projectBox w-full h-[320px] flex">
             <div className="swiperBox h-[290px] w-1/2 mt-6">
               <Swiper
                 modules={[Autoplay, Pagination]}
@@ -153,8 +153,8 @@ const Projects = () => {
             Youtube Music Reworks
           </h1>
           <h2 className="w-full text-gray-500">2024.10 - 2024.10 (1인 개발)</h2>
-          <div className="projectBox flex w-full">
-            <div className="swiperBox w-1/2 h-max mt-6">
+          <div className="projectBox flex w-full h-[320px]">
+            <div className="swiperBox h-[300px] w-1/2 mt-6">
               <Swiper
                 modules={[Autoplay, Pagination]}
                 spaceBetween={20}
@@ -197,39 +197,44 @@ const Projects = () => {
                 </SwiperSlide>
               </Swiper>
             </div>
-            <div className="w-1/2 h-full px-5 flex flex-wrap content-center">
+            <div className="w-1/2 h-[290px] px-5 mt-6 flex flex-wrap content-between">
               <div className="w-full">
-                <h1 className="text-[15px] pb-5">
+                <h1 className="text-[15px] pb-3">
                   유튜브 뮤직 클론 코딩을 진행습니다. UI/UX 적으로 개선되면 좋을
                   것 같다고 생각한 부분을 개선해 봤습니다.
                 </h1>
                 <h2 className="text-[15px] pb-5">
-                  <strong>Javascript, 미디어제어, 반응형 웹페이지</strong>{" "}
-                  공부를 위해 제작했습니다.
+                  <strong>
+                    Javascript, jquery의 코드 숙련도가 상승하였고, 미디어 제어,
+                    반응형 웹페이지
+                  </strong>{" "}
+                  제작 방법에 대한 공부가 되었습니다.
                 </h2>
               </div>
-              <div className="w-full flex flex-wrap text-[14px] pb-5">
-                <p className={`w-max mb-3 pointText`}>주요기능</p>
-                <h1 className="w-full font-bold">
-                  반응형 웹페이지, Javascript 능력 향샹
-                </h1>
-              </div>
-              <div className="w-full flex flex-wrap text-[14px] pb-5">
-                <p className={`w-max mb-3 pointText`}>사용기술</p>
-                <ul className="w-full flex gap-3">
-                  <li className="px-2 py-1 bg-customGray text-white rounded-lg">
-                    HTML
-                  </li>
-                  <li className="px-2 py-1 bg-customGray text-white rounded-lg">
-                    CSS
-                  </li>
-                  <li className="px-2 py-1 bg-customGray text-white rounded-lg">
-                    Javascript
-                  </li>
-                  <li className="px-2 py-1 bg-customGray text-white rounded-lg ">
-                    JQuery
-                  </li>
-                </ul>
+              <div>
+                <div className="w-full flex flex-wrap text-[14px] pb-5">
+                  <p className={`w-max mb-2 pointText`}>주요기능</p>
+                  <h1 className="w-full font-bold">
+                    반응형 웹페이지, Javascript 능력 향샹
+                  </h1>
+                </div>
+                <div className="w-full flex flex-wrap text-[14px]">
+                  <p className={`w-max mb-2 pointText`}>사용기술</p>
+                  <ul className="w-full flex gap-3">
+                    <li className="px-2 py-1 bg-customGray text-white rounded-lg">
+                      HTML
+                    </li>
+                    <li className="px-2 py-1 bg-customGray text-white rounded-lg">
+                      CSS
+                    </li>
+                    <li className="px-2 py-1 bg-customGray text-white rounded-lg">
+                      Javascript
+                    </li>
+                    <li className="px-2 py-1 bg-customGray text-white rounded-lg ">
+                      JQuery
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div className="absolute top-[20px] right-[20px] flex gap-2">
                 <a
@@ -270,7 +275,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
-      <div className="BoxCheck w-full flex justify-center">
+      <div className="BoxCheck w-full flex justify-center leading-[1.6]">
         <div
           className={`SkillsMainBox opacity-0 shadow-lg break-keep relative p-6 w-[1000px] h-max rounded-2xl content-start bg-white mt-[50px] mb-[50px] flex flex-wrap ${isScrolled ? "text-in text-d3" : ""}`}
         >
@@ -278,7 +283,7 @@ const Projects = () => {
           <h2 className="w-full text-gray-500">
             2024.11 - 2024.12 (5인 팀개발)
           </h2>
-          <div className="projectBox flex w-full">
+          <div className="projectBox flex w-full h-[320px]">
             <div className="w-1/2 mt-6">
               <Swiper
                 modules={[Autoplay, Pagination]}
