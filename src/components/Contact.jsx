@@ -1,5 +1,5 @@
 import "./Contact.css";
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 
 import useScrollPosition from "../hooks/useScrollPosition";
 import PhoneIcon from "../hooks/PhoneIcon";
@@ -14,7 +14,7 @@ import { copyPhone } from "../util/copyPhone";
 const Contact = () => {
   const { isDark } = useContext(DarkModeContext);
   const contactRef = useRef(null);
-  const isScrolled = useScrollPosition(contactRef, 700);
+  const isScrolled = useScrollPosition(contactRef, 500);
   const email = "jonggucode@gmail.com";
   const phone = "050-6875-8906";
 
@@ -27,7 +27,7 @@ const Contact = () => {
         className={`opacity-0 relative flex flex-wrap w-full h-max content-center items-center justify-center text-center ${isScrolled ? "cont-d1 cont-up " : ""}`}
       >
         <h1
-          className={`w-full text-7xl font-bold ${isDark ? "text-white" : "text-customDark"} pb-20`}
+          className={`thankmsg w-full absolute translate-x-40 text-7xl font-bold pb-20 ${isDark ? "text-white" : "text-customDark"} ${isScrolled ? "cont-d1 thank-up " : ""}`}
         >
           Thank you !
         </h1>

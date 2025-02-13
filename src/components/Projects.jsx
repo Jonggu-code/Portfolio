@@ -12,6 +12,7 @@ const Projects = () => {
   const { isDark } = useContext(DarkModeContext);
   const aboutRef = useRef(null);
   const isScrolled = useScrollPosition(aboutRef, 500);
+
   return (
     <div
       ref={aboutRef}
@@ -70,7 +71,7 @@ const Projects = () => {
                 </SwiperSlide>
               </Swiper>
             </div>
-            <div className="w-1/2 h-[290px] px-5 mt-6 flex flex-wrap content-between">
+            <div className="w-1/2 h-[294px] px-5 mt-5 flex flex-wrap content-between">
               <div className="w-full">
                 <h1 className="text-[15px] pb-3">
                   이력서와 함께 <strong>나의 역량과 강점</strong> 그리고
@@ -197,7 +198,7 @@ const Projects = () => {
                 </SwiperSlide>
               </Swiper>
             </div>
-            <div className="w-1/2 h-[290px] px-5 mt-6 flex flex-wrap content-between">
+            <div className="w-1/2 h-[294px] px-5 mt-5 flex flex-wrap content-between">
               <div className="w-full">
                 <h1 className="text-[15px] pb-3">
                   유튜브 뮤직 클론 코딩을 진행습니다. UI/UX 적으로 개선되면 좋을
@@ -331,41 +332,42 @@ const Projects = () => {
                 </SwiperSlide>
               </Swiper>
             </div>
-            <div className="w-1/2 h-full px-5 flex flex-wrap content-center">
+            <div className="w-1/2 h-[294px] px-5 mt-5 flex flex-wrap content-between">
               <div className="w-full">
                 <h1 className="text-[15px] pb-5">
                   사람들이 맛집을 검색함에 있어 가장 원하는 정보, 정제된 정보를
                   전달해주는 사이트를 제작했습니다.
                 </h1>
                 <h2 className="text-[15px] pb-5">
-                  <strong>
-                    팀 프로젝트 경험, 데이터 크롤링, 카카오맵 API 활용
-                  </strong>{" "}
-                  등을 경험했습니다.
+                  팀 프로젝트를 진행하며 <strong>협업과 소통의 중요성</strong>을
+                  느꼈고 <strong>데이터 크롤링, 카카오맵 API 활용</strong>을
+                  경험했습니다.
                 </h2>
               </div>
-              <div className="w-full flex flex-wrap text-[14px] pb-5">
-                <p className={`w-max mb-3 pointText`}>주요기능</p>
-                <h1 className="w-full font-bold">
-                  반응형 웹페이지, 카카오맵 API 활용, 카테고리별 맛집 검색
-                </h1>
-              </div>
-              <div className="w-full flex flex-wrap text-[14px] pb-5">
-                <p className={`w-max mb-3 pointText`}>사용기술</p>
-                <ul className="w-full flex gap-3">
-                  <li className="px-2 py-1 bg-customGray text-white rounded-lg">
-                    HTML
-                  </li>
-                  <li className="px-2 py-1 bg-customGray text-white rounded-lg">
-                    CSS
-                  </li>
-                  <li className="px-2 py-1 bg-customGray text-white rounded-lg">
-                    Javascript
-                  </li>
-                  <li className="px-2 py-1 bg-customGray text-white rounded-lg ">
-                    JQuery
-                  </li>
-                </ul>
+              <div>
+                <div className="w-full flex flex-wrap text-[14px] pb-5">
+                  <p className={`w-max mb-2 pointText`}>주요기능</p>
+                  <h1 className="w-full font-bold">
+                    반응형 웹페이지, 카카오맵 API 활용, 카테고리별 맛집 검색
+                  </h1>
+                </div>
+                <div className="w-full flex flex-wrap text-[14px]">
+                  <p className={`w-max mb-2 pointText`}>사용기술</p>
+                  <ul className="w-full flex gap-3">
+                    <li className="px-2 py-1 bg-customGray text-white rounded-lg">
+                      HTML
+                    </li>
+                    <li className="px-2 py-1 bg-customGray text-white rounded-lg">
+                      CSS
+                    </li>
+                    <li className="px-2 py-1 bg-customGray text-white rounded-lg">
+                      Javascript
+                    </li>
+                    <li className="px-2 py-1 bg-customGray text-white rounded-lg ">
+                      JQuery
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div className="absolute top-[20px] right-[20px] flex gap-2">
                 <a

@@ -37,6 +37,7 @@ function App() {
 
     const scrollOn = setTimeout(() => {
       document.body.style.overflow = "auto";
+      console.log(1);
     }, 6000);
 
     return () => {
