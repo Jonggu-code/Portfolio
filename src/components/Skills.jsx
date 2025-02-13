@@ -13,13 +13,13 @@ const Skills = () => {
       className={`relative w-full p-10 h-[870px] flex justify-center ${isDark ? "bg-customDark" : "bg-blue-200"}`}
     >
       <h1
-        className={`fade-target opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-white" : "text-customDark"} ${isScrolled ? "text-in text-d1" : ""}`}
+        className={`fade-target opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-white" : "text-basicFont"} ${isScrolled ? "text-in text-d1" : ""}`}
       >
         <span className="text-customBlue">02. </span>
         Skills
       </h1>
       <div
-        className={`SkillsMainBox w-[1000px] h-max mt-[90px] mb-[50px] flex flex-wrap justify-center ${isDark ? "text-white" : ""}`}
+        className={`SkillsMainBox w-[1000px] h-max mt-[90px] mb-[50px] flex flex-wrap justify-center ${isDark ? "text-white" : "text-basicFont"}`}
       >
         <div
           className={`skillsItemBox opacity-0 w-full h-max pb-10 ${isScrolled ? "skills-in skills-d2" : ""}`}
@@ -35,7 +35,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/html.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 HTML
               </span>
@@ -47,7 +47,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/css.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 CSS
               </span>
@@ -59,7 +59,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/javascript.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 Javascript
               </span>
@@ -71,7 +71,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/jquery.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 JQuery
               </span>
@@ -83,7 +83,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/ajax.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 AJAX
               </span>
@@ -95,7 +95,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/react.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 React
               </span>
@@ -107,7 +107,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/vite.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 Vite
               </span>
@@ -119,7 +119,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/tailwind.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 tailwind
               </span>
@@ -131,7 +131,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/axios.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 Axios
               </span>
@@ -152,7 +152,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/mysql.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 MySQL
               </span>
@@ -164,7 +164,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/mariadb.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 MariaDB
               </span>
@@ -185,7 +185,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/vscode.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 VSCode
               </span>
@@ -197,7 +197,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/intellij.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 IntelliJ
               </span>
@@ -209,7 +209,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/notion.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 Notion
               </span>
@@ -221,7 +221,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/github.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 GitHub
               </span>
@@ -233,7 +233,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/photo.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 Adobe PhotoShop
               </span>
@@ -245,7 +245,7 @@ const Skills = () => {
                 <img className="w-16" src="./logo/illust.png" alt="" />
               </div>
               <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-customDark"}`}
+                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
               >
                 Adobe Illustrator
               </span>
