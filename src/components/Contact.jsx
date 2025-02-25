@@ -6,6 +6,7 @@ import PhoneIcon from "../hooks/PhoneIcon";
 import EmailIcon from "../hooks/EmailIcon";
 import GitHubIcon from "../hooks/GitHubIcon";
 import TistoryIcon from "../hooks/TistoryIcon";
+import VelogIcon from "../hooks/VelogIcon";
 
 import { DarkModeContext } from "../util/DarkModeContext";
 import { copyEmail } from "../util/copyEmail";
@@ -111,17 +112,17 @@ const Contact = () => {
           </div>
           <div className="conBox userMenu flex flex-col gap-3 items-center">
             <a
-              href="https://jongstechblog.tistory.com/"
+              href="https://velog.io/@00whdcks/posts"
               target="_blank"
-              title="종구's Tech Blog"
+              title="imFront.log"
               className="Tistory opacity-0 fade-in delay-9 flex justify-center items-center"
             >
-              <TistoryIcon isDark={isDark} wid={50} hei={50} />
+              <VelogIcon isDark={isDark} wid={50} hei={50} />
             </a>
             <p
               className={`conTxt ${isDark ? "text-customGray" : "text-customDark"}`}
             >
-              jonggu Tech Blog
+              Velog : Tech Blog
             </p>
           </div>
         </div>

@@ -9,6 +9,7 @@ import { copyEmail } from "../util/copyEmail";
 import ModeIcon from "../hooks/ModeIcon";
 import GitHubIcon from "../hooks/GitHubIcon";
 import TistoryIcon from "../hooks/TistoryIcon";
+import VelogIcon from "../hooks/VelogIcon";
 import EmailIcon from "../hooks/EmailIcon";
 
 const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
@@ -98,17 +99,12 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           <GitHubIcon isDark={isDark} wid={32} hei={32} fillColor={"#6c87a1"} />
         </a>
         <a
-          href="https://jongstechblog.tistory.com/"
+          href="https://velog.io/@00whdcks/posts"
           target="_blank"
-          title="종구's Tech Blog"
+          title="Velog : Tech Blog"
           className="Tistory opacity-0 fade-in delay-9 w-9 h-9 flex justify-center items-center"
         >
-          <TistoryIcon
-            isDark={isDark}
-            wid={28}
-            hei={28}
-            fillColor={"#6c87a1"}
-          />
+          <VelogIcon isDark={isDark} wid={28} hei={28} fillColor={"#6c87a1"} />
         </a>
         <div
           className="ModeChange opacity-0 fade-in delay-10 w-9 h-9 flex justify-center items-center cursor-pointer"
