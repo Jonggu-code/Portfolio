@@ -18,7 +18,7 @@ const About = () => {
       <h1
         className={`opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-white" : "text-basic"} ${isScrolled ? "text-in text-d1" : ""}`}
       >
-        <span className="text-customBlue">01. </span>
+        <span className="text-customBlue"></span>
         About Me
       </h1>
       <div

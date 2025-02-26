@@ -21,7 +21,7 @@ const Projects = () => {
       <h1
         className={`fade-target opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-white" : "text-basicFont"} ${isScrolled ? "text-in text-d1" : ""}`}
       >
-        <span className="text-customBlue">03. </span>
+        <span className="text-customBlue"></span>
         Projects
       </h1>
       <div className="BoxCheck w-full flex justify-center leading-[1.6]">
@@ -148,7 +148,7 @@ const Projects = () => {
       </div>
       <div className="BoxCheck w-full flex justify-center leading-[1.6]">
         <div
-          className={`SkillsMainBox opacity-0 shadow-lg break-keep relative p-6 w-[1000px] h-max rounded-2xl content-start bg-white mt-[50px] mb-[50px] flex flex-wrap ${isScrolled ? "text-in text-d3" : ""}`}
+          className={`SkillsMainBox opacity-0 shadow-lg break-keep relative p-6 w-[1000px] h-max rounded-2xl content-start bg-white mt-[20px] mb-[50px] flex flex-wrap ${isScrolled ? "text-in text-d3" : ""}`}
         >
           <h1 className="text-3xl w-full font-bold pb-3">MatMap - 맛맵</h1>
           <h2 className="w-full text-gray-500">

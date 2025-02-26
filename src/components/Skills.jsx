@@ -15,7 +15,7 @@ const Skills = () => {
       <h1
         className={`fade-target opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-white" : "text-basicFont"} ${isScrolled ? "text-in text-d1" : ""}`}
       >
-        <span className="text-customBlue">02. </span>
+        <span className="text-customBlue"></span>
         Skills
       </h1>
       <div
