@@ -18,8 +18,10 @@
 /* ///////////////////////////////////////////////// */
 
 .btnBox {
-    position: absolute;
-    left: 88.5%;
+    position: fixed;
+    z-index: 99999;
+    left: 89%;
+    top: 5.5%;
     width: 50px;
     height: max-content;
 
@@ -48,8 +50,9 @@
 /* ////////////////////////////////////////// */
 
 .modalContent {
-    width: 75%;
+    width: 70%;
     height: max-content;
+    padding-bottom: 50px;
     background-color: #ffffff;
     border-radius: 15px;
     overflow: hidden;
@@ -116,8 +119,15 @@
     width: 100%;
     padding: 10px;
     height: max-content;
+
     background-color: #ebebeb;
     margin-bottom: 5px;
+
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.modalToggle:hover {
+    background-color: #cccccc;
 }
 .modalToggle > span {
     display: inline-block;
@@ -130,7 +140,7 @@
 }
 .modalToggleList {
     list-style-type: disc;
-    padding: 10px 0 10px 30px;
+    padding: 5px 0 10px 30px;
     display: none;
 }
 .toggleRotate {
@@ -141,4 +151,36 @@
 }
 .modalToggleList > li {
     padding: 8px 0;
+    word-break: keep-all;
+}
+
+/* //////////////////////////////////// */
+
+.modalImgList {
+    padding: 10px;
+    background-color: #ebebeb;
+    text-align: center;
+    border-radius: 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    transition: all 0.2s;
+}
+.modalImgList:hover {
+    background-color: #cccccc;
+}
+.modalImgList > li {
+    width: calc((100% / 3) - 4px);
+    height: 185px;
+}
+.modalImgList img {
+    border-radius: 5px;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 8px;
+
+    object-fit: cover;
+    cursor: pointer;
 }
