@@ -14,8 +14,8 @@ code {
     height: 330px !important;
 }
 .swiper-pagination-bullet {
-    width: 9px !important;
-    height: 9px !important;
+    width: 6px !important;
+    height: 6px !important;
     background-color: #bbb;
     opacity: 0.6;
     transition: 0.3s ease;

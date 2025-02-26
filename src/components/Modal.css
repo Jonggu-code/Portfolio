@@ -14,6 +14,9 @@
     display: flex;
     justify-content: center;
 }
+
+/* ///////////////////////////////////////////////// */
+
 .btnBox {
     position: absolute;
     left: 88.5%;
@@ -35,17 +38,64 @@
     font-weight: 100;
     color: #ffffff;
 }
-.modalContent {
-    width: 75%;
-    height: 3000px;
-    border-radius: 15px;
-    padding: 20px;
-    background-color: #ffffff;
-}
-
 .btnStyle {
     margin: 5px;
 }
 .btnStyle > span {
     transition: all 0.3s;
+}
+
+/* ////////////////////////////////////////// */
+
+.modalContent {
+    width: 75%;
+    height: max-content;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* /////////////////////////////////////////// */
+
+.modalHeader {
+    width: 100%;
+    padding: 20px 0 10px;
+    height: max-content;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.modalList {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+.modalList > li {
+    padding: 2px 8px;
+    margin: 0 4px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+
+    font-size: 14px;
+}
+.modalTitle {
+    width: 100%;
+    height: max-content;
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+}
+.modalTime {
+    width: 100%;
+    height: max-content;
+    color: #fff;
+    margin-top: 10px;
 }

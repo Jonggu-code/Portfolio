@@ -1,5 +1,11 @@
-import { useEffect } from "react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "./Modal.css";
+
+import { useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 
 const Modal = ({ closeModal }) => {
   useEffect(() => {
@@ -22,7 +28,13 @@ const Modal = ({ closeModal }) => {
   return (
     <div className="modalBox" onClick={closeModal}>
       <div className="btnBox">
-        <button className="closeBtn bg-customSky" onClick={closeModal}>
+        <button
+          className="closeBtn bg-customSky"
+          onClick={(e) => {
+            e.stopPropagation();
+            closeModal();
+          }}
+        >
           X
         </button>
         <a
@@ -76,7 +88,39 @@ const Modal = ({ closeModal }) => {
         </a>
       </div>
       <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-        <h2>프로젝트 상세 모달 창</h2>
+        <div className="modalHeader bg-customBlue">
+          <div className="swiperBox h-[280px] w-[500px] mt-4 mb-6">
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              spaceBetween={20}
+              slidesPerView={1}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              loop
+              speed={2000}
+              className="rounded-xl"
+            >
+              {/* 각 슬라이드 구성 */}
+              <SwiperSlide>
+                <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
+                  <img src="./portfolio/page1.jpg" className="w-full h-auto" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
+                  <img src="./portfolio/page2.jpg" className="w-full h-auto" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
+                  <img src="./portfolio/page3.jpg" className="w-full h-auto" />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+          <h2 className="modalTitle">Portfolio</h2>
+          <h3 className="modalTime">제작 기간 : 2025. 01. 03 ~ 수정 중</h3>
+        </div>
         <p>여기에 상세내용을 작성하면 됩니다.</p>
       </div>
     </div>
