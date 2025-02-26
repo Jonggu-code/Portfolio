@@ -6,24 +6,21 @@ import "./Modal.css";
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import useModalClose from "../hooks/useModalClose";
 
 const Modal = ({ closeModal }) => {
+  useModalClose(closeModal);
+
   useEffect(() => {
-    // 1. Modal 열리면 스크롤 막기
-    document.body.style.overflow = "hidden";
-
-    // 2. ESC 키 이벤트 리스너 추가
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") closeModal();
-    };
-    document.addEventListener("keydown", handleKeyDown);
-
-    // Modal 닫힐 때 실행
-    return () => {
-      document.body.style.overflow = "auto";
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [closeModal]);
+    const toggles = document.querySelectorAll(".modalToggle");
+    toggles.forEach((toggle) => {
+      toggle.addEventListener("click", function () {
+        const span = this.querySelector("span");
+        const ul = this.nextElementSibling;
+        span.classList.toggle("toggleRotate");
+      });
+    });
+  }, []);
 
   return (
     <div className="modalBox" onClick={closeModal}>
@@ -119,9 +116,61 @@ const Modal = ({ closeModal }) => {
             </Swiper>
           </div>
           <h2 className="modalTitle">Portfolio</h2>
-          <h3 className="modalTime">제작 기간 : 2025. 01. 03 ~ 수정 중</h3>
+          <h3 className="modalTime">제작 기간 : 2025. 01. 03 ~ 개발 진행 중</h3>
         </div>
-        <p>여기에 상세내용을 작성하면 됩니다.</p>
+        <div className="modalBody">
+          <div className="modalListTitle">
+            <h1>📌 프로젝트 개요</h1>
+            <h2 className="modalOverview">
+              개인 포트폴리오 사이트를 가지고 있으면 타 사이트를 활용한
+              포트폴리오보다 <br />
+              저만의 역량과 강점을 어필하기에 더 좋을 것 같다는 생각에 제작하게
+              되었습니다. <br />
+              <b>UI/UX 디자인과 기획, 개발</b>까지 전 과정을 직접 수행하였고{" "}
+              <b>직관적인 UI와 최적의 UX를 제공</b>하는 데 중점을 두었습니다.
+            </h2>
+          </div>
+          <div className="modalListTitle">
+            <h1>⚙️ 개발 환경 및 사용 기술</h1>
+            <ul className="modalList">
+              <li>
+                <code>React</code>
+              </li>
+              <li>
+                <code>Vite</code>
+              </li>
+              <li>
+                <code>Node.js</code>
+              </li>
+              <li>
+                <code>Tailwind CSS</code>
+              </li>
+            </ul>
+          </div>
+          <div className="modalListTitle">
+            <h1>💡 주요 기능</h1>
+            <div className="modalToggle">
+              <span>▶</span> 자기소개 및 프로젝트 설명
+            </div>
+            <ul className="modalToggleList">
+              <li>
+                이력서와 비슷한 목차와 내용으로 구성해 자기소개와 프로젝트
+                설명을 한눈에 볼 수 있도록 제작했습니다.
+              </li>
+              <li>길어지는 내용은 토글창으로 구성해 가독성을 높혔습니다.</li>
+            </ul>
+            <div className="modalToggle">
+              <span>▶</span> 자기소개 및 프로젝트 설명
+            </div>
+            <ul className="modalToggleList">
+              <li>
+                이력서와 비슷한 목차와 내용으로 구성해 자기소개와 프로젝트
+                설명을 한눈에 볼 수 있도록 제작했습니다.
+              </li>
+              <li>길어지는 내용은 토글창으로 구성해 가독성을 높혔습니다.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
