@@ -15,37 +15,34 @@ const Modal = ({ closeModal }) => {
   useModalClose(closeModal);
 
   useEffect(() => {
+    const handleToggleClick = function () {
+      const span = this.querySelector("span");
+      const ul = this.nextElementSibling;
+      span.classList.toggle("toggleRotate");
+      ul.classList.toggle("toggleShow");
+    };
+
+    const handleImageClick = function () {
+      setSelectedImage(this.src);
+    };
+
     const toggles = document.querySelectorAll(".modalToggle");
     toggles.forEach((toggle) => {
-      toggle.addEventListener("click", function () {
-        const span = this.querySelector("span");
-        const ul = this.nextElementSibling;
-        span.classList.toggle("toggleRotate");
-        ul.classList.toggle("toggleShow");
-      });
+      toggle.addEventListener("click", handleToggleClick);
     });
 
     const images = document.querySelectorAll(".modalImgList img");
     images.forEach((img) => {
-      img.addEventListener("click", () => {
-        setSelectedImage(img.src);
-      });
+      img.addEventListener("click", handleImageClick);
     });
 
     return () => {
       toggles.forEach((toggle) => {
-        toggle.removeEventListener("click", function () {
-          const span = this.querySelector("span");
-          const ul = this.nextElementSibling;
-          span.classList.toggle("toggleRotate");
-          ul.classList.toggle("toggleShow");
-        });
+        toggle.removeEventListener("click", handleToggleClick);
       });
 
       images.forEach((img) => {
-        img.removeEventListener("click", () => {
-          setSelectedImage(img.src);
-        });
+        img.removeEventListener("click", handleImageClick);
       });
     };
   }, []);
@@ -282,7 +279,64 @@ const Modal = ({ closeModal }) => {
               </ul>
             </div>
             <div className="modalListTitle">
-              <h1>📋 작업 이미지</h1>
+              <h1>🚀 트러블 슈팅</h1>
+              <div className="modalToggle">
+                <span>▶</span>{" "}
+                <b>Notion API 활용 불가능으로 Modal 창 직접 제작</b>
+              </div>
+              <ul className="modalToggleList">
+                <li className="text-red-600">
+                  Notion API를 활용해 프로젝트 상세 내용을 모달창으로 불러오려
+                  했으나, 불러오는 과정에서{" "}
+                  <b>버전 충돌과 Notion API Key 오류</b>로 인해 프로젝트 상세
+                  내용을 원할하게 불러오지 못하는 문제가 발생했습니다.
+                </li>
+                <li className="text-customBlue">
+                  이를 해결하기 위해 Notion API를 활용하지 않고,{" "}
+                  <b>직접 프로젝트 상세 내용을 전달할 수 있는 모달창을 제작</b>
+                  했습니다.
+                </li>
+                <li className="text-customBlue">
+                  포트폴리오 공유 사이트{" "}
+                  <b>Behance 의 레이아웃을 참고해서 디자인</b>
+                  했으며, 사이드 버튼 구성은 프로젝트 모달창의 목적에 맞게
+                  재구성 했습니다.
+                </li>
+              </ul>
+              <div className="modalToggle">
+                <span>▶</span> <b>프로젝트 Modal 창 이벤트 오류로 로직 수정</b>
+              </div>
+              <ul className="modalToggleList">
+                <li className="text-red-600">
+                  <b>
+                    프로젝트 모달창에서 각 Toggle 항목을 클릭했을 때 제대로
+                    동작하지 않는 오류
+                  </b>
+                  가 있었고, 렌더링 시 해당 기능을 하는 <code>UseEffect</code>{" "}
+                  가 제대로 동작하지 않는 문제를 발견하였습니다.
+                </li>
+                <li className="text-customBlue">
+                  <b>
+                    각 기능을 <code>handleToggleClick</code>,{" "}
+                    <code>handleImageClick</code> 함수로 분리
+                  </b>
+                  하여 이벤트 리스너를 추가할 때 동일한 함수를 사용하도록
+                  수정했습니다.
+                </li>
+                <li className="text-customBlue">
+                  또한, 언마운트 시 이벤트 리스너를 제거하여{" "}
+                  <b>불필요한 메모리 누수를 방지하고 성능을 최적화</b>
+                  하였습니다.
+                </li>
+              </ul>
+            </div>
+            <div className="modalListTitle">
+              <h1>
+                📋 작업 이미지
+                <p className="text-[14px] text-gray-400 font-thin">
+                  이미지를 클릭해 원본 이미지 파일을 확인할 수 있습니다.
+                </p>
+              </h1>
               <ul className="modalImgList">
                 <li>
                   <img src="./portfolio/page1.jpg" className="h-auto" />
