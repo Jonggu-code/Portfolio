@@ -9,10 +9,10 @@ import { Autoplay, Pagination } from "swiper/modules";
 import useModalClose from "../hooks/useModalClose";
 import ImageModal from "../hooks/ImageModal";
 
-const Modal = ({ closeModal }) => {
+const ModalMatmap = ({ toggleModal }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  useModalClose(closeModal);
+  useModalClose(toggleModal);
 
   useEffect(() => {
     const handleToggleClick = function () {
@@ -61,7 +61,7 @@ const Modal = ({ closeModal }) => {
           className="closeBtn bg-customBlue"
           onClick={(e) => {
             e.stopPropagation();
-            closeModal();
+            toggleModal();
           }}
         >
           X
@@ -116,9 +116,9 @@ const Modal = ({ closeModal }) => {
           <span className="text-[12px] text-white">Velog</span>
         </a>
       </div>
-      <div className="modalBox" onClick={closeModal}>
+      <div className="modalBox" onClick={toggleModal}>
         <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-          <div className="modalHeader bg-customBlue">
+          <div className="modalHeader bg-orange-400">
             <div className="swiperBox h-[280px] w-[500px] mt-4 mb-6">
               <Swiper
                 modules={[Autoplay, Pagination]}
@@ -127,74 +127,92 @@ const Modal = ({ closeModal }) => {
                 autoplay={{ delay: 4000, disableOnInteraction: false }}
                 pagination={{ clickable: true }}
                 loop
-                speed={2000}
+                speed={1000}
                 className="rounded-xl"
               >
                 {/* 각 슬라이드 구성 */}
                 <SwiperSlide>
                   <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
+                    <img src="./Matmap/index.png" className="w-full h-auto" />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
+                    <img src="./Matmap/detail.jpg" className="w-full h-auto" />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
+                    <img src="./Matmap/detail2.jpg" className="w-full h-auto" />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
                     <img
-                      src="./portfolio/page1.jpg"
+                      src="./Matmap/rankpage.png"
                       className="w-full h-auto"
                     />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
-                    <img
-                      src="./portfolio/page2.jpg"
-                      className="w-full h-auto"
-                    />
+                    <img src="./Matmap/mypage.png" className="w-full h-auto" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
-                    <img
-                      src="./portfolio/page3.jpg"
-                      className="w-full h-auto"
-                    />
+                    <img src="./Matmap/review.png" className="w-full h-auto" />
                   </div>
                 </SwiperSlide>
               </Swiper>
             </div>
-            <h2 className="modalTitle">Portfolio</h2>
+            <h2 className="modalTitle">MatMap - 맛맵</h2>
             <h3 className="modalTime">
-              제작 기간 : 2025. 01. 03 ~ 개발 진행 중
+              제작 기간 : 2024.11 - 2024.12 (5인 팀개발)
             </h3>
           </div>
           <div className="modalBody">
             <div className="modalListTitle">
               <h1>📌 프로젝트 개요</h1>
-              <h2 className="modalOverview">
-                개인 포트폴리오 사이트를 가지고 있으면 타 사이트를 활용한
-                포트폴리오보다 <br />
-                저만의 역량과 강점을 어필하기에 더 좋을 것 같다는 생각에
-                제작하게 되었습니다. <br />
-                <b>UI/UX 디자인과 기획, 개발</b>까지 전 과정을 직접 수행하였고{" "}
-                <b>직관적인 UI와 최적의 UX를 제공</b>하는 데 중점을 두었습니다.
+              <h2 className="modalOverview break-keep">
+                사람들이 맛집을 검색함에 있어 가장 원하는 정보, 정제된 정보를
+                전달해주는 사이트를 제작했습니다. <br />
+                팀에서 <b>팀장</b> 역할을 맡았으며{" "}
+                <b>UI/UX 디자인과 프로젝트 기획을 담당</b>했습니다. <br />
+                <b>
+                  메인 화면, 맛집 상세 페이지, 리뷰 페이지, 랭킹 페이지,
+                  마이페이지
+                </b>{" "}
+                등의 페이지를 제작하고 <br />
+                <b>프론트 팀원 간 디자인 스타일과 레이아웃을 통일</b>시키는
+                작업을 했습니다.
               </h2>
             </div>
             <div className="modalListTitle">
               <h1>⚙️ 개발 환경 및 사용 기술</h1>
               <ul className="modalList">
                 <li>
-                  <code>React</code>
+                  <code>HTML5</code>
                 </li>
                 <li>
-                  <code>Vite</code>
+                  <code>CSS3</code>
                 </li>
                 <li>
-                  <code>Node.js</code>
+                  <code>JavaScript</code>
                 </li>
                 <li>
-                  <code>Tailwind CSS</code>
+                  <code>JQuery</code>
+                </li>
+                <li>
+                  <code>AJAX</code>
                 </li>
               </ul>
             </div>
             <div className="modalListTitle">
               <h1>💡 주요 기능</h1>
               <div className="modalToggle">
-                <span>▶</span> <b>자기소개 및 프로젝트 설명</b>
+                <span>▶</span>{" "}
+                <b>카카오맵 API 를 활용해 역삼역 주변의 맛집 정보 전달</b>
               </div>
               <ul className="modalToggleList">
                 <li>
@@ -204,7 +222,7 @@ const Modal = ({ closeModal }) => {
                 <li>길어지는 내용은 토글창으로 구성해 가독성을 높혔습니다.</li>
               </ul>
               <div className="modalToggle">
-                <span>▶</span> <b>단독 컬러 위주의 시각적으로 편안한 디자인</b>
+                <span>▶</span> <b>회원 중심적 서비스 구성</b>
               </div>
               <ul className="modalToggleList">
                 <li>메인컬러를 설정하고 사이트 전체적으로 활용했습니다.</li>
@@ -214,7 +232,7 @@ const Modal = ({ closeModal }) => {
                 </li>
               </ul>
               <div className="modalToggle">
-                <span>▶</span> <b>다크 모드</b>
+                <span>▶</span> <b>평점에 따른 '이달의 맛집 랭킹' 서비스</b>
               </div>
               <ul className="modalToggleList">
                 <li>
@@ -371,4 +389,4 @@ const Modal = ({ closeModal }) => {
   );
 };
 
-export default Modal;
+export default ModalMatmap;
