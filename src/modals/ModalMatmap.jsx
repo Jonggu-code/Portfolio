@@ -67,7 +67,7 @@ const ModalMatmap = ({ toggleModal }) => {
           X
         </button>
         <a
-          href="https://github.com/Jonggu-code/Portfolio"
+          href="https://github.com/Jonggu-code/MatMap_portfolio"
           target="_blank"
           className="btnStyle w-full text-center"
         >
@@ -83,7 +83,7 @@ const ModalMatmap = ({ toggleModal }) => {
           <span className="text-[12px] text-white">GitHub</span>
         </a>
         <a
-          href="https://jonggu-portfolio.vercel.app/"
+          href="https://jonggu-code.github.io/MatMap_portfolio/HTML,CSS,JS/index.html"
           target="_blank"
           className="btnStyle text-center"
         >
@@ -245,7 +245,11 @@ const ModalMatmap = ({ toggleModal }) => {
                 </li>
               </ul>
               <div className="modalToggle">
-                <span>▶</span> <b>컨텐츠 스크롤 이벤트</b>
+                <span>▶</span>{" "}
+                <b>
+                  현재 시간에 따른 영업 상태 업데이트 (영업 중, 브레이크 타임,
+                  영업 종료)
+                </b>
               </div>
               <ul className="modalToggleList">
                 <li>
@@ -260,9 +264,9 @@ const ModalMatmap = ({ toggleModal }) => {
               </ul>
             </div>
             <div className="modalListTitle">
-              <h1>✏️ 추후 추가 예정인 기능</h1>
+              <h1>📙 담당 역할</h1>
               <div className="modalToggle">
-                <span>▶</span> <b>반응형 웹 디자인</b>
+                <span>▶</span> <b>프로젝트 기획 & UI/UX 디자인</b>
               </div>
               <ul className="modalToggleList">
                 <li>
@@ -272,7 +276,8 @@ const ModalMatmap = ({ toggleModal }) => {
                 </li>
               </ul>
               <div className="modalToggle">
-                <span>▶</span> <b>Project 박스 레이아웃 변경</b>
+                <span>▶</span>{" "}
+                <b>프로젝트 일정 관리 및 팀원 간 원활한 커뮤니케이션 유치</b>
               </div>
               <ul className="modalToggleList">
                 <li>
@@ -287,7 +292,20 @@ const ModalMatmap = ({ toggleModal }) => {
               </ul>
               <div className="modalToggle">
                 <span>▶</span>{" "}
-                <b>교육 수료 현황(Education), 경력 사항(Career) 추가</b>
+                <b>
+                  페이지 제작 (메인화면, 맛집 상세 페이지, 리뷰 페이지, 랭킹
+                  페이지, 마이페이지, 후기 작성 페이지)
+                </b>
+              </div>
+              <ul className="modalToggleList">
+                <li>
+                  피드백을 통해 교육 수료 현황과 경력 사항이 있어야 한다는
+                  사실을 깨닫고, 추가할 예정입니다.
+                </li>
+              </ul>
+              <div className="modalToggle">
+                <span>▶</span>{" "}
+                <b>프론트 팀원 간 디자인 스타일과 레이아웃 통일 작업</b>
               </div>
               <ul className="modalToggleList">
                 <li>
@@ -300,7 +318,10 @@ const ModalMatmap = ({ toggleModal }) => {
               <h1>🚀 트러블 슈팅</h1>
               <div className="modalToggle">
                 <span>▶</span>{" "}
-                <b>Notion API 활용 불가능으로 Modal 창 직접 제작</b>
+                <b>
+                  후기 작성 페이지에서 이미지 첨부할 때 마다 이미지 리스트
+                  초기화 이슈
+                </b>
               </div>
               <ul className="modalToggleList">
                 <li className="text-red-600">
@@ -322,7 +343,36 @@ const ModalMatmap = ({ toggleModal }) => {
                 </li>
               </ul>
               <div className="modalToggle">
-                <span>▶</span> <b>프로젝트 Modal 창 이벤트 오류로 로직 수정</b>
+                <span>▶</span>{" "}
+                <b>
+                  식당 후기 사진, 후기 갯수가 많아서 웹사이트 스크롤이 길어짐
+                </b>
+              </div>
+              <ul className="modalToggleList">
+                <li className="text-red-600">
+                  <b>
+                    프로젝트 모달창에서 각 Toggle 항목을 클릭했을 때 제대로
+                    동작하지 않는 오류
+                  </b>
+                  가 있었고, 렌더링 시 해당 기능을 하는 <code>UseEffect</code>{" "}
+                  가 제대로 동작하지 않는 문제를 발견하였습니다.
+                </li>
+                <li className="text-customBlue">
+                  <b>
+                    각 기능을 <code>handleToggleClick</code>,{" "}
+                    <code>handleImageClick</code> 함수로 분리
+                  </b>
+                  하여 이벤트 리스너를 추가할 때 동일한 함수를 사용하도록
+                  수정했습니다.
+                </li>
+                <li className="text-customBlue">
+                  또한, 언마운트 시 이벤트 리스너를 제거하여{" "}
+                  <b>불필요한 메모리 누수를 방지하고 성능을 최적화</b>
+                  하였습니다.
+                </li>
+              </ul>
+              <div className="modalToggle">
+                <span>▶</span> <b>검색 기록 없을 시 사용자 경험 이슈</b>
               </div>
               <ul className="modalToggleList">
                 <li className="text-red-600">
