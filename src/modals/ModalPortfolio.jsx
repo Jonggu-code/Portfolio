@@ -214,6 +214,19 @@ const ModalPortfolio = ({ toggleModal }) => {
                 </li>
               </ul>
               <div className="modalToggle">
+                <span>▶</span> <b>프로젝트 상세 내용 Modal Window</b>
+              </div>
+              <ul className="modalToggleList">
+                <li>
+                  각 프로젝트에 detail 버튼을 통해 모달창을 띄워 프로젝트의 상세
+                  내용을 사이트 내에서 바로 확인할 수 있도록 구성했습니다.
+                </li>
+                <li>
+                  포트폴리오 공유 사이트 Behance 와 Notion 의 레이아웃 디자인을
+                  참고하여 제작했습니다.
+                </li>
+              </ul>
+              <div className="modalToggle">
                 <span>▶</span> <b>다크 모드</b>
               </div>
               <ul className="modalToggleList">
@@ -295,12 +308,6 @@ const ModalPortfolio = ({ toggleModal }) => {
                   이를 해결하기 위해 Notion API를 활용하지 않고,{" "}
                   <b>직접 프로젝트 상세 내용을 전달할 수 있는 모달창을 제작</b>
                   했습니다.
-                </li>
-                <li className="text-customBlue">
-                  포트폴리오 공유 사이트{" "}
-                  <b>Behance 의 레이아웃을 참고해서 디자인</b>
-                  했으며, 사이드 버튼 구성은 프로젝트 모달창의 목적에 맞게
-                  재구성 했습니다.
                 </li>
               </ul>
               <div className="modalToggle">

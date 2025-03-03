@@ -413,7 +413,7 @@ const Projects = () => {
                 <div className="w-full flex flex-wrap text-[14px] pb-5">
                   <p className={`w-max mb-2 pointText`}>주요기능</p>
                   <h1 className="w-full font-bold">
-                    반응형 웹페이지, Javascript 능력 향샹
+                    반응형 웹페이지, 미디어 제어, 로컬스토리지 활용
                   </h1>
                 </div>
                 <div className="w-full flex flex-wrap text-[14px]">

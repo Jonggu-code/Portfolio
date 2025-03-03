@@ -69,7 +69,7 @@ const ModalYoutube = ({ toggleModal }) => {
           X
         </button>
         <a
-          href="https://github.com/Jonggu-code/Portfolio"
+          href="https://github.com/Jonggu-code/Portfolio_youtube"
           target="_blank"
           className="btnStyle w-full text-center"
         >
@@ -85,7 +85,7 @@ const ModalYoutube = ({ toggleModal }) => {
           <span className="text-[12px] text-white">GitHub</span>
         </a>
         <a
-          href="https://jonggu-portfolio.vercel.app/"
+          href="https://jonggu-code.github.io/Portfolio_youtube/246.%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A41(%EC%9C%A0%ED%8A%9C%EB%B8%8C).html"
           target="_blank"
           className="btnStyle text-center"
         >
@@ -120,7 +120,7 @@ const ModalYoutube = ({ toggleModal }) => {
       </div>
       <div className="modalBox" onClick={toggleModal}>
         <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-          <div className="modalHeader bg-customBlue">
+          <div className="modalHeader bg-red-600">
             <div className="swiperBox h-[280px] w-[500px] mt-4 mb-6">
               <Swiper
                 modules={[Autoplay, Pagination]}
@@ -129,206 +129,208 @@ const ModalYoutube = ({ toggleModal }) => {
                 autoplay={{ delay: 4000, disableOnInteraction: false }}
                 pagination={{ clickable: true }}
                 loop
-                speed={2000}
+                speed={1000}
                 className="rounded-xl"
               >
                 {/* 각 슬라이드 구성 */}
                 <SwiperSlide>
-                  <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
+                  <div className="w-full h-[290px] overflow-hidden rounded-xl bg-gray-800 flex items-center">
+                    <img src="./youtube/index.jpg" className="w-full h-auto" />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="w-full h-[290px] overflow-hidden rounded-xl bg-gray-800 flex items-center">
                     <img
-                      src="./portfolio/page1.jpg"
+                      src="./youtube/storage.jpg"
                       className="w-full h-auto"
                     />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
+                  <div className="w-full h-[290px] overflow-hidden rounded-xl bg-gray-800 flex items-center">
                     <img
-                      src="./portfolio/page2.jpg"
+                      src="./youtube/playlist.jpg"
                       className="w-full h-auto"
                     />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-[290px] rounded-xl bg-gray-800 flex items-center">
+                  <div className="w-full h-[290px] overflow-hidden rounded-xl bg-gray-800 flex items-center">
                     <img
-                      src="./portfolio/page3.jpg"
+                      src="./youtube/playpage.jpg"
                       className="w-full h-auto"
                     />
                   </div>
                 </SwiperSlide>
               </Swiper>
             </div>
-            <h2 className="modalTitle">Portfolio</h2>
+            <h2 className="modalTitle">Youtube Music Reworks</h2>
             <h3 className="modalTime">
-              제작 기간 : 2025. 01. 03 ~ 개발 진행 중
+              제작 기간 : 2024.10 - 2024.10 (1인 개발)
             </h3>
           </div>
           <div className="modalBody">
             <div className="modalListTitle">
               <h1>📌 프로젝트 개요</h1>
               <h2 className="modalOverview">
-                개인 포트폴리오 사이트를 가지고 있으면 타 사이트를 활용한
-                포트폴리오보다 <br />
-                저만의 역량과 강점을 어필하기에 더 좋을 것 같다는 생각에
-                제작하게 되었습니다. <br />
-                <b>UI/UX 디자인과 기획, 개발</b>까지 전 과정을 직접 수행하였고{" "}
-                <b>직관적인 UI와 최적의 UX를 제공</b>하는 데 중점을 두었습니다.
+                유튜브 뮤직 클론 코딩을 진행한 프로젝트입니다. Youtube API 를
+                활용하지 않고 전부 직접 개발했으며, 유튜브 뮤직의 기능을 최대한
+                구현하고자 했습니다. <br />
+                화면을 구현하며 보관함과 플레이리스트의 UI가 가독성이 떨어지는
+                것 같아 디자인을 개선하였고, 음악을 재생하고 실시간으로 컨트롤
+                할 수 있는 기능에 중점을 맞추고 개발을 진행하였습니다.
+                <br />
+                결과적으로 Javascript, JQuery, HTML, CSS 의 기능 숙지와 숙련도를
+                높일 수 있었던 프로젝트였습니다.
               </h2>
             </div>
             <div className="modalListTitle">
               <h1>⚙️ 개발 환경 및 사용 기술</h1>
               <ul className="modalList">
                 <li>
-                  <code>React</code>
+                  <code>HTML</code>
                 </li>
                 <li>
-                  <code>Vite</code>
+                  <code>CSS</code>
                 </li>
                 <li>
-                  <code>Node.js</code>
+                  <code>Javascript</code>
                 </li>
                 <li>
-                  <code>Tailwind CSS</code>
+                  <code>JQuery</code>
                 </li>
               </ul>
             </div>
             <div className="modalListTitle">
               <h1>💡 주요 기능</h1>
               <div className="modalToggle">
-                <span>▶</span> <b>자기소개 및 프로젝트 설명</b>
+                <span>▶</span> <b>로컬스토리지 기반 음악 재생</b>
               </div>
               <ul className="modalToggleList">
                 <li>
-                  이력서와 비슷한 목차와 내용으로 구성해 자기소개와 프로젝트
-                  설명을 한눈에 볼 수 있도록 제작했습니다.
+                  JS 객체로 음악 데이터를 저장하고, 로컬스토리지에 저장된
+                  데이터를 불러와 음악을 재생할 수 있도록 구현했습니다.
                 </li>
-                <li>길어지는 내용은 토글창으로 구성해 가독성을 높혔습니다.</li>
-              </ul>
-              <div className="modalToggle">
-                <span>▶</span> <b>단독 컬러 위주의 시각적으로 편안한 디자인</b>
-              </div>
-              <ul className="modalToggleList">
-                <li>메인컬러를 설정하고 사이트 전체적으로 활용했습니다.</li>
                 <li>
-                  차트를 내릴수록 어두워지는 배경으로 시각적으로 편안할 수
-                  있도록 디자인했습니다.
+                  장르, 재생 길이, 태그 등의 정보를 저장하고 사용했습니다.
                 </li>
               </ul>
               <div className="modalToggle">
-                <span>▶</span> <b>다크 모드</b>
+                <span>▶</span>{" "}
+                <b>
+                  플레이어 실시간 제어 기능 (음악 길이, 볼륨, 버튼 상호작용)
+                  구현
+                </b>
               </div>
               <ul className="modalToggleList">
                 <li>
-                  네비게이션 바에서 다크모드 / 라이트모드 를 사용자의 편의에
-                  따라 조정할 수 있습니다.
+                  음악이 재생되고 페이지 하단의 고정 플레이어로 이를 조정할 수
+                  있는 실시간 제어 기능을 구현했습니다.
                 </li>
                 <li>
-                  컴포넌트 전역적으로 다크모드 / 라이트모드를 구분하기 위해{" "}
-                  <code>DarkModeContext</code> 를 생성해 활용했습니다.
-                </li>
-              </ul>
-              <div className="modalToggle">
-                <span>▶</span> <b>컨텐츠 스크롤 이벤트</b>
-              </div>
-              <ul className="modalToggleList">
-                <li>
-                  스크롤 이벤트에 따라 각 컨텐츠가 나타나는 애니메이션을
+                  음악의 길이, 볼륨, 재생, 일시정지, 이전, 다음 등의 버튼을
                   구현했습니다.
                 </li>
+              </ul>
+              <div className="modalToggle">
+                <span>▶</span> <b>반응형 웹 디자인</b>
+              </div>
+              <ul className="modalToggleList">
                 <li>
-                  <code>UseRef</code>를 활용해 각 컨텐츠의 위치를 파악하고,{" "}
-                  <code>useScrollSection</code>을 통해 현재 스크롤 위치에서
-                  벗어나면 컨텐츠들이 fadeOut 되도록 구성했습니다.
+                  데스크탑 화면에서 비율에 따른 반응형 디자인을 제공할 수 있도록
+                  반응형 웹 디자인을 추가했습니다.
+                </li>
+              </ul>
+              <div className="modalToggle">
+                <span>▶</span> <b>메인 화면 무한 스크롤</b>
+              </div>
+              <ul className="modalToggleList">
+                <li>
+                  유튜브 뮤직의 메인 화면처럼 무한 스크롤 기능을 추가했습니다.
+                </li>
+                <li>
+                  현재는 제한된 정보로 같은 음악과 앨범이 스크롤되지만
+                  로컬스토리지에 추가 데이터를 저장하면 바로 중복되지 않는
+                  정보를 불러올 수 있도록 구현했습니다.
                 </li>
               </ul>
             </div>
             <div className="modalListTitle">
               <h1>✏️ 추후 추가 예정인 기능</h1>
               <div className="modalToggle">
-                <span>▶</span> <b>반응형 웹 디자인</b>
+                <span>▶</span> <b>React 마이그레이션</b>
               </div>
               <ul className="modalToggleList">
                 <li>
-                  현재 PC 환경에 최적화된 디자인으로 제작되었으나, 모바일
-                  환경에서도 최적화된 디자인을 제공할 수 있도록 반응형 웹
-                  디자인을 추가할 예정입니다.
+                  현재 기본 Javascript 와 JQuery 를 사용해 개발했으나{" "}
+                  <b>React 로 마이그레이션</b> 할 예정입니다.
                 </li>
               </ul>
               <div className="modalToggle">
-                <span>▶</span> <b>Project 박스 레이아웃 변경</b>
+                <span>▶</span> <b>모바일 반응형</b>
               </div>
               <ul className="modalToggleList">
                 <li>
-                  현재는 각 프로젝트가 큰 박스 형태로 제공하고 있으나,
-                  프로젝트가 추가되면 화면이 길어지는 단점이 있습니다.
-                </li>
-                <li>
-                  전체적인 레이아웃을 변경해 각 프로젝트들을 더 간략한 박스
-                  형태로 변경하고, detail 을 통해 내용을 파악할 수 있도록 변경할
+                  현재 데스크탑 화면에 최적화된 반응형 웹 디자인을 제공하고
+                  있으나, 모바일 환경에 최적화된 반응형 웹 디자인을 추가할
                   예정입니다.
                 </li>
               </ul>
               <div className="modalToggle">
-                <span>▶</span>{" "}
-                <b>교육 수료 현황(Education), 경력 사항(Career) 추가</b>
+                <span>▶</span> <b>음악 검색 기능 추가</b>
               </div>
               <ul className="modalToggleList">
                 <li>
-                  피드백을 통해 교육 수료 현황과 경력 사항이 있어야 한다는
-                  사실을 깨닫고, 추가할 예정입니다.
+                  현재는 로컬스토리지에 저장된 음악 데이터만을 불러와 재생할 수
+                  있으나, 검색창을 통해 음악을 검색할 수 있도록 추가할
+                  예정입니다.
+                </li>
+                <li>
+                  React 로 마이그레이션 할 시, <code>filter()</code> 메서드를
+                  활용해 간단한 검색기능이 구현 가능할 것이라 생각합니다.
+                </li>
+              </ul>
+              <div className="modalToggle">
+                <span>▶</span> <b>재생목록 생성 기능 추가</b>
+              </div>
+              <ul className="modalToggleList">
+                <li>
+                  DB와 Server를 활용한 재생목록 생성 기능은 불가능하지만,
+                  재생목록을 추가했을 때의 보관함 화면을 추가할 수 있도록 구현할
+                  예정입니다.
                 </li>
               </ul>
             </div>
             <div className="modalListTitle">
               <h1>🚀 트러블 슈팅</h1>
               <div className="modalToggle">
-                <span>▶</span>{" "}
-                <b>Notion API 활용 불가능으로 Modal 창 직접 제작</b>
+                <span>▶</span> <b>유튜브 컨텐츠 iframe 활용 불가능</b>
               </div>
               <ul className="modalToggleList">
                 <li className="text-red-600">
-                  Notion API를 활용해 프로젝트 상세 내용을 모달창으로 불러오려
-                  했으나, 불러오는 과정에서{" "}
-                  <b>버전 충돌과 Notion API Key 오류</b>로 인해 프로젝트 상세
-                  내용을 원할하게 불러오지 못하는 문제가 발생했습니다.
+                  Youtube 컨텐츠를 iframe 으로 불러오는 방법을 사용하려 했으나,{" "}
+                  <b>API 키를 발급받지 않아 사용할 수 없었습니다.</b>
                 </li>
                 <li className="text-customBlue">
-                  이를 해결하기 위해 Notion API를 활용하지 않고,{" "}
-                  <b>직접 프로젝트 상세 내용을 전달할 수 있는 모달창을 제작</b>
-                  했습니다.
-                </li>
-                <li className="text-customBlue">
-                  포트폴리오 공유 사이트{" "}
-                  <b>Behance 의 레이아웃을 참고해서 디자인</b>
-                  했으며, 사이드 버튼 구성은 프로젝트 모달창의 목적에 맞게
-                  재구성 했습니다.
+                  이를 해결하기 위해 모든 UI를 직접 개발하고,{" "}
+                  <b>로컬스토리지에 음악 데이터를 저장</b>하고, 해당 데이터를
+                  불러와 음악을 재생할 수 있도록 구현했습니다.
                 </li>
               </ul>
               <div className="modalToggle">
-                <span>▶</span> <b>프로젝트 Modal 창 이벤트 오류로 로직 수정</b>
+                <span>▶</span>{" "}
+                <b>다음 음악으로 넘어가면 볼륨이 초기화되는 현상</b>
               </div>
               <ul className="modalToggleList">
                 <li className="text-red-600">
-                  <b>
-                    프로젝트 모달창에서 각 Toggle 항목을 클릭했을 때 제대로
-                    동작하지 않는 오류
-                  </b>
-                  가 있었고, 렌더링 시 해당 기능을 하는 <code>UseEffect</code>{" "}
-                  가 제대로 동작하지 않는 문제를 발견하였습니다.
+                  다음 음악으로 넘어갈 때마다 <b>설정해놓은 볼륨이 초기화</b>
+                  되는 현상을 발견했습니다.
                 </li>
                 <li className="text-customBlue">
-                  <b>
-                    각 기능을 <code>handleToggleClick</code>,{" "}
-                    <code>handleImageClick</code> 함수로 분리
-                  </b>
-                  하여 이벤트 리스너를 추가할 때 동일한 함수를 사용하도록
-                  수정했습니다.
-                </li>
-                <li className="text-customBlue">
-                  또한, 언마운트 시 이벤트 리스너를 제거하여{" "}
-                  <b>불필요한 메모리 누수를 방지하고 성능을 최적화</b>
-                  하였습니다.
+                  이를 해결하기 위해{" "}
+                  <b>다음 음악으로 넘어갈 때의 볼륨 수치를 변수에 저장</b>
+                  하고, 해당 볼륨을 다음 음악 재생 시 불러와 적용할 수 있도록
+                  구현했습니다.
                 </li>
               </ul>
             </div>
@@ -341,28 +343,24 @@ const ModalYoutube = ({ toggleModal }) => {
               </h1>
               <ul className="modalImgList">
                 <li>
-                  <img src="./portfolio/page1.jpg" className="h-auto" />
-                  <span>자기 소개</span>
+                  <img src="./youtube/modal/page1.jpg" className="h-auto" />
+                  <span>메인 화면</span>
                 </li>
                 <li>
-                  <img src="./portfolio/page2.jpg" className="h-auto" />
-                  <span>About Me</span>
+                  <img src="./youtube/modal/page2.jpg" className="h-auto" />
+                  <span>둘러 보기</span>
                 </li>
                 <li>
-                  <img src="./portfolio/page3.jpg" className="h-auto" />
-                  <span>Skills</span>
+                  <img src="./youtube/modal/page3.jpg" className="h-auto" />
+                  <span>보관함</span>
                 </li>
                 <li>
-                  <img src="./portfolio/page4.jpg" className="h-auto" />
-                  <span>Project</span>
+                  <img src="./youtube/modal/page4.jpg" className="h-auto" />
+                  <span>보관함 목록</span>
                 </li>
                 <li>
-                  <img src="./portfolio/page5.jpg" className="h-auto" />
-                  <span>Project Detail</span>
-                </li>
-                <li>
-                  <img src="./portfolio/page6.jpg" className="h-auto" />
-                  <span>Contact</span>
+                  <img src="./youtube/modal/page5.jpg" className="h-auto" />
+                  <span>뮤직 플레이어</span>
                 </li>
               </ul>
             </div>
