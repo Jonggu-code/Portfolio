@@ -13,14 +13,54 @@ const About = () => {
   return (
     <div
       ref={aboutRef}
-      className={`relative w-full p-10 h-max flex justify-center ${isDark ? "bg-customDark" : "bg-blue-100"}`}
+      className={`relative w-full p-10 h-max flex flex-wrap justify-center ${isDark ? "bg-customDark" : "bg-blue-100"}`}
     >
       <h1
         className={`opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-white" : "text-basic"} ${isScrolled ? "text-in text-d1" : ""}`}
       >
-        <span className="text-customBlue"></span>
         About Me
       </h1>
+      <div className="educationBox w-full h-max flex flex-wrap justify-center">
+        <h1
+          className={`education w-full text-center mt-[100px] mb-[20px] text-[26px] font-bold ${isDark ? "text-white" : "text-basicFont"}`}
+        >
+          Education
+        </h1>
+        <div className="eduContentBox w-[1000px] flex flex-wrap justify-center gap-[10px]">
+          <div
+            className={`eduContent ${isDark ? "bg-customGray" : "bg-white"}`}
+          >
+            <div className="contentBox">
+              <div className="schoolLogo">
+                <img src="/logo/highschoollogo.svg" alt="" />
+              </div>
+              <div className="schoolText">
+                <h1 className="schoolTitle">
+                  건국대학교 사범대학 부속고등학교
+                </h1>
+                <h2 className="schoolGraduate">
+                  2014.02 ~ 2017.02 | 인문계 | 졸업
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className={`eduContent ${isDark ? "bg-customGray" : "bg-white"}`}
+          >
+            <div className="contentBox">
+              <div className="schoolLogo">
+                <img src="/logo/universitylogo.svg" alt="" />
+              </div>
+              <div className="schoolText">
+                <h1 className="schoolTitle">동양대학교 동두천캠퍼스</h1>
+                <h2 className="schoolGraduate">
+                  2017.02 ~ 2023.02 | 공간디자인학과 | 졸업
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         className={`aboutMainBox mt-[90px] mb-[50px] ${isDark ? "text-customDark" : "text-basicFont"}`}
       >

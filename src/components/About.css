@@ -35,3 +35,39 @@
 .text-d4 {
     animation-delay: 0.6s;
 }
+.eduContent {
+    width: calc((100% / 2) - 5px);
+    height: max-content;
+    padding: 15px;
+    border-radius: 10px;
+}
+.contentBox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.schoolLogo {
+    width: 80px;
+    height: 80px;
+}
+.schoolText {
+    width: calc(100% - 100px);
+    margin-left: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.schoolTitle,
+.schoolGraduate {
+    width: 100%;
+}
+.schoolTitle {
+    color: #333333;
+    font-weight: 900;
+    font-size: 20px;
+}
+.schoolGraduate {
+    color: #555555;
+    font-size: 18px;
+}

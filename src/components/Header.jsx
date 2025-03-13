@@ -8,7 +8,6 @@ import { copyEmail } from "../util/copyEmail";
 
 import ModeIcon from "../hooks/ModeIcon";
 import GitHubIcon from "../hooks/GitHubIcon";
-import TistoryIcon from "../hooks/TistoryIcon";
 import VelogIcon from "../hooks/VelogIcon";
 import EmailIcon from "../hooks/EmailIcon";
 
@@ -25,7 +24,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
 
   return (
     <header
-      className={`header fixed top-0 left-0 z-50 fade-in delay-1 opacity-0 w-full p-4 px-10 flex justify-between ${isDark ? "header_dark" : "header_basic"}`}
+      className={`header fixed top-0 left-0 z-50 fade-in delay-1 opacity-0 w-full p-4 px-10 flex justify-between ${isDark ? "header_dark" : "header_basic"} xl:`}
     >
       <div
         className="logo opacity-0 w-[210px] h-full fade-in delay-2"
@@ -74,10 +73,16 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
         </a>
       </div>
       <div className="userMenu w-max flex gap-6 items-center">
+        <div
+          className="ModeChange opacity-0 fade-in delay-7 w-9 h-9 flex justify-center items-center cursor-pointer"
+          onClick={toggleDarkMode}
+        >
+          <ModeIcon isDark={isDark} />
+        </div>
         <a
           href="#"
           title="Jonggu-code 이메일 주소"
-          className={`Email ${isDark ? "bg-customGray" : "bg-customGray"} iconCircle opacity-0 fade-in delay-7 w-[30px] h-[30px] flex justify-center items-center`}
+          className={`Email ${isDark ? "bg-customGray" : "bg-customGray"} iconCircle opacity-0 fade-in delay-8 w-[30px] h-[30px] flex justify-center items-center`}
           onClick={() => {
             copyEmail(email);
           }}
@@ -94,7 +99,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           href="https://github.com/Jonggu-code"
           target="_blank"
           title="Jonggu-code GitHub Profile"
-          className="Notion opacity-0 fade-in delay-8 w-9 h-9 flex justify-center items-center"
+          className="Notion opacity-0 fade-in delay-9 w-9 h-9 flex justify-center items-center"
         >
           <GitHubIcon isDark={isDark} wid={32} hei={32} fillColor={"#6c87a1"} />
         </a>
@@ -102,16 +107,10 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           href="https://velog.io/@00whdcks/posts"
           target="_blank"
           title="Velog : Tech Blog"
-          className="Tistory opacity-0 fade-in delay-9 w-9 h-9 flex justify-center items-center"
+          className="Tistory fade-in delay-10 w-9 h-9 xl:flex opacity-0 justify-center items-center"
         >
           <VelogIcon isDark={isDark} wid={28} hei={28} fillColor={"#6c87a1"} />
         </a>
-        <div
-          className="ModeChange opacity-0 fade-in delay-10 w-9 h-9 flex justify-center items-center cursor-pointer"
-          onClick={toggleDarkMode}
-        >
-          <ModeIcon isDark={isDark} />
-        </div>
       </div>
     </header>
   );
