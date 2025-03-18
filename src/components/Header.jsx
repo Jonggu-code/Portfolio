@@ -28,7 +28,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
 
   return (
     <header
-      className={`header fixed top-0 left-0 z-50 fade-in delay-1 opacity-0 w-full p-4 px-4 flex justify-between ${isDark ? "header_dark" : "header_basic"}`}
+      className={`header fixed top-0 left-0 z-50 fade-in delay-1 opacity-0 w-full p-4 px-6 flex justify-between ${isDark ? "header_dark" : "header_basic"}`}
     >
       <div
         className="logo opacity-0 w-[210px] h-full fade-in delay-2"
@@ -76,14 +76,14 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           Projects
         </a>
       </div>
-      <div className="userMenu flex lg:w-[210px]">
+      <div className="userMenu relative flex w-max lg:w-[210px]">
         <div
           className="hamberBtn flex relative w-8 h-8 justify-center items-center transition-color opacity-100 text-[28px] text-customGray cursor-pointer hover:text-customBlue lg:opacity-0 lg:hidden"
           onClick={toggleMenu}
         >
           ☰
         </div>
-        <div className="userMenuBox flex gap-6 lg:w-max ">
+        <div className="userMenuBox bg-gray-200 rounded-[10px] shadow-sm flex flex-wrap gap-6 absolute p-[10px] top-[120%] left-[50%] translate-x-[-50%] lg:justify-between lg:p-0 lg:top-0 lg:left-0 lg:translate-x-0 lg:w-full lg:flex-nowrap lg:bg-transparent lg:relative lg:shadow-none">
           <a
             href="#"
             title="Jonggu-code 이메일 주소"
