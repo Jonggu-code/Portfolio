@@ -1,5 +1,5 @@
 import "./Header.css";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { getLogoImage } from "../util/get-logo";
 import { DarkModeContext } from "../util/DarkModeContext";
@@ -14,6 +14,7 @@ import EmailIcon from "../hooks/EmailIcon";
 const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
   const { isDark, toggleDarkMode } = useContext(DarkModeContext);
   const email = "jonggucode@gmail.com";
+  const [isHamberActive, setIsHamberActive] = useState(false);
 
   const moveTop = () => {
     window.scrollTo({
@@ -21,10 +22,13 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
       behavior: "smooth",
     });
   };
+  const toggleMenu = () => {
+    setIsHamberActive(!isHamberActive);
+  };
 
   return (
     <header
-      className={`header fixed top-0 left-0 z-50 fade-in delay-1 opacity-0 w-full p-4 px-10 flex justify-between ${isDark ? "header_dark" : "header_basic"} xl:`}
+      className={`header fixed top-0 left-0 z-50 fade-in delay-1 opacity-0 w-full p-4 px-4 flex justify-between ${isDark ? "header_dark" : "header_basic"}`}
     >
       <div
         className="logo opacity-0 w-[210px] h-full fade-in delay-2"
@@ -72,45 +76,63 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           Projects
         </a>
       </div>
-      <div className="userMenu w-max flex gap-6 items-center">
+      <div className="userMenu flex lg:w-[210px]">
         <div
-          className="ModeChange opacity-0 fade-in delay-7 w-9 h-9 flex justify-center items-center cursor-pointer"
-          onClick={toggleDarkMode}
+          className="hamberBtn flex relative w-8 h-8 justify-center items-center transition-color opacity-100 text-[28px] text-customGray cursor-pointer hover:text-customBlue lg:opacity-0 lg:hidden"
+          onClick={toggleMenu}
         >
-          <ModeIcon isDark={isDark} />
+          ☰
         </div>
-        <a
-          href="#"
-          title="Jonggu-code 이메일 주소"
-          className={`Email ${isDark ? "bg-customGray" : "bg-customGray"} iconCircle opacity-0 fade-in delay-8 w-[30px] h-[30px] flex justify-center items-center`}
-          onClick={() => {
-            copyEmail(email);
-          }}
-        >
-          <EmailIcon
-            isDark={isDark}
-            wid={20}
-            hei={20}
-            custom={"#fff"}
-            basic={"#333333"}
-          />
-        </a>
-        <a
-          href="https://github.com/Jonggu-code"
-          target="_blank"
-          title="Jonggu-code GitHub Profile"
-          className="Notion opacity-0 fade-in delay-9 w-9 h-9 flex justify-center items-center"
-        >
-          <GitHubIcon isDark={isDark} wid={32} hei={32} fillColor={"#6c87a1"} />
-        </a>
-        <a
-          href="https://velog.io/@00whdcks/posts"
-          target="_blank"
-          title="Velog : Tech Blog"
-          className="Tistory fade-in delay-10 w-9 h-9 xl:flex opacity-0 justify-center items-center"
-        >
-          <VelogIcon isDark={isDark} wid={28} hei={28} fillColor={"#6c87a1"} />
-        </a>
+        <div className="userMenuBox flex gap-6 lg:w-max ">
+          <a
+            href="#"
+            title="Jonggu-code 이메일 주소"
+            className={`Email ${isDark ? "bg-customGray" : "bg-customGray"} iconCircle opacity-0 fade-in delay-8 w-8 h-8 flex justify-center items-center`}
+            onClick={() => {
+              copyEmail(email);
+            }}
+          >
+            <EmailIcon
+              isDark={isDark}
+              wid={20}
+              hei={20}
+              custom={"#fff"}
+              basic={"#333333"}
+            />
+          </a>
+          <a
+            href="https://github.com/Jonggu-code"
+            target="_blank"
+            title="Jonggu-code GitHub Profile"
+            className="githubIcon opacity-0 fade-in delay-9 w-8 h-8 flex justify-center items-center"
+          >
+            <GitHubIcon
+              isDark={isDark}
+              wid={36}
+              hei={36}
+              fillColor={"#6c87a1"}
+            />
+          </a>
+          <a
+            href="https://velog.io/@00whdcks/posts"
+            target="_blank"
+            title="Velog : Tech Blog"
+            className="velogIcon fade-in delay-10 w-8 h-8 flex justify-center items-center"
+          >
+            <VelogIcon
+              isDark={isDark}
+              wid={28}
+              hei={28}
+              fillColor={"#6c87a1"}
+            />
+          </a>
+          <div
+            className="ModeChange opacity-0 fade-in delay-7 w-8 h-8 flex justify-center items-center cursor-pointer"
+            onClick={toggleDarkMode}
+          >
+            <ModeIcon isDark={isDark} />
+          </div>
+        </div>
       </div>
     </header>
   );

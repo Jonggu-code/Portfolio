@@ -100,7 +100,7 @@ const Contact = () => {
               href="https://github.com/Jonggu-code"
               target="_blank"
               title="Jonggu-code GitHub Profile"
-              className="Notion opacity-0 fade-in delay-8 flex justify-center items-center"
+              className="githubIcon opacity-0 fade-in delay-8 flex justify-center items-center"
             >
               <GitHubIcon isDark={isDark} wid={50} hei={50} />
             </a>
@@ -115,7 +115,7 @@ const Contact = () => {
               href="https://velog.io/@00whdcks/posts"
               target="_blank"
               title="imFront.log"
-              className="Tistory opacity-0 fade-in delay-9 flex justify-center items-center"
+              className="velogIcon opacity-0 fade-in delay-9 flex justify-center items-center"
             >
               <VelogIcon isDark={isDark} wid={50} hei={50} />
             </a>

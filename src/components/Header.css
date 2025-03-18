@@ -39,7 +39,7 @@
 }
 .iconCircle {
     border-radius: 50%;
-    transition: all 0.5s;
+    transition: background 0.3s;
 }
 .iconCircle:hover {
     background-color: #186ebd;
@@ -47,12 +47,16 @@
 
 /* //////////////////////////// */
 .userMenu {
-    transition: all 0.2s;
+    transition: color 0.2s;
 }
 .iconDark,
 .iconBasic,
+.githubIcon,
+.velogIcon,
 .ModeChange {
-    transition: all 0.3s;
+    transition:
+        color 0.3s,
+        fill 0.3s;
 }
 .userMenu > a:hover .iconDark,
 .userMenu > a:hover .iconBasic {

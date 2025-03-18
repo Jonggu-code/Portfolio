@@ -80,31 +80,6 @@
 
 /* /////////////////////////////////////////////// */
 
-.iconCircle {
-    border-radius: 50%;
-    transition: all 0.5s;
-}
-.iconCircle:hover {
-    background-color: #186ebd;
-}
-
-/* //////////////////////////// */
-
-.userMenu {
-    transition: all 0.2s;
-}
-.iconDark,
-.iconBasic,
-.ModeChange {
-    transition: all 0.3s;
-}
-.userMenu:hover > .iconDark,
-.userMenu:hover > .iconBasic {
-    fill: #186ebd;
-}
-
-/* //////////////////////////// */
-
 .conBox {
     transform: translateY(10px);
     transition: all 0.4s;
