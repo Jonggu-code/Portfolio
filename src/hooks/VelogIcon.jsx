@@ -1,9 +1,9 @@
-const TistoryIcon = ({ isDark, wid, hei, fillColor }) => {
+const TistoryIcon = ({ isDark, wid, hei }) => {
   return isDark ? (
     <svg
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      fill="#6c87a1"
+      fill="#fff"
       width={wid}
       height={hei}
       className="iconDark"
@@ -14,7 +14,7 @@ const TistoryIcon = ({ isDark, wid, hei, fillColor }) => {
     <svg
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      fill={fillColor}
+      fill="#0f172a"
       width={wid}
       height={hei}
       className="iconBasic"

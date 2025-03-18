@@ -66,12 +66,12 @@ const Contact = () => {
           <div className="conBox userMenu flex flex-col items-center gap-3">
             <a
               title="050-6875-8906"
-              className={`cursor-pointer Email ${isDark ? "bg-customGray" : "bg-customDark"} iconCircle opacity-0 fade-in delay-7 w-[50px] h-[50px] flex justify-center items-center`}
+              className={`cursor-pointer Email opacity-0 fade-in delay-7 w-[50px] h-[50px] flex justify-center items-center`}
               onClick={() => {
                 copyPhone(phone);
               }}
             >
-              <PhoneIcon isDark={isDark} wid={30} hei={30} />
+              <PhoneIcon isDark={isDark} wid={40} hei={40} />
             </a>
             <p
               className={`conTxt ${isDark ? "text-customGray" : "text-customDark"}`}
@@ -82,12 +82,12 @@ const Contact = () => {
           <div className="conBox userMenu flex flex-col gap-3 items-center">
             <a
               title="Jonggu-code 이메일 주소"
-              className={`cursor-pointer Email ${isDark ? "bg-customGray" : "bg-customDark"} iconCircle opacity-0 fade-in delay-7 w-[50px] h-[50px] flex justify-center items-center`}
+              className={`cursor-pointer Email opacity-0 fade-in delay-7 w-[50px] h-[50px] flex justify-center items-center`}
               onClick={() => {
                 copyEmail(email);
               }}
             >
-              <EmailIcon isDark={isDark} wid={30} hei={30} custom={"#71b1ff"} />
+              <EmailIcon isDark={isDark} wid={40} hei={40} />
             </a>
             <p
               className={`conTxt ${isDark ? "text-customGray" : "text-customDark"}`}

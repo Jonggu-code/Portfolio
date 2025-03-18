@@ -46,10 +46,9 @@
 }
 
 /* //////////////////////////// */
-.userMenu {
-    transition: color 0.2s;
-}
+
 .iconDark,
+.Email,
 .iconBasic,
 .githubIcon,
 .velogIcon,
@@ -58,8 +57,8 @@
         color 0.3s,
         fill 0.3s;
 }
-.userMenu > a:hover .iconDark,
-.userMenu > a:hover .iconBasic {
+.userMenuBox > a:hover .iconDark,
+.userMenuBox > a:hover .iconBasic {
     fill: #186ebd;
 }
 
