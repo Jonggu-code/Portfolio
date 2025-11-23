@@ -1,5 +1,5 @@
-import dark_logo from "./../assets/dark_logo_mobile.png";
-import basic_logo from "./../assets/basic_logo_mobile.png";
+import dark_logo from "./../assets/dark_logo_header.png";
+import basic_logo from "./../assets/basic_logo_header.png";
 
 export function getLogoImage(modeColor) {
     switch (modeColor) {
