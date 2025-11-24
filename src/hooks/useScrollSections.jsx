@@ -7,7 +7,7 @@ export const useScrollSections = (sectionRefs) => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
 
-      const sectionPositions = sectionRefs.map((ref, index) => ({
+      const sectionPositions = sectionRefs.map((ref) => ({
         id: ref.id,
         offset: ref.ref.current.offsetTop - 70,
       }));
@@ -33,5 +33,5 @@ export const useScrollSections = (sectionRefs) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [sectionRefs]);
 
-  return activeSection;
+  return { activeSection, setActiveSection };
 };

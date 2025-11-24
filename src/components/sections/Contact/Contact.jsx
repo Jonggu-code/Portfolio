@@ -22,7 +22,7 @@ const Contact = () => {
   return (
     <div
       ref={contactRef}
-      className={`relative w-full p-10 h-[calc(100vh-70px)] flex flex-wrap justify-center items-center ${isDark ? "bg-customDark" : "bg-customSky"}`}
+      className={`relative w-svw p-10 h-[calc(100vh-70px)] flex flex-wrap justify-center items-center ${isDark ? "bg-customDark" : "bg-customSky"}`}
     >
       <div
         className={`opacity-0 relative flex flex-wrap w-full h-max content-center items-center justify-center text-center ${isScrolled ? "cont-d1 cont-up " : ""}`}

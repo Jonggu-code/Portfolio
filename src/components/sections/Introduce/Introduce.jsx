@@ -18,7 +18,7 @@ const Introduce = () => {
   }, []);
 
   return (
-    <div className={`w-full h-svh ${isDark ? "bg-customDark" : "bg-white"}`}>
+    <div className={`w-svw h-svh ${isDark ? "bg-customDark" : "bg-white"}`}>
       <div
         className={`Introduce fixed top-0 left-0 w-full h-svh ${isDark ? "Introduce_dark" : "Introduce_basic"}`}
         style={{

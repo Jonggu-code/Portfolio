@@ -31,7 +31,7 @@ const Projects = () => {
   return (
     <div
       ref={aboutRef}
-      className={`relative w-full p-10 h-max flex flex-wrap justify-center ${isDark ? "bg-customDark" : "bg-blue-300"} text-basicFont`}
+      className={`relative w-svw p-10 h-max flex flex-wrap justify-center ${isDark ? "bg-customDark" : "bg-blue-300"} text-basicFont`}
     >
       {ModalComponent && <ModalComponent toggleModal={toggleModal} />}
       <h1

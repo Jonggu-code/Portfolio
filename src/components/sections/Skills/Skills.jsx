@@ -10,7 +10,7 @@ const Skills = () => {
   return (
     <div
       ref={aboutRef}
-      className={`relative w-full p-10 h-[870px] flex justify-center ${isDark ? "bg-customDark" : "bg-blue-200"}`}
+      className={`relative w-svw p-10 h-[870px] flex justify-center ${isDark ? "bg-customDark" : "bg-blue-200"}`}
     >
       <h1
         className={`fade-target opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-white" : "text-basicFont"} ${isScrolled ? "text-in text-d1" : ""}`}

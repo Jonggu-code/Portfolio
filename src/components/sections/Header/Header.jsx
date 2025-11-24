@@ -1,4 +1,3 @@
-import "./Header.css";
 import { useContext, useEffect, useState } from "react";
 
 import { getLogoImage } from "../../../util/get-logo";
@@ -13,14 +12,14 @@ import EmailIcon from "../../icons/EmailIcon";
 
 const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
   const { isDark, toggleDarkMode } = useContext(DarkModeContext);
-  const email = "jonggucode@gmail.com";
   const [isHamberActive, setIsHamberActive] = useState(false);
   const [isRender, setIsRender] = useState(true);
+  const email = "jonggucode@gmail.com";
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsRender(false);
-    }, 5000);
+    }, 6000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -37,17 +36,28 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
 
   return (
     <header
-      className={`header fixed text-sm sm:text-base h-10 sm:h-[60px] top-0 left-0 z-50 ${isRender ? "opacity-0 fade-in delay-1" : ""} w-svw px-6 flex items-center justify-between !bg-teal-300 ${isDark ? "header_dark" : "header_basic"}`}
+      className={`header fixed text-sm w-svw h-10 top-0 left-0 z-50 px-6 flex items-center justify-between 
+        ${isRender ? "opacity-0 fade-in delay-1" : ""} 
+        ${isDark ? "bg-customDark" : "bg-white"}
+        sm:text-base sm:h-14`}
     >
       {/* 로고 관련 전체 */}
       <div
-        className={`logo h-full flex items-center overflow-hidden sm:w-1/4 md:w-[210px] ${isRender ? "opacity-0 fade-in delay-2" : ""}`}
+        className={`
+          logo w-0 h-0 flex items-center overflow-hidden 
+          sm:w-1/4 sm:h-full
+          lg:w-[210px] 
+          ${isRender ? "opacity-0 fade-in delay-2" : ""}`}
         onClick={moveTop}
       >
         {/* 로고 이미지  */}
-        <div className="sm:overflow-hidden md:w-10 md:h-6 lg:h-10 lg:w-full  md:aspect-auto">
+        <div
+          className="
+          sm:overflow-hidden sm:w-10 sm:h-6 sm:aspect-auto
+        lg:h-10 lg:w-full"
+        >
           <img
-            className="h-10 hidden md:object-left md:object-cover md:block md:origin-center md:rotate-90 lg:rotate-0"
+            className="h-10 hidden sm:object-left sm:object-cover sm:block sm:origin-center sm:rotate-90 lg:rotate-0"
             src={`${isDark ? getLogoImage("dark") : getLogoImage("basic")}`}
             alt="logo"
           />
@@ -55,7 +65,10 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
       </div>
       {/* 내비게이션 메뉴 전체 */}
       <div
-        className={`headMenu w-2/4 flex items-center justify-center gap-[30px] ${isDark ? "text_dark" : "text_basic"}`}
+        className={`
+          headMenu w-svw flex items-center justify-center gap-[30px]
+          sm:w-2/4
+          ${isDark ? "text-white" : "text-slate-900"}`}
       >
         {/* 각 메뉴 a태그 */}
         <a
@@ -63,21 +76,21 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           onClick={(e) =>
             handleNav(e, sectionRefs, "introduce", scrollToSection)
           }
-          className={`headItem ${isRender ? "opacity-0 fade-in delay-3" : ""} ${activeSection === "introduce" ? "active_sec" : " "}`}
+          className={`hover:text-customBlue transition-colors duration-200 cursor-pointer ${isRender ? "opacity-0 fade-in delay-3" : ""} ${activeSection === "introduce" ? "text-customBlue" : " "}`}
         >
           Intro
         </a>
         <a
           href="#about"
           onClick={(e) => handleNav(e, sectionRefs, "about", scrollToSection)}
-          className={`headItem  ${isRender ? "opacity-0 fade-in delay-4" : ""} ${activeSection === "about" ? "active_sec" : " "}`}
+          className={`hover:text-customBlue transition-colors duration-200 cursor-pointer  ${isRender ? "opacity-0 fade-in delay-4" : ""} ${activeSection === "about" ? "text-customBlue" : " "}`}
         >
           About
         </a>
         <a
           href="skills"
           onClick={(e) => handleNav(e, sectionRefs, "skills", scrollToSection)}
-          className={`headItem  ${isRender ? "opacity-0 fade-in delay-5" : ""} ${activeSection === "skills" ? "active_sec" : " "}`}
+          className={`hover:text-customBlue transition-colors duration-200 cursor-pointer  ${isRender ? "opacity-0 fade-in delay-5" : ""} ${activeSection === "skills" ? "text-customBlue" : " "}`}
         >
           Skills
         </a>
@@ -86,17 +99,28 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           onClick={(e) =>
             handleNav(e, sectionRefs, "projects", scrollToSection)
           }
-          className={`headItem  ${isRender ? "opacity-0 fade-in delay-6" : ""} ${activeSection === "projects" ? "active_sec" : " "}`}
+          className={`hover:text-customBlue transition-colors duration-200 cursor-pointer  ${isRender ? "opacity-0 fade-in delay-6" : ""} ${activeSection === "projects" ? "text-customBlue" : " "}`}
         >
           Projects
         </a>
       </div>
 
       {/* 유저박스 전체 */}
-      <div className="userMenu relative flex sm:justify-end sm:w-1/4 lg:w-[210px]">
+      <div
+        className="
+      userMenu relative flex w-0
+      sm:justify-end sm:w-1/4 
+      lg:w-[210px]"
+      >
         {/* 햄버거 버튼 */}
         <div
-          className={`hamberBtn transition-all duration-300 flex relative w-10 h-10 justify-center items-center transition-color text-[30px] rounded-[10px] cursor-pointer lg:hidden ${isRender ? "opacity-0 fade-in delay-7" : ""} ${isDark ? "text-white hover:bg-customGray" : " text-gray-800 hover:bg-slate-200"}`}
+          className={`hamberBtn flex justify-center items-center text-[30px] rounded-[10px] cursor-pointer fixed bottom-10 left-8
+            sm:relative sm:w-10 sm:h-10 sm:bottom-0 sm:left-0 sm:bg-transparent sm:transition-colors
+              lg:hidden 
+            ${isRender ? "opacity-0 fade-in delay-7" : ""} 
+            ${isDark ? "text-white sm:hover:bg-customGray bg-customGray " : " text-gray-800 sm:hover:bg-slate-200 bg-slate-200"}
+            
+            `}
           onClick={toggleMenu}
         >
           ☰
@@ -107,7 +131,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
             ${isRender ? "opacity-0 fade-in delay-7" : ""} 
             ${isHamberActive ? "h-[220px]" : "h-0"} 
             ${isDark ? "bg-customGray" : "bg-slate-200"}
-            md:fixed md:top-[55px] md:right-[13px] md:px-3 md:rounded-lg
+            sm:fixed sm:top-[55px] sm:right-[13px] sm:px-3 sm:rounded-lg
            lg:relative lg:flex lg:transition-none lg:gap-6 lg:justify-between lg:p-0 lg:top-0 lg:left-0 lg:flex-nowrap lg:shadow-none lg:h-max lg:bg-inherit`}
         >
           {/* 이메일 아이콘 */}
@@ -116,7 +140,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
             title="Jonggu-code 이메일 주소"
             className={`Email transition-colors duration-200 hover:text-customBlue
               ${isRender ? "opacity-0 fade-in delay-7" : ""} 
-              w-8 h-8 flex justify-center items-center mb-5 mt-3 lg:mb-0`}
+              w-8 h-8 flex justify-center items-center mb-5 mt-3 lg:m-0`}
             onClick={() => {
               copyEmail(email);
             }}
@@ -149,7 +173,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           <div
             className={`ModeChange transition-colors duration-200 hover:text-customBlue
               ${isRender ? "opacity-0 fade-in delay-10" : ""}
-              w-8 h-8 flex justify-center items-center mb-5 lg:mb-0`}
+              w-8 h-8 flex justify-center items-center mb-5 lg:mb-0 cursor-pointer`}
             onClick={toggleDarkMode}
           >
             <ModeIcon />

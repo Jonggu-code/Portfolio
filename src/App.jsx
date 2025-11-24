@@ -27,7 +27,7 @@ function App() {
     { id: "contact", ref: contactRef },
   ];
 
-  const activeSection = useScrollSections(sectionRefs);
+  const { activeSection, setActiveSection } = useScrollSections(sectionRefs);
 
   useEffect(() => {
     document.body.style.overflow = "hidden"; // Intro 페이지 모두 로드되기 전에 스크롤 방지
@@ -37,6 +37,7 @@ function App() {
 
     const scrollOn = setTimeout(() => {
       document.body.style.overflow = "auto";
+      setActiveSection("introduce");
     }, 6000);
 
     return () => {
@@ -46,7 +47,7 @@ function App() {
 
   return (
     <DarkModeProvider>
-      <div className="App">
+      <div className="App sm:w-svw sm:h-max">
         <Header
           activeSection={activeSection}
           scrollToSection={scrollToSection}
