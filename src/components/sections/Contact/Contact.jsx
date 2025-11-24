@@ -1,16 +1,16 @@
 import "./Contact.css";
 import React, { useContext, useEffect, useRef } from "react";
 
-import useScrollPosition from "../hooks/useScrollPosition";
-import PhoneIcon from "../hooks/PhoneIcon";
-import EmailIcon from "../hooks/EmailIcon";
-import GitHubIcon from "../hooks/GitHubIcon";
-import TistoryIcon from "../hooks/TistoryIcon";
-import VelogIcon from "../hooks/VelogIcon";
+// import useScrollPosition from "../hooks/useScrollPosition";
+import useScrollPosition from "../../../hooks/useScrollPosition";
+import PhoneIcon from "../../icons/PhoneIcon";
+import EmailIcon from "../../icons/EmailIcon";
+import GitHubIcon from "../../icons/GitHubIcon";
+import VelogIcon from "../../icons/VelogIcon";
 
-import { DarkModeContext } from "../util/DarkModeContext";
-import { copyEmail } from "../util/copyEmail";
-import { copyPhone } from "../util/copyPhone";
+import { DarkModeContext } from "../../../util/DarkModeContext";
+import { copyEmail } from "../../../util/copyEmail";
+import { copyPhone } from "../../../util/copyPhone";
 
 const Contact = () => {
   const { isDark } = useContext(DarkModeContext);

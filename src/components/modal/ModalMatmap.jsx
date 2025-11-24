@@ -6,8 +6,8 @@ import "./Modal.css";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import useModalClose from "../hooks/useModalClose";
-import ImageModal from "../hooks/ImageModal";
+import useModalClose from "../../hooks/useModalClose";
+import ImageModal from "./ImageModal";
 
 const ModalMatmap = ({ toggleModal }) => {
   const [selectedImage, setSelectedImage] = useState(null);

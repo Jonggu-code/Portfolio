@@ -1,6 +1,6 @@
-import ModalPortfolio from "../modals/ModalPortfolio";
-import ModalYoutube from "../modals/ModalYoutube";
-import ModalMatmap from "../modals/ModalMatmap";
+import ModalPortfolio from "./ModalPortfolio";
+import ModalYoutube from "./ModalYoutube";
+import ModalMatmap from "./ModalMatmap";
 
 const ModalComponents = {
   portfolio: ModalPortfolio,

@@ -36,20 +36,3 @@
 }
 
 /* //////////////////////////// */
-
-.iconDark,
-.Email,
-.iconBasic,
-.githubIcon,
-.velogIcon,
-.ModeChange {
-    transition:
-        color 0.3s,
-        fill 0.3s;
-}
-.userMenuBox > a:hover .iconDark,
-.userMenuBox > a:hover .iconBasic {
-    fill: #186ebd;
-}
-
-/* /////////////////////////// */

@@ -5,9 +5,9 @@ import "./Projects.css";
 
 import React, { useContext, useRef, useState } from "react";
 
-import ModalComponents from "../hooks/ModalComponents";
-import useScrollPosition from "../hooks/useScrollPosition";
-import { DarkModeContext } from "../util/DarkModeContext";
+import ModalComponents from "../../modal/ModalComponents";
+import useScrollPosition from "../../../hooks/useScrollPosition";
+import { DarkModeContext } from "../../../util/DarkModeContext";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 

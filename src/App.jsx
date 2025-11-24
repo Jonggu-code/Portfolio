@@ -1,11 +1,11 @@
 import "./App.css";
 
-import About from "./components/About";
-import Header from "./components/Header";
-import Introduce from "./components/Introduce";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Contact from "./components/Contact";
+import About from "./components/sections/About/About";
+import Header from "./components/sections/Header/Header";
+import Introduce from "./components/sections/Introduce/Introduce";
+import Projects from "./components/sections/Projects/Projects";
+import Skills from "./components/sections/Skills/Skills";
+import Contact from "./components/sections/Contact/Contact";
 
 import { useEffect, useRef } from "react";
 import { DarkModeProvider } from "./util/DarkModeContext";

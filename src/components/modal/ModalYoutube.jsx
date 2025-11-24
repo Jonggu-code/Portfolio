@@ -8,8 +8,8 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
-import useModalClose from "../hooks/useModalClose";
-import ImageModal from "../hooks/ImageModal";
+import useModalClose from "../../hooks/useModalClose";
+import ImageModal from "./ImageModal";
 
 const ModalYoutube = ({ toggleModal }) => {
   const [selectedImage, setSelectedImage] = useState(null);

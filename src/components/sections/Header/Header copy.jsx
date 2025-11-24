@@ -1,15 +1,15 @@
 import "./Header.css";
 import React, { useContext, useEffect, useState } from "react";
 
-import { getLogoImage } from "../util/get-logo";
-import { DarkModeContext } from "../util/DarkModeContext";
-import { handleNav } from "../util/handleNav";
-import { copyEmail } from "../util/copyEmail";
+import { getLogoImage } from "../../../util/get-logo";
+import { DarkModeContext } from "../../../util/DarkModeContext";
+import { handleNav } from "../../../util/handleNav";
+import { copyEmail } from "../../../util/copyEmail";
 
-import ModeIcon from "../hooks/ModeIcon";
-import GitHubIcon from "../hooks/GitHubIcon";
-import VelogIcon from "../hooks/VelogIcon";
-import EmailIcon from "../hooks/EmailIcon";
+import ModeIcon from "../../icons/ModeIcon";
+import GitHubIcon from "../../icons/GitHubIcon";
+import VelogIcon from "../../icons/VelogIcon";
+import EmailIcon from "../../icons/EmailIcon";
 
 const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
   const { isDark, toggleDarkMode } = useContext(DarkModeContext);

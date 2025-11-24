@@ -1,5 +1,4 @@
-import React from "react";
-import "./ImageModal.css";
+import "./Modal.css";
 
 const ImageModal = ({ src, alt, onClose }) => {
   return (

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
+import { DarkModeContext } from "../../../util/DarkModeContext";
 import "./Introduce.css";
-import { DarkModeContext } from "../util/DarkModeContext";
 
 const Introduce = () => {
   const [opacity, setOpacity] = useState(1);

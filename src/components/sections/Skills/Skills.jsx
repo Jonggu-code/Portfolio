@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from "react";
-import { DarkModeContext } from "../util/DarkModeContext";
-import useScrollPosition from "../hooks/useScrollPosition";
+import { DarkModeContext } from "../../../util/DarkModeContext";
+import useScrollPosition from "../../../hooks/useScrollPosition";
 import "./Skills.css";
 
 const Skills = () => {

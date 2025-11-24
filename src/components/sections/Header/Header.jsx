@@ -1,15 +1,15 @@
 import "./Header.css";
 import { useContext, useEffect, useState } from "react";
 
-import { getLogoImage } from "../util/get-logo";
-import { DarkModeContext } from "../util/DarkModeContext";
-import { handleNav } from "../util/handleNav";
-import { copyEmail } from "../util/copyEmail";
+import { getLogoImage } from "../../../util/get-logo";
+import { DarkModeContext } from "../../../util/DarkModeContext";
+import { handleNav } from "../../../util/handleNav";
+import { copyEmail } from "../../../util/copyEmail";
 
-import ModeIcon from "../hooks/ModeIcon";
-import GitHubIcon from "../hooks/GitHubIcon";
-import VelogIcon from "../hooks/VelogIcon";
-import EmailIcon from "../hooks/EmailIcon";
+import ModeIcon from "../../icons/ModeIcon";
+import GitHubIcon from "../../icons/GitHubIcon";
+import VelogIcon from "../../icons/VelogIcon";
+import EmailIcon from "../../icons/EmailIcon";
 
 const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
   const { isDark, toggleDarkMode } = useContext(DarkModeContext);
@@ -20,7 +20,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsRender(false);
-    }, 4000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -103,48 +103,56 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
         </div>
         {/* 유저박스 아이콘 모음 */}
         <div
-          className={`userMenuBox transition-all duration-300 ease-in-out overflow-hidden  ${isRender ? "opacity-0 fade-in delay-7" : ""} ${isHamberActive ? "h-[220px]" : "h-0"} ${isDark ? "bg-customGray" : "bg-slate-200"} rounded-[10px] flex flex-wrap absolute top-[120%] left-[50%] translate-x-[-50%] lg:transition-none lg:gap-6 lg:justify-between lg:p-0 lg:top-0 lg:left-0 lg:translate-x-0 lg:w-full lg:flex-nowrap lg:relative lg:shadow-none lg:h-max lg:bg-inherit`}
+          className={`userMenuBox overflow-hidden transition-all duration-300 ease-in-out
+            ${isRender ? "opacity-0 fade-in delay-7" : ""} 
+            ${isHamberActive ? "h-[220px]" : "h-0"} 
+            ${isDark ? "bg-customGray" : "bg-slate-200"}
+            md:fixed md:top-[55px] md:right-[13px] md:px-3 md:rounded-lg
+           lg:relative lg:flex lg:transition-none lg:gap-6 lg:justify-between lg:p-0 lg:top-0 lg:left-0 lg:flex-nowrap lg:shadow-none lg:h-max lg:bg-inherit`}
         >
           {/* 이메일 아이콘 */}
           <a
             href="#"
             title="Jonggu-code 이메일 주소"
-            className={`Email ${isRender ? "opacity-0 fade-in delay-7" : ""} w-8 h-8 flex justify-center items-center mx-[13px] mt-[20px] mb-[20px] lg:m-0`}
+            className={`Email transition-colors duration-200 hover:text-customBlue
+              ${isRender ? "opacity-0 fade-in delay-7" : ""} 
+              w-8 h-8 flex justify-center items-center mb-5 mt-3 lg:mb-0`}
             onClick={() => {
               copyEmail(email);
             }}
           >
-            <EmailIcon isDark={isDark} wid={26} hei={26} />
+            <EmailIcon wid={26} hei={26} />
           </a>
           {/* 깃허브 링크 */}
           <a
             href="https://github.com/Jonggu-code"
             target="_blank"
             title="Jonggu-code GitHub Profile"
-            className={`githubIcon ${isRender ? "opacity-0 fade-in delay-8" : ""} w-8 h-8 flex justify-center items-center mx-[13px] mb-[20px] lg:m-0`}
+            className={`githubIcon transition-colors duration-200 hover:text-customBlue
+              ${isRender ? "opacity-0 fade-in delay-8" : ""} 
+              w-8 h-8 flex justify-center items-center mb-5 lg:mb-0`}
           >
-            <GitHubIcon isDark={isDark} wid={36} hei={36} />
+            <GitHubIcon wid={26} hei={26} />
           </a>
           {/* 블로그 링크 */}
           <a
             href="https://velog.io/@00whdcks/posts"
             target="_blank"
             title="Velog : Tech Blog"
-            className={`velogIcon ${isRender ? "opacity-0 fade-in delay-9" : ""} w-8 h-8 flex justify-center items-center mx-[13px] mb-[20px] lg:m-0`}
+            className={`velogIcon transition-colors duration-200 hover:text-customBlue
+              ${isRender ? "opacity-0 fade-in delay-9" : ""} 
+              w-8 h-8 flex justify-center items-center mb-5 lg:mb-0`}
           >
-            <VelogIcon
-              isDark={isDark}
-              wid={28}
-              hei={28}
-              fillColor={"#6c87a1"}
-            />
+            <VelogIcon wid={28} hei={28} />
           </a>
           {/* 다크모드 버튼 */}
           <div
-            className={`ModeChange ${isRender ? "opacity-0 fade-in delay-10" : ""} w-8 h-8 flex justify-center items-center mx-[13px] mb-[10px] lg:m-0 cursor-pointer`}
+            className={`ModeChange transition-colors duration-200 hover:text-customBlue
+              ${isRender ? "opacity-0 fade-in delay-10" : ""}
+              w-8 h-8 flex justify-center items-center mb-5 lg:mb-0`}
             onClick={toggleDarkMode}
           >
-            <ModeIcon isDark={isDark} />
+            <ModeIcon />
           </div>
         </div>
       </div>
