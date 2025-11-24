@@ -9,6 +9,7 @@ import ModeIcon from "../../icons/ModeIcon";
 import GitHubIcon from "../../icons/GitHubIcon";
 import VelogIcon from "../../icons/VelogIcon";
 import EmailIcon from "../../icons/EmailIcon";
+import HamberBtn from "../../icons/HamberBtn";
 
 const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
   const { isDark, toggleDarkMode } = useContext(DarkModeContext);
@@ -38,7 +39,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
     <header
       className={`header fixed text-sm w-svw h-10 top-0 left-0 z-50 px-6 flex items-center justify-between 
         ${isRender ? "opacity-0 fade-in delay-1" : ""} 
-        ${isDark ? "bg-customDark" : "bg-white"}
+        ${isDark ? "bg-slate-800 sm:bg-customDark" : "bg-slate-200 sm:bg-white"}
         sm:text-base sm:h-14`}
     >
       {/* 로고 관련 전체 */}
@@ -114,24 +115,31 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
       >
         {/* 햄버거 버튼 */}
         <div
-          className={`hamberBtn flex justify-center items-center text-[30px] rounded-[10px] cursor-pointer fixed bottom-10 left-8
-            sm:relative sm:w-10 sm:h-10 sm:bottom-0 sm:left-0 sm:bg-transparent sm:transition-colors
+          className={`hamberBtn flex justify-center items-center text-[30px] rounded-lg cursor-pointer fixed bottom-5 right-5 w-12 h-12 transition-colors
+            sm:relative sm:w-10 sm:h-10 sm:bottom-0 sm:right-0 
               lg:hidden 
-            ${isRender ? "opacity-0 fade-in delay-7" : ""} 
-            ${isDark ? "text-white sm:hover:bg-customGray bg-customGray " : " text-gray-800 sm:hover:bg-slate-200 bg-slate-200"}
+            ${isRender ? "opacity-0 fade-in delay-[3.6]" : ""} 
+            ${
+              isDark
+                ? `text-white 
+              ${isHamberActive ? "bg-slate-600" : "sm:hover:bg-slate-700 sm:bg-inherit bg-slate-700"}`
+                : `text-gray-800 
+              ${isHamberActive ? "bg-slate-300" : "sm:hover:bg-slate-100 sm:bg-inherit bg-slate-100"}`
+            }
             
             `}
           onClick={toggleMenu}
         >
-          ☰
+          <HamberBtn wid={30} hei={30} />
         </div>
         {/* 유저박스 아이콘 모음 */}
         <div
           className={`userMenuBox overflow-hidden transition-all duration-300 ease-in-out
             ${isRender ? "opacity-0 fade-in delay-7" : ""} 
             ${isHamberActive ? "h-[220px]" : "h-0"} 
-            ${isDark ? "bg-customGray" : "bg-slate-200"}
-            sm:fixed sm:top-[55px] sm:right-[13px] sm:px-3 sm:rounded-lg
+            ${isDark ? "bg-slate-700" : "bg-slate-200"}
+             fixed bottom-[75px] right-[16px] px-3 rounded-lg
+            sm:top-[55px] sm:right-[12px] 
            lg:relative lg:flex lg:transition-none lg:gap-6 lg:justify-between lg:p-0 lg:top-0 lg:left-0 lg:flex-nowrap lg:shadow-none lg:h-max lg:bg-inherit`}
         >
           {/* 이메일 아이콘 */}
@@ -139,6 +147,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
             href="#"
             title="Jonggu-code 이메일 주소"
             className={`Email transition-colors duration-200 hover:text-customBlue
+              ${isDark ? "text-white" : "text-slate-800"}
               ${isRender ? "opacity-0 fade-in delay-7" : ""} 
               w-8 h-8 flex justify-center items-center mb-5 mt-3 lg:m-0`}
             onClick={() => {
@@ -153,6 +162,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
             target="_blank"
             title="Jonggu-code GitHub Profile"
             className={`githubIcon transition-colors duration-200 hover:text-customBlue
+              ${isDark ? "text-white" : "text-slate-800"}
               ${isRender ? "opacity-0 fade-in delay-8" : ""} 
               w-8 h-8 flex justify-center items-center mb-5 lg:mb-0`}
           >
@@ -164,6 +174,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
             target="_blank"
             title="Velog : Tech Blog"
             className={`velogIcon transition-colors duration-200 hover:text-customBlue
+              ${isDark ? "text-white" : "text-slate-800"}
               ${isRender ? "opacity-0 fade-in delay-9" : ""} 
               w-8 h-8 flex justify-center items-center mb-5 lg:mb-0`}
           >
@@ -172,11 +183,12 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
           {/* 다크모드 버튼 */}
           <div
             className={`ModeChange transition-colors duration-200 hover:text-customBlue
+              ${isDark ? "text-white" : "text-slate-800"}
               ${isRender ? "opacity-0 fade-in delay-10" : ""}
               w-8 h-8 flex justify-center items-center mb-5 lg:mb-0 cursor-pointer`}
             onClick={toggleDarkMode}
           >
-            <ModeIcon />
+            <ModeIcon isDark={isDark} />
           </div>
         </div>
       </div>
