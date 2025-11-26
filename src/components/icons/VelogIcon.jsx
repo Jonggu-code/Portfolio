@@ -1,4 +1,4 @@
-const TistoryIcon = ({ wid, hei }) => {
+const VelogIcon = ({ wid, hei }) => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -12,4 +12,4 @@ const TistoryIcon = ({ wid, hei }) => {
   );
 };
 
-export default TistoryIcon;
+export default VelogIcon;

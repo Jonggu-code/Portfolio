@@ -1,14 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
-import { IsMobileContext } from "../../../hooks/IsMobileContext";
 
 import Logo from "./Logo";
-import UserMenu from "./UserMenu";
+import UserMenu from "./UserMenu/UserMenu";
 import NavMenu from "./NavMenu";
 
 const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
   const { isDark, toggleDarkMode } = useContext(DarkModeContext);
-  const isMobile = useContext(IsMobileContext);
   const [isHamberActive, setIsHamberActive] = useState(false);
   const [isRender, setIsRender] = useState(true);
   const email = "jonggucode@gmail.com";

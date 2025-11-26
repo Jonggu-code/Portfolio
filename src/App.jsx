@@ -49,7 +49,7 @@ function App() {
   return (
     <DarkModeProvider>
       <IsMobileProvider>
-        <div className="App sm:w-svw sm:h-max">
+        <div className="App w-svw h-max">
           <Header
             activeSection={activeSection}
             scrollToSection={scrollToSection}
