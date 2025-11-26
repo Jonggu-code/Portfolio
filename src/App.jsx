@@ -8,9 +8,10 @@ import Skills from "./components/sections/Skills/Skills";
 import Contact from "./components/sections/Contact/Contact";
 
 import { useEffect, useRef } from "react";
-import { DarkModeProvider } from "./util/DarkModeContext";
+import { DarkModeProvider } from "./hooks/DarkModeContext";
 import { useScrollSections } from "./hooks/useScrollSections";
 import { scrollToSection } from "./util/scrollToSection";
+import { IsMobileProvider } from "./hooks/IsMobileContext";
 
 function App() {
   const introduceRef = useRef(null);
@@ -47,28 +48,30 @@ function App() {
 
   return (
     <DarkModeProvider>
-      <div className="App sm:w-svw sm:h-max">
-        <Header
-          activeSection={activeSection}
-          scrollToSection={scrollToSection}
-          sectionRefs={sectionRefs}
-        />
-        <div ref={introduceRef}>
-          <Introduce />
+      <IsMobileProvider>
+        <div className="App sm:w-svw sm:h-max">
+          <Header
+            activeSection={activeSection}
+            scrollToSection={scrollToSection}
+            sectionRefs={sectionRefs}
+          />
+          <div ref={introduceRef}>
+            <Introduce />
+          </div>
+          <div ref={aboutRef}>
+            <About />
+          </div>
+          <div ref={skillsRef}>
+            <Skills />
+          </div>
+          <div ref={projectsRef}>
+            <Projects />
+          </div>
+          <div ref={contactRef}>
+            <Contact />
+          </div>
         </div>
-        <div ref={aboutRef}>
-          <About />
-        </div>
-        <div ref={skillsRef}>
-          <Skills />
-        </div>
-        <div ref={projectsRef}>
-          <Projects />
-        </div>
-        <div ref={contactRef}>
-          <Contact />
-        </div>
-      </div>
+      </IsMobileProvider>
     </DarkModeProvider>
   );
 }

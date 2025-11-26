@@ -1,6 +1,6 @@
 import "./About.css";
 import React, { useContext, useRef } from "react";
-import { DarkModeContext } from "../../../util/DarkModeContext";
+import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 
 const About = () => {

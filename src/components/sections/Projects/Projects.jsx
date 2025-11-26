@@ -7,7 +7,7 @@ import React, { useContext, useRef, useState } from "react";
 
 import ModalComponents from "../../modal/ModalComponents";
 import useScrollPosition from "../../../hooks/useScrollPosition";
-import { DarkModeContext } from "../../../util/DarkModeContext";
+import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 

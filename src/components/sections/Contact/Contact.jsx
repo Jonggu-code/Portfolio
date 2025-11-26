@@ -8,7 +8,7 @@ import EmailIcon from "../../icons/EmailIcon";
 import GitHubIcon from "../../icons/GitHubIcon";
 import VelogIcon from "../../icons/VelogIcon";
 
-import { DarkModeContext } from "../../../util/DarkModeContext";
+import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import { copyEmail } from "../../../util/copyEmail";
 import { copyPhone } from "../../../util/copyPhone";
 

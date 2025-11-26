@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { DarkModeContext } from "../../../util/DarkModeContext";
+import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import "./Introduce.css";
 
 const Introduce = () => {

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
 // DarkModeContext 생성
 export const DarkModeContext = createContext();
@@ -12,9 +12,7 @@ export const DarkModeProvider = ({ children }) => {
   };
 
   return (
-    <DarkModeContext.Provider
-      value={{ isDark, toggleDarkMode }}
-    >
+    <DarkModeContext.Provider value={{ isDark, toggleDarkMode }}>
       {children}
     </DarkModeContext.Provider>
   );
