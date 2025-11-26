@@ -4,9 +4,12 @@ import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import Logo from "./Logo";
 import UserMenu from "./UserMenu/UserMenu";
 import NavMenu from "./NavMenu";
+import { IsMobileContext } from "../../../hooks/IsMobileContext";
+import MoveTopBtn from "./UserMenu/MoveTopBtn";
 
 const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
   const { isDark, toggleDarkMode } = useContext(DarkModeContext);
+  const isMobile = useContext(IsMobileContext);
   const [isHamberActive, setIsHamberActive] = useState(false);
   const [isRender, setIsRender] = useState(true);
   const email = "jonggucode@gmail.com";
@@ -52,6 +55,9 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
         toggleDarkMode={toggleDarkMode}
         email={email}
       />
+      {isMobile && (
+        <MoveTopBtn isDark={isDark} isRender={isRender} moveTop={moveTop} />
+      )}
     </header>
   );
 };

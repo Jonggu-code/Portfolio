@@ -7,11 +7,11 @@ import Projects from "./components/sections/Projects/Projects";
 import Skills from "./components/sections/Skills/Skills";
 import Contact from "./components/sections/Contact/Contact";
 
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { DarkModeProvider } from "./hooks/DarkModeContext";
 import { useScrollSections } from "./hooks/useScrollSections";
 import { scrollToSection } from "./util/scrollToSection";
-import { IsMobileProvider } from "./hooks/IsMobileContext";
+import { IsMobileContext, IsMobileProvider } from "./hooks/IsMobileContext";
 
 function App() {
   const introduceRef = useRef(null);
@@ -19,6 +19,7 @@ function App() {
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const isMobile = useContext(IsMobileContext);
 
   const sectionRefs = [
     { id: "introduce", ref: introduceRef },

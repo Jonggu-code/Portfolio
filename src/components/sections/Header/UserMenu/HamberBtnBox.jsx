@@ -7,7 +7,7 @@ const HamberBtnBox = ({ isDark, isRender, isHamberActive, toggleMenu }) => {
   const isMobile = useContext(IsMobileContext);
   return (
     <div
-      className={`flex justify-center items-center text-[30px] rounded-lg cursor-pointer  w-12 h-12 fixed bottom-3 right-5 transition-all duration-500 
+      className={`flex justify-center items-center rounded-lg cursor-pointer w-12 h-12 fixed bottom-3 right-5 transition-all duration-500 
             sm:transition-colors sm:w-10 sm:h-10 sm:relative sm:bottom-0 sm:right-0              
             lg:hidden 
             ${isRender ? `${isMobile ? "opacity-0" : "opacity-0 fade-in delay-7"}` : `opacity-1 -translate-y-2`}
