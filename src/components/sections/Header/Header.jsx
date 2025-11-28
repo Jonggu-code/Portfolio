@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 
 import Logo from "./Logo";
@@ -11,6 +11,8 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
   const { isDark, toggleDarkMode } = useContext(DarkModeContext);
   const isMobile = useContext(IsMobileContext);
   const [isHamberActive, setIsHamberActive] = useState(false);
+  const menuRef = useRef(null);
+  const btnRef = useRef(null);
   const [isRender, setIsRender] = useState(true);
   const email = "jonggucode@gmail.com";
 
@@ -21,6 +23,21 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (!menuRef.current || !btnRef.current) return;
+
+      const clickedMenu = menuRef.current.contains(e.target);
+      const clickedBtn = btnRef.current.contains(e.target);
+
+      if (isHamberActive && !clickedMenu && !clickedBtn) {
+        setIsHamberActive(false);
+      }
+    };
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, [isHamberActive]);
 
   const moveTop = () => {
     window.scrollTo({
@@ -54,6 +71,8 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
         toggleMenu={toggleMenu}
         toggleDarkMode={toggleDarkMode}
         email={email}
+        menuRef={menuRef}
+        btnRef={btnRef}
       />
       {isMobile && (
         <MoveTopBtn isDark={isDark} isRender={isRender} moveTop={moveTop} />

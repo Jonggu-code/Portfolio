@@ -11,6 +11,7 @@ const UserMenuBox = ({
   isHamberActive,
   toggleDarkMode,
   email,
+  menuRef,
 }) => {
   const iconList = [
     {
@@ -39,6 +40,7 @@ const UserMenuBox = ({
 
   return (
     <div
+      ref={menuRef}
       className={`userMenuBox overflow-hidden transition-all duration-300 ease-in-out
             ${isRender ? "opacity-0 fade-in delay-7" : ""} 
             ${isHamberActive ? "h-[220px]" : "h-0"} 

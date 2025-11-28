@@ -8,6 +8,8 @@ const UserMenu = ({
   toggleMenu,
   toggleDarkMode,
   email,
+  menuRef,
+  btnRef,
 }) => {
   return (
     <div
@@ -17,12 +19,14 @@ const UserMenu = ({
       lg:w-[210px]"
     >
       <HamberBtnBox
+        btnRef={btnRef}
         isDark={isDark}
         isRender={isRender}
         isHamberActive={isHamberActive}
         toggleMenu={toggleMenu}
       />
       <UserMenuBox
+        menuRef={menuRef}
         isDark={isDark}
         isRender={isRender}
         isHamberActive={isHamberActive}
