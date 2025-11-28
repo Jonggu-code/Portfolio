@@ -19,7 +19,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsRender(false);
-    }, 6000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -51,10 +51,10 @@ const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
 
   return (
     <header
-      className={`header fixed text-sm w-svw h-10 top-0 left-0 z-50 px-6 flex items-center justify-between 
+      className={`header fixed z-50 text-xs w-svw h-8 top-0 left-0 px-6 flex items-center justify-between sm:text-base sm:h-14
         ${isRender ? "opacity-0 fade-in delay-1" : ""} 
-        ${isDark ? "bg-slate-800 sm:bg-customDark" : "bg-slate-200 sm:bg-white"}
-        sm:text-base sm:h-14`}
+        ${isDark ? "bg-slate-800/80 sm:bg-customDark" : "bg-slate-200/80 sm:bg-white"}
+        `}
     >
       <Logo isDark={isDark} isRender={isRender} moveTop={moveTop} />
       <NavMenu

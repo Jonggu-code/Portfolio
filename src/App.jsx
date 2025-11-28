@@ -3,15 +3,16 @@ import "./App.css";
 import About from "./components/sections/About/About";
 import Header from "./components/sections/Header/Header";
 import Introduce from "./components/sections/Introduce/Introduce";
+import Introduce2 from "./components/sections/Introduce/Introduce2";
 import Projects from "./components/sections/Projects/Projects";
 import Skills from "./components/sections/Skills/Skills";
 import Contact from "./components/sections/Contact/Contact";
 
-import { useContext, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { DarkModeProvider } from "./hooks/DarkModeContext";
 import { useScrollSections } from "./hooks/useScrollSections";
 import { scrollToSection } from "./util/scrollToSection";
-import { IsMobileContext, IsMobileProvider } from "./hooks/IsMobileContext";
+import { IsMobileProvider } from "./hooks/IsMobileContext";
 
 function App() {
   const introduceRef = useRef(null);
@@ -19,7 +20,6 @@ function App() {
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
-  const isMobile = useContext(IsMobileContext);
 
   const sectionRefs = [
     { id: "introduce", ref: introduceRef },
@@ -57,7 +57,8 @@ function App() {
             sectionRefs={sectionRefs}
           />
           <div ref={introduceRef}>
-            <Introduce />
+            {/* <Introduce /> */}
+            <Introduce2 />
           </div>
           <div ref={aboutRef}>
             <About />

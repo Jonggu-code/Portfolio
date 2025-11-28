@@ -18,9 +18,9 @@ const Introduce = () => {
   }, []);
 
   return (
-    <div className={`w-svw h-svh ${isDark ? "bg-customDark" : "bg-white"}`}>
+    <div className={`w-svw h-svh z-0 ${isDark ? "bg-customDark" : "bg-white"}`}>
       <div
-        className={`Introduce fixed top-0 left-0 z-0 ${isDark ? "Introduce_dark" : "Introduce_basic"}`}
+        className={`Introduce fixed top-0 left-0  ${isDark ? "Introduce_dark" : "Introduce_basic"}`}
         style={{
           opacity: opacity,
           pointerEvents: opacity === 0 ? "none" : "auto",
@@ -31,20 +31,24 @@ const Introduce = () => {
         </h1>
 
         <div className="mainBox flex items-center justify-center">
-          <div className="font-sans w-svw flex flex-col items-center gap-8 mt-8 p-5 py-10 aspect-auto">
-            <img
-              className="w-[40vw] h-[40vw] max-w-[300px] rounded-lg opacity-0 fade-in delay-10 object-cover object-top"
-              src="./Profile_image.jpg"
-              alt="박종찬 프로필"
-            />
-            <div className="introTextBox flex flex-col gap-4 text-center text-lg">
+          <div className="font-sans w-svw flex flex-col gap-8 mt-12 p-10">
+            <div className="w-svw aspect-auto flex gap-5 items-end">
+              <img
+                className="w-[40vw] h-[40vw] max-w-[300px] rounded-lg opacity-0 fade-in delay-10 object-cover object-top"
+                src="./Profile_image.jpg"
+                alt="박종찬 프로필"
+              />
               <h1
-                className={`opacity-0 sm:text-2xl w-full h-max fade-in delay-11 font-extrabold ${isDark ? "text-white" : "text-slate-800"}`}
+                className={`opacity-0 text-xl sm:text-2xl w-full h-max fade-in delay-11 font-extrabold break-keep ${isDark ? "text-white" : "text-slate-800"}`}
               >
-                <span className="font-normal">안녕하세요.</span> <br />
-                프론트엔드 개발자 박종찬{" "}
-                <span className="font-normal">입니다.</span>
+                <span className="font-normal text-gray-600">안녕하세요.</span>{" "}
+                <br />
+                프론트엔드 개발자 <br /> 박종찬
+                <span className="font-normal text-gray-600">입니다.</span>
               </h1>
+            </div>
+
+            <div className="introTextBox flex flex-col gap-4 text-lg">
               {/* <h3 className="opacity-0 font-black text-customBlue break-keep fade-in delay-12">
                 "개발자는 사랑하는 사람에게 코딩으로 만든 <br />
                 소프트웨어 꽃다발을 선물하는 사람입니다."
