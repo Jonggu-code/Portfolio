@@ -17,7 +17,7 @@ const Projects = () => {
 
   // 스크롤 위치 관련
   const aboutRef = useRef(null);
-  const isScrolled = useScrollPosition(aboutRef, 500);
+  const isScrolled = useScrollPosition(aboutRef);
 
   // 모달창 관련
   const [openModal, setOpenModal] = useState(null);

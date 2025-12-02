@@ -15,7 +15,7 @@ import { copyPhone } from "../../../util/copyPhone";
 const Contact = () => {
   const { isDark } = useContext(DarkModeContext);
   const contactRef = useRef(null);
-  const isScrolled = useScrollPosition(contactRef, 500);
+  const isScrolled = useScrollPosition(contactRef);
   const email = "jonggucode@gmail.com";
   const phone = "050-6875-8906";
 

@@ -6,7 +6,7 @@ import "./Skills.css";
 const Skills = () => {
   const { isDark } = useContext(DarkModeContext);
   const aboutRef = useRef(null);
-  const isScrolled = useScrollPosition(aboutRef, 500);
+  const isScrolled = useScrollPosition(aboutRef);
   return (
     <div
       ref={aboutRef}

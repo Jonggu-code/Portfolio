@@ -4,34 +4,30 @@ export const useScrollSections = (sectionRefs) => {
   const [activeSection, setActiveSection] = useState(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-
-      const sectionPositions = sectionRefs.map((ref) => ({
-        id: ref.id,
-        offset: ref.ref.current.offsetTop - 70,
-      }));
-
-      const currentSection = sectionPositions.find((section, index) => {
-        const nextSection = sectionPositions[index + 1];
-        if (nextSection) {
-          return (
-            scrollPosition >= section.offset &&
-            scrollPosition < nextSection.offset
-          );
-        } else {
-          return scrollPosition >= section.offset;
-        }
-      });
-
-      if (currentSection) {
-        setActiveSection(currentSection.id);
-      }
+    const observerOptions = {
+      root: null,
+      rootMargin: "-40% 0px -40% 0px", // 화면 여유분
+      threshold: 0,
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.dataset.sectionId;
+          setActiveSection(id);
+        }
+      });
+    }, observerOptions);
+
+    sectionRefs.forEach((item) => {
+      if (item.ref.current) {
+        item.ref.current.dataset.sectionId = item.id;
+        observer.observe(item.ref.current);
+      }
+    });
+
+    return () => observer.disconnect();
   }, [sectionRefs]);
 
-  return { activeSection, setActiveSection };
+  return { activeSection };
 };

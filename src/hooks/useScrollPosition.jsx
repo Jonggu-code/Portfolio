@@ -1,28 +1,27 @@
 // useScrollPosition.js
 import { useState, useEffect } from "react";
 
-const useScrollPosition = (ref, offset) => {
+const useScrollPosition = (ref, rootMargin = "0px 0px -10% 0px") => {
+  // 화면 10% 지점에서 트리거
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (ref.current) {
-        const threshold = ref.current.offsetTop - offset; // offsetTop - offset 계산
-        if (window.scrollY > threshold) {
-          setIsScrolled(true);
-        } else {
-          setIsScrolled(false);
-        }
-      }
-    };
+    if (!ref.current) return;
 
-    window.addEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsScrolled(entry.isIntersecting);
+      },
+      { root: null, rootMargin, threshold: 0 },
+    );
+
+    observer.observe(ref.current);
 
     // 컴포넌트가 언마운트될 때 이벤트 리스너 제거
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
     };
-  }, [ref, offset]);
+  }, [ref, rootMargin]);
 
   return isScrolled;
 };

@@ -15,6 +15,15 @@ module.exports = {
                 basicFont: "#333333",
             },
         },
+        keyframes: {
+            textIn: {
+                "0%": { opacity: "0", transform: "translateX(-20px)" },
+                "100%": { opacity: "1", transform: "translateX(0)" },
+            },
+        },
+        animation: {
+            textIn: "textIn 0.5s ease-out forwards",
+        },
     },
     plugins: [],
 };
