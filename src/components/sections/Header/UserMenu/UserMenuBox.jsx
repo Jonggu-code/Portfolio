@@ -44,7 +44,7 @@ const UserMenuBox = ({
       className={`userMenuBox overflow-hidden transition-all duration-300 ease-in-out
             ${isRender ? "opacity-0 fade-in delay-7" : ""} 
             ${isHamberActive ? "h-[220px]" : "h-0"} 
-            ${isDark ? "bg-slate-700" : "bg-slate-200"}
+            ${isDark ? "bg-slate-700/50" : "bg-slate-200/50"}
              fixed bottom-[75px] right-[16px] px-3 rounded-lg
             sm:top-[55px] sm:right-[12px] 
            lg:relative lg:flex lg:transition-none lg:gap-6 lg:justify-between lg:p-0 lg:top-0 lg:left-0 lg:flex-nowrap lg:shadow-none lg:h-max lg:bg-inherit`}

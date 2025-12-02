@@ -21,10 +21,12 @@ const Introduce = ({ isRender }) => {
 
   return (
     <div className={`w-svw h-svh z-0 ${isDark ? "bg-customDark" : "bg-white"}`}>
+      {/* 전체 */}
       <div
         className={`Introduce fixed top-0 left-0 ${isDark ? "Introduce_dark" : "Introduce_basic"} ${opacity === 0 ? "pointer-events-none" : "pointer-events-auto"}`}
         style={{ opacity }}
       >
+        {/* 화면 하단 Front-end */}
         {isMobile ? (
           ""
         ) : (
@@ -34,12 +36,17 @@ const Introduce = ({ isRender }) => {
             Front-End
           </p>
         )}
+
+        {/* 브라우저 진입 시 Welcome */}
         <h1 className="flex w-svw h-svh justify-center items-center text-5xl sm:text-8xl transition-all animate-slide-in-out">
           <span>Welcome !</span>
         </h1>
 
+        {/* Intro 내부  */}
         <div className="w-svw h-svh flex items-center justify-center">
-          <div className="font-sans flex flex-col gap-8 w-[320px] sm:w-[600px] h-[400px] sm:h-auto">
+          {/* Intro 내부 구분 박스 */}
+          <div className="font-sans flex flex-col gap-6 sm:gap-12 w-[320px] sm:w-[600px] h-[400px] sm:h-auto">
+            {/* 이미지 & 옆 텍스트 */}
             <div className="aspect-auto flex gap-5 sm:gap-8 items-end">
               <img
                 className="w-2/5 max-w-[120px] sm:max-w-[300px] rounded-lg opacity-0 fade-in delay-10 object-cover object-top"
@@ -59,14 +66,15 @@ const Introduce = ({ isRender }) => {
               </h1>
             </div>
 
+            {/* 이미지 하단 메인 텍스트 */}
             <div className="flex flex-col gap-4 sm:gap-6 text-lg sm:text-2xl">
               <h4
-                className={`opacity-0 break-keep fade-in delay-12 ${isDark ? "text-gray-400" : "text-gray-600"}`}
+                className={`opacity-0 break-keep fade-in delay-12 ${isDark ? "text-gray-400" : "text-gray-600"} sm:leading-10`}
               >
-                기술은 사람을 위한 것이라는 믿음으로 사용자를 이해하고, <br />더
+                기술은 사람을 위한 것이라는 믿음으로 사용자를 이해하고 <br />더
                 나은 경험을 설계하는데에 집중하며 최선을 다합니다.
               </h4>
-              <h5 className="text-customBlue opacity-0 font-bold break-keep fade-in delay-13">
+              <h5 className="text-customBlue opacity-0 font-bold break-keep fade-in delay-13 sm:leading-10">
                 마치 사랑하는 사람에게 코딩으로 만든 소프트웨어 꽃다발을
                 선물하는 마음으로.
               </h5>

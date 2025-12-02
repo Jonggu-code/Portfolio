@@ -1,6 +1,12 @@
 const Education = ({ isDark, isScrolled }) => {
   const educationList = [
     {
+      logo: "/logo/khacademylogo.png",
+      title: "KH정보교육원",
+      graduate: "2024. 07 ~ 2024. 12",
+      category: "React & Spring 활용 <br /> 자바개발자 양성과정",
+    },
+    {
       logo: "/logo/universitylogo.svg",
       title: "동양대학교 동두천캠퍼스",
       graduate: "2017. 02 ~ 2023. 02",
@@ -16,11 +22,13 @@ const Education = ({ isDark, isScrolled }) => {
 
   return (
     <div
-      className={`w-full h-max justify-center items-center mt-20 opacity-0 ${isScrolled ? "animate-textIn" : ""}`}
+      className={`w-full h-max justify-center items-center mt-10 sm:mt-20 opacity-0 ${isScrolled ? "animate-textIn" : ""}`}
       style={{ animationDelay: `200ms` }}
     >
       {/* title */}
-      <h1 className={`text-center w-auto text-[26px] font-bold mb-4`}>
+      <h1
+        className={`text-center w-auto text-xl sm:text-2xl font-bold mb-3 sm:mb-4`}
+      >
         Education
       </h1>
 
@@ -29,19 +37,19 @@ const Education = ({ isDark, isScrolled }) => {
         {educationList.map((edu, i) => (
           <div
             key={i}
-            className={`rounded-lg p-3 flex flex-col justify-center items-center gap-4 shadow-md ${isDark ? "bg-customGray shadow-white " : "bg-white"}`}
+            className={`rounded-lg p-3 flex flex-col justify-center items-center gap-4 shadow-md transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 ${isDark ? "bg-customGray shadow-white " : "bg-white"}`}
           >
-            <div className="flex justify-center">
+            <div className="flex items-center justify-center">
               <img
                 className="w-20 h-20 sm:w-32 sm:h-32"
                 src={edu.logo}
                 alt={edu.title}
               />
             </div>
-            <div className="w-full h-max break-keep text-center flex flex-col gap-1">
-              <h1 className="text-lg font-bold">{edu.title}</h1>
-              <h2 className="w-full text-sm">{edu.graduate}</h2>
-              <h3>{edu.category}</h3>
+            <div className="w-full h-max break-keep text-center flex flex-col gap-1 text-sm sm:text-lg">
+              <h1 className="sm:text-lg font-bold">{edu.title}</h1>
+              <h2 className="w-full">{edu.graduate}</h2>
+              <h3 dangerouslySetInnerHTML={{ __html: edu.category }}></h3>
             </div>
           </div>
         ))}

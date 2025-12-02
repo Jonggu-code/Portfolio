@@ -3,53 +3,29 @@ const Question = ({ isDark, isScrolled }) => {
     {
       delay: 400,
       question: "Q1. 개발자가 되기로 결심한 이유 ?",
-      answer: `공간디자인을 전공하며 실제로 구성될
-            <strong>공간에 대한 창의적인 아이디어</strong>를 구체화하고
-            <strong>사용자 중심의 경험을 설계</strong>
-            하는 데에 익숙해졌습니다. <br />
-            이러한 경험을 바탕으로
-            <strong>
-              기술적인 도구를 활용해 더 많은 가치를 창출할 수 있는 분야
-            </strong>
-            에 도전하고 싶다는 생각이 들었습니다. <br />그 과정에서 소프트웨어를
-            활용한 개발은 현실에 제약을 받지 않고 더 창의적인 구현이 가능하지
-            않을까? 라는 생각을 하다보니 개발자, 그 중에서도
-            <strong> 프론트엔드 개발자</strong>라는 직군에 관심을 가지게
-            되었습니다.`,
+      answer: `사용자 경험을 설계하는 과정이 좋아 공간디자인을 전공했지만
+<strong>현실적인 제약</strong>으로 인해 아이디어를 온전히 구현하기 어렵다는 한계를 느꼈습니다.
+<strong>프론트엔드 개발</strong>은 제가 구상한 인터페이스를 <strong>제약 없이 구현하고,
+사용자 반응을 즉시 확인하며 개선</strong>할 수 있다는 점에서 큰 매력을 느꼈습니다.`,
     },
     {
       delay: 500,
       question: "Q2. 개발자가 되기 위한 노력 ?",
-      answer: `<strong>KH정보교육원</strong>
-            에서 HTML5, CSS, JavaScript, jQuery 등 다양한 웹 애플리케이션 이론과
-            실무를 체계적으로 배웠습니다. 이론 학습을 바탕으로 실제 프로젝트에
-            적용하며 실력을 쌓았습니다.
-            <br />
-            <strong>인프런, 유데미</strong> 와 같은 온라인 강의 사이트를 통해
-            지속적으로 새로운 기술을 습득하고 있으며 <strong>기술블로그</strong>
-            를 통해 배운 내용들을 복습하고 에러를 해결하고, 그 과정을 포스팅하며
-            지식을 공유하고 있습니다. <br />
-            무엇보다도 <strong>효율적이고 인간지향적인 코드</strong>를 작성하기
-            위해 항상 고민하며 공부했습니다.`,
+      answer: `<strong>KH정보교육원에서 6개월 간 </strong>
+웹 기본기(HTML, CSS, Javascript, Jquery)부터 팀 프로젝트 기반 실습까지 체계적으로 경험했습니다.
+<strong>온라인 강의와 기술블로그</strong>를 통해 최신 기술을 꾸준히 학습하며,
+개념 정리·문제 해결 과정을 직접 기록하는 습관을 유지하고 있습니다. <br />또한 <strong>웹디자인기능사와 정보처리기사 자격증을 취득</strong>하며 기본기와 이론적 기반을 탄탄히 다졌습니다.`,
     },
     {
       delay: 600,
       question: "Q3. 본인의 강점 ?",
-      answer: `저의 가장 큰 강점은
-            <strong>긍정적인 성격을 바탕으로 적극적이고 원활한 소통</strong>
-            을 할 수 있다는 점입니다.
-            <br /> 대학 재학 중 동아리 부 팀장과 졸업 전시 위원회의 임원진으로
-            활동하며, 자신의 의견을 주장하는 동시에 타인의 견해를 충분히
-            고려하여 결과를 도출하는 능력을 키웠습니다.
-            <br /> 교육원에서 진행한 팀프로젝트에서 팀장을 맡아 팀원 간의 소통을
-            원활하게 만들며, 조화로운 분위기를 이끌어내는 역할을 잘 수행했고 그
-            결과, 2주 간의 팀프로젝트를 성공적으로 마무리할 수 있었습니다.`,
+      answer: `<strong>긍정적인 성격과 적극적인 소통</strong> 으로 팀 내 협업과 조율에 강점이 있습니다. 인테리어 회사에서 근무하는 동안 제안·설계·조정 과정을 거치며 <strong>고객의 요구를 정확히 파악하고, 문제를 빠르게 해결하는 역량</strong>을 키웠습니다. 프로젝트의 완성도를 높이기 위해 과몰입하여 일정이 딜레이되는 경향이 있지만, <strong>우선순위 설정과 지속적인 작업 효율화</strong>를 통해 보완해 나가고 있습니다.`,
     },
   ];
   return (
-    <div className="mt-10">
+    <div className="mt-6 sm:mt-10">
       <h1
-        className={`text-center w-auto text-[26px] font-bold mb-4 opacity-0 ${isScrolled ? "animate-textIn" : ""}`}
+        className={`text-center w-auto text-xl sm:text-2xl font-bold mb-4 opacity-0 ${isScrolled ? "animate-textIn" : ""}`}
         style={{ animationDelay: "300ms" }}
       >
         Question
@@ -57,12 +33,14 @@ const Question = ({ isDark, isScrolled }) => {
       {questionList.map((item, i) => (
         <div
           key={i}
-          className={`opacity-0 w-full h-max rounded-2xl p-6 mb-8 ${isDark ? "bg-customGray" : "bg-white shadow-gray-400"} ${isScrolled ? `animate-textIn` : ""}`}
+          className={`opacity-0 w-full h-max rounded-2xl p-6 mb-8 shadow-md ${isDark ? "bg-customGray" : "bg-white"} ${isScrolled ? `animate-textIn` : ""}`}
           style={{ animationDelay: `${item.delay}ms` }}
         >
-          <h1 className="text-2xl pb-5 font-bold">{item.question}</h1>
+          <h1 className="text-lg pb-3 sm:text-2xl sm:pb-5 font-bold">
+            {item.question}
+          </h1>
           <p
-            className="text-[16px] break-keep leading-8"
+            className="text-base break-keep sm:text-lg leading-7 sm:leading-8"
             dangerouslySetInnerHTML={{ __html: item.answer }}
           ></p>
         </div>

@@ -21,7 +21,7 @@ const About = () => {
     >
       {/* title */}
       <h1
-        className={`absolute top-6 left-6 sm:top-10 sm:left-10 opacity-0 text-4xl w-full font-bold ${isScrolled ? "animate-textIn" : ""}`}
+        className={`absolute top-6 left-6 sm:top-10 sm:left-10 opacity-0 text-2xl sm:text-4xl w-full font-bold ${isScrolled ? "animate-textIn" : ""}`}
         style={{ animationDelay: `100ms` }}
       >
         About Me
