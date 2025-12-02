@@ -3,12 +3,11 @@ import "./App.css";
 import About from "./components/sections/About/About";
 import Header from "./components/sections/Header/Header";
 import Introduce from "./components/sections/Introduce/Introduce";
-import Introduce2 from "./components/sections/Introduce/Introduce2";
 import Projects from "./components/sections/Projects/Projects";
 import Skills from "./components/sections/Skills/Skills";
 import Contact from "./components/sections/Contact/Contact";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DarkModeProvider } from "./hooks/DarkModeContext";
 import { useScrollSections } from "./hooks/useScrollSections";
 import { scrollToSection } from "./util/scrollToSection";
@@ -20,6 +19,7 @@ function App() {
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const [isRender, setIsRender] = useState(true);
 
   const sectionRefs = [
     { id: "introduce", ref: introduceRef },
@@ -42,8 +42,13 @@ function App() {
       setActiveSection("introduce");
     }, 6000);
 
+    const timer = setTimeout(() => {
+      setIsRender(false);
+    }, 6000);
+
     return () => {
       clearTimeout(scrollOn);
+      clearTimeout(timer);
     };
   }, []);
 
@@ -55,10 +60,10 @@ function App() {
             activeSection={activeSection}
             scrollToSection={scrollToSection}
             sectionRefs={sectionRefs}
+            isRender={isRender}
           />
           <div ref={introduceRef}>
-            {/* <Introduce /> */}
-            <Introduce2 />
+            <Introduce isRender={isRender} />
           </div>
           <div ref={aboutRef}>
             <About />

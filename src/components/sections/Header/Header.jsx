@@ -7,22 +7,13 @@ import NavMenu from "./NavMenu";
 import { IsMobileContext } from "../../../hooks/IsMobileContext";
 import MoveTopBtn from "./UserMenu/MoveTopBtn";
 
-const Header = ({ activeSection, scrollToSection, sectionRefs }) => {
+const Header = ({ activeSection, scrollToSection, sectionRefs, isRender }) => {
   const { isDark, toggleDarkMode } = useContext(DarkModeContext);
   const isMobile = useContext(IsMobileContext);
   const [isHamberActive, setIsHamberActive] = useState(false);
   const menuRef = useRef(null);
   const btnRef = useRef(null);
-  const [isRender, setIsRender] = useState(true);
   const email = "jonggucode@gmail.com";
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsRender(false);
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
