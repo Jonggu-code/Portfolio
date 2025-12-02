@@ -15,7 +15,7 @@ const About = () => {
     <div
       ref={aboutRef}
       className={`relative w-svw p-6 h-max flex justify-center
-        ${isDark ? "bg-customDark text-white" : "bg-blue-100 text-slate-800"}
+        ${isDark ? "bg-customDark text-white" : "bg-blue-100 text-basicFont"}
         
         `}
     >
@@ -27,7 +27,7 @@ const About = () => {
         About Me
       </h1>
 
-      <div className="max-w-[1000px]">
+      <div className="max-w-[1000px] mt-16 sm:mt-20">
         {/* Education */}
         <Education isDark={isDark} isScrolled={isScrolled} />
 

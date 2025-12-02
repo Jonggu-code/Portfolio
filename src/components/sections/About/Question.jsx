@@ -23,9 +23,9 @@ const Question = ({ isDark, isScrolled }) => {
     },
   ];
   return (
-    <div className="mt-6 sm:mt-10">
+    <div className="mt-10">
       <h1
-        className={`text-center w-auto text-xl sm:text-2xl font-bold mb-4 opacity-0 ${isScrolled ? "animate-textIn" : ""}`}
+        className={`w-auto text-xl sm:text-2xl font-bold mb-4 opacity-0 ml-2 sm:ml-3 ${isScrolled ? "animate-textIn" : ""}`}
         style={{ animationDelay: "300ms" }}
       >
         Question

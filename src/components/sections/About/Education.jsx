@@ -22,12 +22,12 @@ const Education = ({ isDark, isScrolled }) => {
 
   return (
     <div
-      className={`w-full h-max justify-center items-center mt-10 sm:mt-20 opacity-0 ${isScrolled ? "animate-textIn" : ""}`}
+      className={`w-full h-max justify-center items-center opacity-0 ${isScrolled ? "animate-textIn" : ""}`}
       style={{ animationDelay: `200ms` }}
     >
       {/* title */}
       <h1
-        className={`text-center w-auto text-xl sm:text-2xl font-bold mb-3 sm:mb-4`}
+        className={`w-auto text-xl sm:text-2xl font-bold mb-3 sm:mb-4 ml-2 sm:ml-3`}
       >
         Education
       </h1>

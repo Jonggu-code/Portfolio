@@ -29,7 +29,7 @@ function App() {
     { id: "contact", ref: contactRef },
   ];
 
-  const { activeSection, setActiveSection } = useScrollSections(sectionRefs);
+  const { activeSection } = useScrollSections(sectionRefs);
 
   useEffect(() => {
     document.body.style.overflow = "hidden"; // Intro 페이지 모두 로드되기 전에 스크롤 방지
@@ -39,7 +39,6 @@ function App() {
 
     const scrollOn = setTimeout(() => {
       document.body.style.overflow = "auto";
-      setActiveSection("introduce");
     }, 6000);
 
     const timer = setTimeout(() => {
