@@ -27,7 +27,7 @@ const Core = ({ isDark, isScrolled }) => {
             className={`group w-max rounded-xl flex flex-col transition-all duration-300 hover:-translate-y-1`}
           >
             <div
-              className={`p-3 mb-1 shadow-md group-hover:shadow-gray-500 rounded-md transition-all duration-300 ${isDark ? "bg-customGray" : "bg-white"}
+              className={`p-3 mb-1 shadow-md group-hover:shadow-gray-500 rounded-md transition-all duration-300 ${isDark ? "bg-customGray shadow-none" : "bg-white"}
               `}
             >
               <img

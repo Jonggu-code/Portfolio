@@ -2,7 +2,7 @@ import { useContext, useRef } from "react";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import Core from "./Core";
-import { mainTitle } from "../../styles/commonStyle";
+import commonStyle from "../../styles/commonStyle";
 
 const Skills = () => {
   const { isDark } = useContext(DarkModeContext);
@@ -14,7 +14,10 @@ const Skills = () => {
       className={`relative w-svw p-6 box-border h-max flex justify-center ${isDark ? "bg-customDark text-white" : "bg-blue-200 text-basicFont"}`}
     >
       {/* 메인 title */}
-      <h1 className={mainTitle(isScrolled)} style={{ animationDelay: `100ms` }}>
+      <h1
+        className={commonStyle.mainTitle(isScrolled)}
+        style={{ animationDelay: `100ms` }}
+      >
         Skills
       </h1>
 

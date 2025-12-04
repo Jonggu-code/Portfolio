@@ -9,7 +9,7 @@ module.exports = {
             colors: {
                 customBlue: "#186ebd",
                 customDark: "#0f172a",
-                customGray: "#6c87a1",
+                customGray: "#334155",
                 customSky: "#71b1ff",
                 pointText: "rgb(135 160 184)",
                 basicFont: "#333333",

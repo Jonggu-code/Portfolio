@@ -10,7 +10,7 @@ import useScrollPosition from "../../../hooks/useScrollPosition";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { mainTitle } from "../../styles/commonStyle";
+import commonStyle from "../../styles/commonStyle";
 
 const Projects = () => {
   // 다크모드 관련 useContext
@@ -35,7 +35,7 @@ const Projects = () => {
       className={`relative w-svw p-6 h-max flex flex-wrap justify-center ${isDark ? "bg-customDark" : "bg-blue-300"} text-basicFont`}
     >
       {ModalComponent && <ModalComponent toggleModal={toggleModal} />}
-      <h1 className={mainTitle(isScrolled)}>
+      <h1 className={commonStyle.mainTitle(isScrolled)}>
         <span className="text-customBlue"></span>
         Projects
       </h1>

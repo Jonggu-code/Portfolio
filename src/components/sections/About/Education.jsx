@@ -1,3 +1,5 @@
+import commonStyle from "../../styles/commonStyle";
+
 const Education = ({ isDark, isScrolled }) => {
   const educationList = [
     {
@@ -26,18 +28,14 @@ const Education = ({ isDark, isScrolled }) => {
       style={{ animationDelay: `200ms` }}
     >
       {/* title */}
-      <h1
-        className={`w-auto text-xl sm:text-2xl font-bold mb-3 sm:mb-4 ml-2 sm:ml-3`}
-      >
-        Education
-      </h1>
+      <h1 className={commonStyle.subTitle}>Education</h1>
 
       {/* contents */}
       <div className="w-full h-max grid grid-cols-2 sm:grid-cols-3 gap-3">
         {educationList.map((edu, i) => (
           <div
             key={i}
-            className={`rounded-lg p-3 flex flex-col justify-center items-center gap-4 shadow-md transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 ${isDark ? "bg-customGray shadow-white " : "bg-white"}`}
+            className={`rounded-lg p-3 flex flex-col justify-center items-center gap-4 shadow-md transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 ${isDark ? "bg-customGray" : "bg-white"}`}
           >
             <div className="flex items-center justify-center">
               <img
