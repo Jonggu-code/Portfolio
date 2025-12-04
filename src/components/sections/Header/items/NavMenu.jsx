@@ -1,4 +1,4 @@
-import { handleNav } from "../../../util/handleNav";
+import { handleNav } from "../../../../util/handleNav";
 
 const menus = [
   { key: "introduce", label: "Intro" },

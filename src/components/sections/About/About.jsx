@@ -1,8 +1,8 @@
 import { useContext, useRef } from "react";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import useScrollPosition from "../../../hooks/useScrollPosition";
-import Education from "./Education";
-import Question from "./Question";
+import Education from "./items/Education";
+import Question from "./items/Question";
 import commonStyle from "../../styles/commonStyle";
 
 const About = () => {

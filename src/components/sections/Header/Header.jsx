@@ -1,11 +1,11 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 
-import Logo from "./Logo";
-import UserMenu from "./UserMenu/UserMenu";
-import NavMenu from "./NavMenu";
+import Logo from "./items/Logo";
+import UserMenu from "./items/UserMenu";
+import NavMenu from "./items/NavMenu";
 import { IsMobileContext } from "../../../hooks/IsMobileContext";
-import MoveTopBtn from "./UserMenu/MoveTopBtn";
+import MoveTopBtn from "./items/MoveTopBtn";
 
 const Header = ({ activeSection, scrollToSection, sectionRefs, isRender }) => {
   const { isDark, toggleDarkMode } = useContext(DarkModeContext);

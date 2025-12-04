@@ -1,5 +1,5 @@
-import commonStyle from "../../styles/commonStyle";
-import skillsStyle from "../../styles/skillsStyle";
+import commonStyle from "../../../styles/commonStyle";
+import skillsStyle from "../../../styles/skillsStyle";
 
 const Core = ({ isDark, isScrolled }) => {
   const coreList = [

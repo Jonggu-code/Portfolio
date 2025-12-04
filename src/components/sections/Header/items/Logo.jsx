@@ -1,4 +1,4 @@
-import { getLogoImage } from "../../../util/get-logo";
+import { getLogoImage } from "../../../../util/get-logo";
 
 const Logo = ({ isDark, isRender, moveTop }) => {
   return (

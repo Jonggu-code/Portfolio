@@ -2,9 +2,9 @@ import { useContext, useRef } from "react";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import commonStyle from "../../styles/commonStyle";
-import Core from "./Core";
-import Backend from "./Backend";
-import Tool from "./Tool";
+import Core from "./items/Core";
+import Backend from "./items/Backend";
+import Tool from "./items/Tool";
 
 const Skills = () => {
   const { isDark } = useContext(DarkModeContext);

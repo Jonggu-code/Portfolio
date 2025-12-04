@@ -1,4 +1,4 @@
-import commonStyle from "../../styles/commonStyle";
+import commonStyle from "../../../styles/commonStyle";
 
 const Education = ({ isDark, isScrolled }) => {
   const educationList = [

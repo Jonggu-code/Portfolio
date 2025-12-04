@@ -1,4 +1,4 @@
-import commonStyle from "../../styles/commonStyle";
+import commonStyle from "../../../styles/commonStyle";
 
 const Question = ({ isDark, isScrolled }) => {
   const questionList = [
