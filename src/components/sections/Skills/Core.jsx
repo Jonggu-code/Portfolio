@@ -1,3 +1,4 @@
+import commonStyle from "../../styles/commonStyle";
 import skillsStyle from "../../styles/skillsStyle";
 
 const Core = ({ isDark, isScrolled }) => {
@@ -19,7 +20,7 @@ const Core = ({ isDark, isScrolled }) => {
       className={skillsStyle.wrapper(isScrolled)}
       style={{ animationDelay: "200ms" }}
     >
-      <div className={skillsStyle.title(isDark)}>
+      <div className={commonStyle.subTitle(isDark)}>
         <span>Core Skills</span>
       </div>
       {/* 아이콘 나열 ul/li */}

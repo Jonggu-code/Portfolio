@@ -28,7 +28,7 @@ const Education = ({ isDark, isScrolled }) => {
       style={{ animationDelay: `200ms` }}
     >
       {/* title */}
-      <h1 className={commonStyle.subTitle}>Education</h1>
+      <h1 className={commonStyle.subTitle(isDark)}>Education</h1>
 
       {/* contents */}
       <div className="w-full h-max grid grid-cols-2 sm:grid-cols-3 gap-3">

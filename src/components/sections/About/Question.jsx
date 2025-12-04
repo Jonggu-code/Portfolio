@@ -1,3 +1,5 @@
+import commonStyle from "../../styles/commonStyle";
+
 const Question = ({ isDark, isScrolled }) => {
   const questionList = [
     {
@@ -25,7 +27,7 @@ const Question = ({ isDark, isScrolled }) => {
   return (
     <div className="mt-10">
       <h1
-        className={`w-auto text-xl sm:text-2xl font-bold mb-4 opacity-0 ml-2 sm:ml-3 ${isScrolled ? "animate-textIn" : ""}`}
+        className={commonStyle.subTitle(isDark)}
         style={{ animationDelay: "300ms" }}
       >
         Question

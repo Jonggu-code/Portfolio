@@ -1,3 +1,4 @@
+import commonStyle from "../../styles/commonStyle";
 import skillsStyle from "../../styles/skillsStyle";
 
 const Tool = ({ isDark, isScrolled }) => {
@@ -5,7 +6,7 @@ const Tool = ({ isDark, isScrolled }) => {
     { src: "./logo/vscode.png", name: "VSCode" },
     { src: "./logo/intellij.png", name: "IntelliJ" },
     { src: "./logo/notion.png", name: "Notion" },
-    { src: "./logo/github.png", name: "Github" },
+    { src: "./logo/githublogo.svg", name: "Github" },
     { src: "./logo/figmalogo.svg", name: "Figma" },
     { src: "./logo/vercellogo.svg", name: "Vercel" },
     { src: "./logo/photo.png", name: "Adobe PhotoShop" },
@@ -16,7 +17,7 @@ const Tool = ({ isDark, isScrolled }) => {
       className={skillsStyle.wrapper(isScrolled)}
       style={{ animationDelay: "400ms" }}
     >
-      <h1 className={skillsStyle.title(isDark)}>Tools</h1>
+      <h1 className={commonStyle.subTitle(isDark)}>Tools</h1>
       <ul className={skillsStyle.list}>
         {toolList.map((item, i) => (
           <li key={i} className={skillsStyle.item}>

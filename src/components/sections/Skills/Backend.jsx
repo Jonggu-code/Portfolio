@@ -1,3 +1,4 @@
+import commonStyle from "../../styles/commonStyle";
 import skillsStyle from "../../styles/skillsStyle";
 
 const Backend = ({ isDark, isScrolled }) => {
@@ -10,7 +11,7 @@ const Backend = ({ isDark, isScrolled }) => {
       className={skillsStyle.wrapper(isScrolled)}
       style={{ animationDelay: "300ms" }}
     >
-      <h1 className={skillsStyle.title(isDark)}>Backend (DB)</h1>
+      <h1 className={commonStyle.subTitle(isDark)}>Backend (DB)</h1>
       <ul className={skillsStyle.list}>
         {backList.map((item, i) => (
           <li key={i} className={skillsStyle.item}>
