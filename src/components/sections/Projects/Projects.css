@@ -1,15 +1,3 @@
-.pointText {
-    font-size: 18px;
-    font-weight: 900;
-    padding: 2px 0;
-    border-radius: 4px;
-}
-code {
-    font-size: 14px;
-    padding: 4px;
-    border-radius: 4px;
-    background-color: rgb(211, 211, 211);
-}
 .swiper {
     height: 330px !important;
 }
@@ -47,45 +35,4 @@ code {
 .swiper-pagination-bullet-active {
     background-color: #007bff !important;
     opacity: 1;
-}
-
-.logoLink,
-.logoLink > span {
-    transition: all 0.3s;
-}
-.logoLink:hover {
-    transform: translateY(-5px);
-}
-.logoLink:hover > span {
-    opacity: 1;
-}
-
-@keyframes textIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.text-in {
-    animation: textIn 0.5s ease-out forwards;
-}
-
-.text-d1 {
-    animation-delay: 0.1s;
-}
-
-.text-d2 {
-    animation-delay: 0.2s;
-}
-
-.text-d3 {
-    animation-delay: 0.4s;
-}
-.text-d4 {
-    animation-delay: 0.6s;
 }

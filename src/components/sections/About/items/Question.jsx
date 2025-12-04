@@ -25,7 +25,10 @@ const Question = ({ isDark, isScrolled }) => {
     },
   ];
   return (
-    <div className="mt-10">
+    <div
+      className={`mt-10 w-full opacity-0 ${isScrolled ? "animate-textIn" : ""}`}
+      style={{ animationDelay: `200ms` }}
+    >
       <h1
         className={commonStyle.subTitle(isDark)}
         style={{ animationDelay: "300ms" }}
