@@ -1,150 +1,31 @@
 import { useContext, useRef } from "react";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import useScrollPosition from "../../../hooks/useScrollPosition";
-import Core from "./Core";
 import commonStyle from "../../styles/commonStyle";
+import Core from "./Core";
+import Backend from "./Backend";
+import Tool from "./Tool";
 
 const Skills = () => {
   const { isDark } = useContext(DarkModeContext);
   const aboutRef = useRef(null);
   const isScrolled = useScrollPosition(aboutRef);
   return (
-    <div
-      ref={aboutRef}
-      className={`relative w-svw p-6 box-border h-max flex justify-center ${isDark ? "bg-customDark text-white" : "bg-blue-200 text-basicFont"}`}
-    >
-      {/* 메인 title */}
-      <h1
-        className={commonStyle.mainTitle(isScrolled)}
-        style={{ animationDelay: `100ms` }}
-      >
-        Skills
-      </h1>
-
+    <div ref={aboutRef} className={commonStyle.wrapper(isDark, 200)}>
       {/* Skills 메인 박스 */}
-      <div
-        className={`w-svw max-w-[1000px] h-max mt-10 sm:mt-20 ${isDark ? "text-white" : "text-basicFont"}`}
-      >
+      <div className={commonStyle.subWrapper}>
+        <h1
+          className={commonStyle.mainTitle(isScrolled)}
+          style={{ animationDelay: `100ms` }}
+        >
+          Skills
+        </h1>
         {/* Core Skills 박스 */}
         <Core isDark={isDark} isScrolled={isScrolled} />
         {/* Back End 박스 */}
-        <div
-          className={`skillsItemBox opacity-0 w-full h-max pb-10 ${isScrolled ? "animate-skillsIn" : ""}`}
-          style={{ animationDelay: "500ms" }}
-        >
-          <h1 className="w-full text-[20px] text-center font-bold pb-7">
-            Backend (DB)
-          </h1>
-          <ul className="iconBox flex gap-5 justify-center pb-5">
-            <li
-              className={`techIcon hover:shadow-gray-500 shadow-lg rounded-xl flex items-center justify-center flex-wrap ${isDark ? "bg-customGray" : "bg-white"}`}
-            >
-              <div>
-                <img className="w-16" src="./logo/mysql.png" alt="" />
-              </div>
-              <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
-              >
-                MySQL
-              </span>
-            </li>
-            <li
-              className={`techIcon hover:shadow-gray-500 shadow-lg rounded-xl flex items-center justify-center flex-wrap ${isDark ? "bg-customGray" : "bg-white"}`}
-            >
-              <div>
-                <img className="w-16" src="./logo/mariadb.png" alt="" />
-              </div>
-              <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
-              >
-                MariaDB
-              </span>
-            </li>
-          </ul>
-        </div>
+        <Backend isDark={isDark} isScrolled={isScrolled} />
         {/* tools 박스 */}
-        <div
-          className={`skillsItemBox opacity-0 w-full h-max pb-10 ${isScrolled ? "animate-skillsIn" : ""}`}
-          style={{ animationDelay: "700ms" }}
-        >
-          <h1 className="w-full text-[20px] text-center font-bold pb-7">
-            Tools
-          </h1>
-          <ul className="iconBox flex flex-wrap gap-5 justify-center pb-5">
-            <li
-              className={`techIcon hover:shadow-gray-500 shadow-lg rounded-xl flex items-center justify-center flex-wrap ${isDark ? "bg-customGray" : "bg-white"}`}
-            >
-              <div>
-                <img className="w-16" src="./logo/vscode.png" alt="" />
-              </div>
-              <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
-              >
-                VSCode
-              </span>
-            </li>
-            <li
-              className={`techIcon hover:shadow-gray-500 shadow-lg rounded-xl flex items-center justify-center flex-wrap ${isDark ? "bg-customGray" : "bg-white"}`}
-            >
-              <div>
-                <img className="w-16" src="./logo/intellij.png" alt="" />
-              </div>
-              <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
-              >
-                IntelliJ
-              </span>
-            </li>
-            <li
-              className={`techIcon hover:shadow-gray-500 shadow-lg rounded-xl flex items-center justify-center flex-wrap ${isDark ? "bg-customGray" : "bg-white"}`}
-            >
-              <div>
-                <img className="w-16" src="./logo/notion.png" alt="" />
-              </div>
-              <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
-              >
-                Notion
-              </span>
-            </li>
-            <li
-              className={`techIcon hover:shadow-gray-500 shadow-lg rounded-xl flex items-center justify-center flex-wrap ${isDark ? "bg-customGray" : "bg-white"}`}
-            >
-              <div>
-                <img className="w-16" src="./logo/github.png" alt="" />
-              </div>
-              <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
-              >
-                GitHub
-              </span>
-            </li>
-            <li
-              className={`techIcon hover:shadow-gray-500 shadow-lg rounded-xl flex items-center justify-center flex-wrap ${isDark ? "bg-customGray" : "bg-white"}`}
-            >
-              <div>
-                <img className="w-16" src="./logo/photo.png" alt="" />
-              </div>
-              <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
-              >
-                Adobe PhotoShop
-              </span>
-            </li>
-            <li
-              className={`techIcon hover:shadow-gray-500 shadow-lg rounded-xl flex items-center justify-center flex-wrap ${isDark ? "bg-customGray" : "bg-white"}`}
-            >
-              <div>
-                <img className="w-16" src="./logo/illust.png" alt="" />
-              </div>
-              <span
-                className={`w-full text-center text-[15px] font-bold ${isDark ? "text-customGray" : "text-basicFont"}`}
-              >
-                Adobe Illustrator
-              </span>
-            </li>
-          </ul>
-        </div>
+        <Tool isDark={isDark} isScrolled={isScrolled} />
       </div>
     </div>
   );

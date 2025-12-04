@@ -13,16 +13,14 @@ const About = () => {
   // 스크롤 이벤트 리스너 등록
 
   return (
-    <div ref={aboutRef} className={commonStyle.wrapper(isDark)}>
-      {/* title */}
-      <h1
-        className={commonStyle.mainTitle(isScrolled)}
-        style={{ animationDelay: `100ms` }}
-      >
-        About Me
-      </h1>
-
+    <div ref={aboutRef} className={commonStyle.wrapper(isDark, 100)}>
       <div className={commonStyle.subWrapper}>
+        <h1
+          className={commonStyle.mainTitle(isScrolled)}
+          style={{ animationDelay: `100ms` }}
+        >
+          About Me
+        </h1>
         {/* Education */}
         <Education isDark={isDark} isScrolled={isScrolled} />
 
