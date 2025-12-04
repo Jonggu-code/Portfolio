@@ -2,6 +2,7 @@ import { useContext, useRef } from "react";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import Core from "./Core";
+import { mainTitle } from "../../styles/commonStyle";
 
 const Skills = () => {
   const { isDark } = useContext(DarkModeContext);
@@ -10,19 +11,16 @@ const Skills = () => {
   return (
     <div
       ref={aboutRef}
-      className={`relative w-svw p-10 h-max flex justify-center ${isDark ? "bg-customDark text-white" : "bg-blue-200 text-basicFont"}`}
+      className={`relative w-svw p-6 box-border h-max flex justify-center ${isDark ? "bg-customDark text-white" : "bg-blue-200 text-basicFont"}`}
     >
       {/* 메인 title */}
-      <h1
-        className={`absolute top-6 left-6 sm:top-10 sm:left-10 opacity-0 text-2xl sm:text-4xl w-full font-bold ${isScrolled ? "animate-textIn" : ""}`}
-        style={{ animationDelay: `100ms` }}
-      >
+      <h1 className={mainTitle(isScrolled)} style={{ animationDelay: `100ms` }}>
         Skills
       </h1>
 
       {/* Skills 메인 박스 */}
       <div
-        className={`w-svw max-w-[1000px] h-max mt-10 sm:mt-20 px-5 ${isDark ? "text-white" : "text-basicFont"}`}
+        className={`w-svw max-w-[1000px] h-max mt-10 sm:mt-20 ${isDark ? "text-white" : "text-basicFont"}`}
       >
         {/* Core Skills 박스 */}
         <Core isDark={isDark} isScrolled={isScrolled} />
@@ -69,7 +67,7 @@ const Skills = () => {
           <h1 className="w-full text-[20px] text-center font-bold pb-7">
             Tools
           </h1>
-          <ul className="iconBox flex gap-5 justify-center pb-5">
+          <ul className="iconBox flex flex-wrap gap-5 justify-center pb-5">
             <li
               className={`techIcon hover:shadow-gray-500 shadow-lg rounded-xl flex items-center justify-center flex-wrap ${isDark ? "bg-customGray" : "bg-white"}`}
             >

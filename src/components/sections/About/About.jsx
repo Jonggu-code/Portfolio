@@ -3,6 +3,7 @@ import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import Education from "./Education";
 import Question from "./Question";
+import commonStyle from "../../styles/commonStyle";
 
 const About = () => {
   const { isDark } = useContext(DarkModeContext);
@@ -21,13 +22,13 @@ const About = () => {
     >
       {/* title */}
       <h1
-        className={`absolute top-6 left-6 sm:top-10 sm:left-10 opacity-0 text-2xl sm:text-4xl w-full font-bold ${isScrolled ? "animate-textIn" : ""}`}
+        className={commonStyle.mainTitle(isScrolled)}
         style={{ animationDelay: `100ms` }}
       >
         About Me
       </h1>
 
-      <div className="max-w-[1000px] mt-16 sm:mt-20">
+      <div className="max-w-[1000px] mt-12 sm:mt-20">
         {/* Education */}
         <Education isDark={isDark} isScrolled={isScrolled} />
 

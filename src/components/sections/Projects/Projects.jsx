@@ -10,6 +10,7 @@ import useScrollPosition from "../../../hooks/useScrollPosition";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { mainTitle } from "../../styles/commonStyle";
 
 const Projects = () => {
   // 다크모드 관련 useContext
@@ -31,12 +32,10 @@ const Projects = () => {
   return (
     <div
       ref={aboutRef}
-      className={`relative w-svw p-10 h-max flex flex-wrap justify-center ${isDark ? "bg-customDark" : "bg-blue-300"} text-basicFont`}
+      className={`relative w-svw p-6 h-max flex flex-wrap justify-center ${isDark ? "bg-customDark" : "bg-blue-300"} text-basicFont`}
     >
       {ModalComponent && <ModalComponent toggleModal={toggleModal} />}
-      <h1
-        className={`fade-target opacity-0 absolute top-[40px] left-[60px] text-4xl font-bold ${isDark ? "text-white" : "text-basicFont"} ${isScrolled ? "text-in text-d1" : ""}`}
-      >
+      <h1 className={mainTitle(isScrolled)}>
         <span className="text-customBlue"></span>
         Projects
       </h1>
@@ -45,7 +44,7 @@ const Projects = () => {
 
       <div className="BoxCheck w-full flex justify-center leading-[1.6]">
         <div
-          className={`SkillsMainBox opacity-0 shadow-lg break-keep relative p-6 w-[1000px] h-max rounded-2xl content-start bg-white mt-[90px] mb-[50px] flex flex-wrap ${isScrolled ? "text-in text-d2" : ""}`}
+          className={`SkillsMainBox opacity-0 shadow-lg break-keep relative p-6 w-svw h-max rounded-2xl content-start bg-white mt-[90px] mb-[50px] flex flex-wrap ${isScrolled ? "text-in text-d2" : ""}`}
         >
           <h1 className="text-3xl w-full font-bold pb-3">Portfolio</h1>
           <h2 className="w-full text-gray-500">
@@ -110,7 +109,7 @@ const Projects = () => {
                 </div>
                 <div className="w-full flex flex-wrap text-[14px]">
                   <p className={`w-max mb-2 pointText`}>사용기술</p>
-                  <ul className="w-full flex gap-3">
+                  <ul className="w-full flex flex-wrap">
                     <li className="px-2 py-1 bg-customGray text-white rounded-lg">
                       React
                     </li>
@@ -190,7 +189,7 @@ const Projects = () => {
 
       <div className="BoxCheck w-full flex justify-center leading-[1.6]">
         <div
-          className={`SkillsMainBox opacity-0 shadow-lg break-keep relative p-6 w-[1000px] h-max rounded-2xl content-start bg-white mt-[20px] mb-[50px] flex flex-wrap ${isScrolled ? "text-in text-d3" : ""}`}
+          className={`SkillsMainBox opacity-0 shadow-lg break-keep relative p-6 w-svw h-max rounded-2xl content-start bg-white mt-[20px] mb-[50px] flex flex-wrap ${isScrolled ? "text-in text-d3" : ""}`}
         >
           <h1 className="text-3xl w-full font-bold pb-3">MatMap - 맛맵</h1>
           <h2 className="w-full text-gray-500">
@@ -265,7 +264,7 @@ const Projects = () => {
                 </div>
                 <div className="w-full flex flex-wrap text-[14px]">
                   <p className={`w-max mb-2 pointText`}>사용기술</p>
-                  <ul className="w-full flex gap-3">
+                  <ul className="w-full flex flex-wrap">
                     <li className="px-2 py-1 bg-customGray text-white rounded-lg">
                       HTML
                     </li>
@@ -345,7 +344,7 @@ const Projects = () => {
 
       <div className="BoxCheck w-full flex justify-center leading-[1.6]">
         <div
-          className={`SkillsMainBox opacity-0 shadow-lg break-keep relative p-6 w-[1000px] h-max rounded-2xl content-start bg-white mt-[20px] mb-[50px] flex flex-wrap ${isScrolled ? "text-in text-d2" : ""}`}
+          className={`SkillsMainBox opacity-0 shadow-lg break-keep relative p-6 w-svw h-max rounded-2xl content-start bg-white mt-[20px] mb-[50px] flex flex-wrap ${isScrolled ? "text-in text-d2" : ""}`}
         >
           <h1 className="text-3xl w-full font-bold pb-3">
             Youtube Music Reworks
@@ -418,7 +417,7 @@ const Projects = () => {
                 </div>
                 <div className="w-full flex flex-wrap text-[14px]">
                   <p className={`w-max mb-2 pointText`}>사용기술</p>
-                  <ul className="w-full flex gap-3">
+                  <ul className="w-full flex flex-wrap">
                     <li className="px-2 py-1 bg-customGray text-white rounded-lg">
                       HTML
                     </li>

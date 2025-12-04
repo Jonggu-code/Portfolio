@@ -61,7 +61,7 @@ const Contact = () => {
           </p>
         </div>
         <div
-          className={`opacity-0 absolute -bottom-[220px] w-max flex gap-32 ${isScrolled ? "cont-in cont-d6" : ""}`}
+          className={`opacity-0 absolute -bottom-[220px] w-svw flex gap-0 ${isScrolled ? "cont-in cont-d6" : ""}`}
         >
           <div className="conBox userMenu flex flex-col items-center gap-3">
             <a
