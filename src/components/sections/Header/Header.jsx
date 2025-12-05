@@ -42,7 +42,7 @@ const Header = ({ activeSection, scrollToSection, sectionRefs, isRender }) => {
 
   return (
     <header
-      className={`header fixed z-50 text-xs w-svw h-8 top-0 left-0 px-6 flex items-center justify-between sm:text-base sm:h-14
+      className={`header fixed z-30 text-xs w-svw h-8 top-0 left-0 px-6 flex items-center justify-between sm:text-base sm:h-14
         ${isRender ? "opacity-0 fade-in delay-1" : ""} 
         ${isDark ? "bg-slate-800/80 sm:bg-customDark" : "bg-slate-200/80 sm:bg-white"}
         `}

@@ -2,6 +2,7 @@ export const projects = [
     {
         id: "todoapp",
         title: "Todo App",
+        subtitle: "TS 활용 TodoApp 토이프로젝트",
         date: "2025. 11",
         description: [
             "타입스크립트 숙련을 위한 TodoList 미니 프로젝트입니다.",
@@ -21,6 +22,7 @@ export const projects = [
     {
         id: "portfolio",
         title: "Portfolio",
+        subtitle: "개인용 포트폴리오 사이트",
         date: "2025. 01",
         description: [
             "이력서와 함께 나의 역량과 강점 그리고 개인 프로젝트들을 한눈에 볼 수 있도록 제작했습니다.",
@@ -40,6 +42,7 @@ export const projects = [
     {
         id: "matmap",
         title: "MatMap - 맛맵",
+        subtitle: "유저 맞춤형 맛집 검색 지도",
         date: "2024. 11",
         description: [
             "사람들이 맛집을 검색함에 있어 가장 원하는 정보, 정제된 정보를 전달해주는 사이트를 제작했습니다.",
@@ -62,6 +65,7 @@ export const projects = [
     {
         id: "youtubemusic",
         title: "Youtube Music Reworks",
+        subtitle: "유튜브 뮤직 리워크 프로젝트",
         date: "2024. 10",
         description: [
             "유튜브 뮤직 클론 코딩을 진행습니다. UI/UX 적으로 개선되면 좋을 것 같다고 생각한 부분을 개선해 봤습니다.",

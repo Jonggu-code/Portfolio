@@ -35,7 +35,7 @@ const Projects = () => {
         >
           Projects
         </h1>
-        <div className="w-full flex ">
+        <div className="w-full grid grid-cols-2">
           {projects.map((item, i) => (
             <ProjectCard
               key={item.id}

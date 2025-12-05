@@ -24,10 +24,15 @@ module.exports = {
                 "0%": { opacity: "0", transform: "translateY(20px)" },
                 "100%": { opacity: "1", transform: "translateY(0)" },
             },
+            modalIn: {
+                "0%": { opacity: "0", transform: "translateY(40px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+            },
         },
         animation: {
             textIn: "textIn 0.5s ease-out forwards",
             skillsIn: "skillsIn 0.5s ease-out forwards",
+            modalIn: "modalIn 0.3s ease-out forwards",
         },
     },
     plugins: [],
