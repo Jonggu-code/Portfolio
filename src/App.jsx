@@ -37,17 +37,13 @@ function App() {
     window.scrollTo(0, 0); // 페이지 로드 시 스크롤을 맨 위로 이동
     window.history.scrollRestoration = "manual"; // 세션 스크롤 복원 방지
 
-    const scrollOn = setTimeout(() => {
+    const renderOn = setTimeout(() => {
       document.body.style.overflow = "auto";
-    }, 6000);
-
-    const timer = setTimeout(() => {
       setIsRender(false);
-    }, 6000);
+    }, 5500);
 
     return () => {
-      clearTimeout(scrollOn);
-      clearTimeout(timer);
+      clearTimeout(renderOn);
     };
   }, []);
 

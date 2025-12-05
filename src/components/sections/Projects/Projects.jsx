@@ -1,9 +1,4 @@
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "./Projects.css";
-
-import React, { useContext, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 
 import ModalComponents from "../../modal/ModalComponents";
 import useScrollPosition from "../../../hooks/useScrollPosition";
@@ -40,16 +35,17 @@ const Projects = () => {
         >
           Projects
         </h1>
-        {projects.map((item, i) => (
-          <ProjectCard
-            key={item.id}
-            data={item}
-            isScrolled={isScrolled}
-            toggleModal={toggleModal}
-            isDark={isDark}
-            delay={(i + 2) * 100}
-          />
-        ))}
+        <div className="w-full flex ">
+          {projects.map((item, i) => (
+            <ProjectCard
+              key={item.id}
+              data={item}
+              toggleModal={toggleModal}
+              isScrolled={isScrolled}
+              delay={(i + 2) * 100}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
