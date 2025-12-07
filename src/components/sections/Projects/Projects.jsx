@@ -35,16 +35,18 @@ const Projects = () => {
         >
           Projects
         </h1>
-        <div className="w-full grid grid-cols-2">
-          {projects.map((item, i) => (
-            <ProjectCard
-              key={item.id}
-              data={item}
-              toggleModal={toggleModal}
-              isScrolled={isScrolled}
-              delay={(i + 2) * 100}
-            />
-          ))}
+        <div className="w-full flex justify-center">
+          <div className="w-max grid grid-cols-2 gap-4 ">
+            {projects.map((item, i) => (
+              <ProjectCard
+                key={item.id}
+                data={item}
+                toggleModal={toggleModal}
+                isScrolled={isScrolled}
+                delay={(i + 2) * 100}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
