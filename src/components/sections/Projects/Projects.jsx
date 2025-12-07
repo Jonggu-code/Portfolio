@@ -5,7 +5,7 @@ import useScrollPosition from "../../../hooks/useScrollPosition";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import commonStyle from "../../styles/commonStyle";
 import ProjectCard from "./items/ProjectCard";
-import { projects } from "./items/projectsData";
+import { projects } from "../../../util/projectsData";
 
 const Projects = () => {
   // 다크모드 관련 useContext
