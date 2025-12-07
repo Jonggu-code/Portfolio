@@ -1,68 +1,3 @@
-.modalContent {
-    width: 70%;
-    height: max-content;
-    padding-bottom: 50px;
-    background-color: #ffffff;
-    border-radius: 15px;
-    overflow: hidden;
-
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-/* /////////////////////////////////////////// */
-
-.modalHeader {
-    width: 100%;
-    padding: 20px 0 10px;
-    height: max-content;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.modalTitle {
-    width: 100%;
-    height: max-content;
-    font-size: 30px;
-    font-weight: 900;
-    color: #fff;
-}
-.modalTime {
-    width: 100%;
-    height: max-content;
-    color: #fff;
-    margin-top: 10px;
-}
-
-/* ////////////////////////////// */
-
-.modalBody {
-    width: 65%;
-    text-align: left;
-}
-.modalOverview {
-    word-break: keep-all;
-}
-.modalListTitle > h1 {
-    font-size: 26px;
-    font-weight: 900;
-    padding: 40px 0 20px;
-}
-.modalListTitle > h2 {
-    padding-bottom: 10px;
-    line-height: 2;
-}
-.modalList {
-    list-style-type: disc;
-    padding-left: 30px;
-}
-.modalList > li {
-    padding-bottom: 10px;
-}
-
 /* ///////////////////////////////////////////////// */
 
 .modalToggle {
@@ -78,15 +13,6 @@
 }
 .modalToggle:hover {
     background-color: #cccccc;
-}
-.modalToggle > span {
-    display: inline-block;
-    position: relative;
-    top: -2px;
-    font-size: 10px;
-    margin-right: 6px;
-
-    transition: all 0.2s;
 }
 .modalToggleList {
     list-style-type: disc;
