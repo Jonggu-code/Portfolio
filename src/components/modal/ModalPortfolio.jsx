@@ -4,7 +4,7 @@ import "swiper/css/pagination";
 import "../styles/swiperStyle.css";
 import "./Modal.css";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import useModalClose from "../../hooks/useModalClose";
@@ -17,39 +17,6 @@ const ModalPortfolio = ({ toggleModal }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   useModalClose(toggleModal);
-
-  useEffect(() => {
-    const handleToggleClick = function () {
-      const span = this.querySelector("span");
-      const ul = this.nextElementSibling;
-      span.classList.toggle("toggleRotate");
-      ul.classList.toggle("toggleShow");
-    };
-
-    const handleImageClick = function () {
-      setSelectedImage(this.src);
-    };
-
-    const toggles = document.querySelectorAll(".modalToggle");
-    toggles.forEach((toggle) => {
-      toggle.addEventListener("click", handleToggleClick);
-    });
-
-    const images = document.querySelectorAll(".modalImgList img");
-    images.forEach((img) => {
-      img.addEventListener("click", handleImageClick);
-    });
-
-    return () => {
-      toggles.forEach((toggle) => {
-        toggle.removeEventListener("click", handleToggleClick);
-      });
-
-      images.forEach((img) => {
-        img.removeEventListener("click", handleImageClick);
-      });
-    };
-  }, []);
 
   const handleCloseImageModal = () => {
     setSelectedImage(null);
@@ -120,7 +87,7 @@ const ModalPortfolio = ({ toggleModal }) => {
           <h2 className="text-2xl font-bold mb-3">Portfolio</h2>
           <h3 className="text-sm">2025. 01. 03 ~ 개발 진행 중</h3>
         </div>
-        <div className="px-6 pt-3 text-left flex flex-col gap-7">
+        <div className="px-6 pt-3 pb-5 text-left flex flex-col gap-7">
           <div className="summary">
             <h1 className={modalStyle.title}>📌 프로젝트 개요</h1>
             <div className="text-sm leading-6 break-keep flex flex-col gap-3">
@@ -168,38 +135,28 @@ const ModalPortfolio = ({ toggleModal }) => {
               />
             ))}
           </div>
-          <div className="modalListTitle">
-            <h1>
+          <div className="imagePreviewBox">
+            <h1 className={modalStyle.title}>
               📋 작업 이미지
-              <p className="text-[14px] text-gray-400 font-thin">
+              <p className="text-xs text-gray-400 font-thin">
                 이미지를 클릭해 원본 이미지 파일을 확인할 수 있습니다.
               </p>
             </h1>
-            <ul className="modalImgList">
-              <li>
-                <img src="./portfolio/page1.jpg" className="h-auto" />
-                <span>자기 소개</span>
-              </li>
-              <li>
-                <img src="./portfolio/page2.jpg" className="h-auto" />
-                <span>About Me</span>
-              </li>
-              <li>
-                <img src="./portfolio/page3.jpg" className="h-auto" />
-                <span>Skills</span>
-              </li>
-              <li>
-                <img src="./portfolio/page4.jpg" className="h-auto" />
-                <span>Project</span>
-              </li>
-              <li>
-                <img src="./portfolio/page5.jpg" className="h-auto" />
-                <span>Project Detail</span>
-              </li>
-              <li>
-                <img src="./portfolio/page6.jpg" className="h-auto" />
-                <span>Contact</span>
-              </li>
+            <ul className="text-center grid grid-cols-2 gap-2">
+              {modalData.portfolio.images.map((item, idx) => (
+                <li
+                  key={idx}
+                  className="bg-gray-200 rounded-lg p-1 flex flex-col justify-between gap-1"
+                  onClick={() => setSelectedImage(item.src)}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.label}
+                    className="rounded-md cursor-pointer hover:opacity-80 transition"
+                  />
+                  <span className="text-xs">{item.label}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
