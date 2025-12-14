@@ -30,7 +30,6 @@ export const projects = [
             "React와 Tailwind를 활용했고, 컴포넌트 관계성과 Hooks 숙련도가 상승했습니다.",
         ],
         features: "스크롤 반응형, 다크모드",
-        modal: "portfolio",
     },
     {
         id: "matmap",
@@ -53,10 +52,9 @@ export const projects = [
         ],
         github: "https://github.com/Jonggu-code/MatMap_portfolio",
         link: "https://jonggu-code.github.io/MatMap_portfolio/HTML,CSS,JS/index.html",
-        modal: "matmap",
     },
     {
-        id: "youtubemusic",
+        id: "youtube",
         title: "Youtube Music Reworks",
         subtitle: "유튜브 뮤직 리워크 프로젝트",
         date: "2024. 10",
@@ -74,6 +72,5 @@ export const projects = [
         ],
         github: "https://github.com/Jonggu-code/Portfolio_youtube",
         link: "https://jonggu-code.github.io/Portfolio_youtube/246.%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A41(%EC%9C%A0%ED%8A%9C%EB%B8%8C).html",
-        modal: "youtube",
     },
 ];

@@ -1,11 +1,11 @@
 import { useContext, useRef, useState } from "react";
 
-import ModalComponents from "../../modal/ModalComponents";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import commonStyle from "../../styles/commonStyle";
 import ProjectCard from "./items/ProjectCard";
 import { projects } from "../../../util/projectsData";
+import CommonModal from "../../modal/CommonModal";
 
 const Projects = () => {
   // 다크모드 관련 useContext
@@ -16,17 +16,21 @@ const Projects = () => {
   const isScrolled = useScrollPosition(aboutRef);
 
   // 모달창 관련
-  const [openModal, setOpenModal] = useState(null);
+  const [openProjectId, setOpenProjectId] = useState(null);
 
-  const toggleModal = (modalType) => {
-    setOpenModal((prev) => (prev === modalType ? null : modalType));
+  const openModal = (projectId) => {
+    setOpenProjectId(projectId);
   };
 
-  const ModalComponent = openModal ? ModalComponents[openModal] : null;
+  const closeModal = () => {
+    setOpenProjectId(null);
+  };
 
   return (
     <div ref={aboutRef} className={commonStyle.wrapper(isDark, 300)}>
-      {ModalComponent && <ModalComponent toggleModal={toggleModal} />}
+      {openProjectId && (
+        <CommonModal projectId={openProjectId} onClose={closeModal} />
+      )}
 
       <div className={commonStyle.subWrapper}>
         <h1
@@ -41,7 +45,9 @@ const Projects = () => {
               <ProjectCard
                 key={item.id}
                 data={item}
-                toggleModal={toggleModal}
+                onOpen={() => {
+                  openModal(item.id);
+                }}
                 isScrolled={isScrolled}
                 delay={(i + 2) * 100}
               />
