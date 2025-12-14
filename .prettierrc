@@ -3,8 +3,9 @@
   "singleQuote": false,
   "jsxSingleQuote": false,
   "trailingComma": "all",
-  "printWidth": 80,
+  "printWidth": 60,
   "tabWidth": 2,
+  "plugins": ["prettier-plugin-tailwindcss"],
   "cssWhitespaceSensitivity": "ignore",
   "overrides": [
     {
