@@ -2,12 +2,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "../styles/swiperStyle.css";
-import "./Modal.css";
 
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import useModalClose from "../../hooks/useModalClose";
 import ImageModal from "./ImageModal";
 import { modalData } from "../../util/modalData";
 import modalStyle from "../styles/modalStyle";

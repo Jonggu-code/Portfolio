@@ -266,5 +266,114 @@ export const modalData = {
             { src: "./Matmap/modal/page8.png", label: "회원가입" },
         ],
     },
-    youtube: {},
+    youtube: {
+        title: "Youtube Music Reworks",
+        date: "제작 기간 : 2024.10 - 2024.10",
+        color: "bg-red-600",
+        summary: [
+            "유튜브 뮤직 클론 코딩을 진행한 프로젝트입니다. Youtube API 를 활용하지 않고 전부 직접 개발했으며, 유튜브 뮤직의 기능을 최대한 구현하고자 했습니다.",
+            "화면을 구현하며 보관함과 플레이리스트의 UI가 가독성이 떨어지는 것 같아 디자인을 개선하였고, 음악을 재생하고 실시간으로 컨트롤 할 수 있는 기능에 중점을 맞추고 개발을 진행하였습니다.",
+        ],
+        skills: ["HTML5", "CSS3", "Javascript", "JQuery"],
+        slides: [
+            { src: "./youtube/index.jpg", alt: "Youtube Page 1" },
+            { src: "./youtube/storage.jpg", alt: "Youtube Page 2" },
+            { src: "./youtube/playlist.jpg", alt: "Youtube Page 3" },
+            { src: "./youtube/playpage.jpg", alt: "Youtube Page 4" },
+        ],
+        links: [
+            {
+                href: "https://github.com/Jonggu-code/Portfolio_youtube",
+                img: "/logo/githublogo.svg",
+                alt: "Github Link",
+                label: "Github",
+            },
+            {
+                href: "https://jonggu-code.github.io/Portfolio_youtube/246.%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A41(%EC%9C%A0%ED%8A%9C%EB%B8%8C).html",
+                img: "/logo/linkbtn.svg",
+                alt: "Project Link",
+                label: "Link",
+            },
+            {
+                href: "https://velog.io/@00whdcks/posts",
+                img: "/logo/veloglogo.svg",
+                alt: "Velog Link",
+                label: "Velog",
+            },
+        ],
+        FeaturesList: [
+            {
+                title: "로컬스토리지 기반 음악 재생",
+                contents: [
+                    "JS 객체로 음악 데이터를 저장하고, 로컬스토리지에 저장된 데이터를 불러와 음악을 재생할 수 있도록 구현했습니다.",
+                    "장르, 재생 길이, 태그 등의 정보를 저장하고 사용했습니다.",
+                ],
+            },
+            {
+                title: "플레이어 실시간 제어 기능 (음악 길이, 볼륨, 버튼 상호작용) 구현",
+                contents: [
+                    "음악이 재생되고 페이지 하단의 고정 플레이어로 이를 조정할 수 있는 실시간 제어 기능을 구현했습니다.",
+                    "음악의 길이, 볼륨, 재생, 일시정지, 이전, 다음 등의 버튼을 구현했습니다.",
+                ],
+            },
+            {
+                title: "반응형 웹 디자인",
+                contents: [
+                    "데스크탑 화면에서 비율에 따른 반응형 디자인을 제공할 수 있도록 반응형 웹 디자인을 추가했습니다.",
+                ],
+            },
+            {
+                title: "메인 화면 무한 스크롤",
+                contents: [
+                    "유튜브 뮤직의 메인 화면처럼 무한 스크롤 기능을 추가했습니다.",
+                    "현재는 제한된 정보로 같은 음악과 앨범이 스크롤되지만 로컬스토리지에 추가 데이터를 저장하면 바로 중복되지 않는 정보를 불러올 수 있도록 구현했습니다.",
+                ],
+            },
+        ],
+        addFeaturesList: [
+            {
+                title: "React 마이그레이션",
+                contents: [
+                    "현재 기본 Javascript 와 JQuery 를 사용해 개발했으나 <b>React 를 활용한 마이그레이션을</b>진행할 예정입니다.",
+                    "플레이리스트 추가, 유저 로그인 기능 등을 구현해 볼 예정입니다.",
+                ],
+            },
+            {
+                title: "모바일 반응형",
+                contents: [
+                    "현재 데스크탑 화면에 최적화된 반응형 웹 디자인을 제공하고 있으나, 모바일 환경에 최적화된 반응형 웹 디자인을 추가할 예정입니다.",
+                ],
+            },
+            {
+                title: "음악 검색 기능 추가",
+                contents: [
+                    "현재는 로컬스토리지에 저장된 음악 데이터만을 불러와 재생할 수 있으나, 검색창을 통해 음악을 검색할 수 있도록 추가할 예정입니다.",
+                    "React 로 마이그레이션 할 시, <code>filter()</code> 메서드를 활용해 간단한 검색기능이 구현 가능할 것이라 생각합니다.",
+                ],
+            },
+        ],
+        troubleShooting: [
+            {
+                title: "유튜브 컨텐츠 iframe 활용 불가능",
+                contents: [
+                    "Youtube 컨텐츠를 iframe 으로 불러오는 방법을 사용하려 했으나, <b>API 키를 발급받는게 제한적이라 사용할 수 없었습니다.",
+                    "이를 해결하기 위해 모든 UI를 직접 개발하고, <b>로컬스토리지에 음악 데이터를 저장</b>하고, 해당 데이터를 불러와 음악을 재생할 수 있도록 구현했습니다.",
+                ],
+            },
+            {
+                title: "다음 음악으로 넘어가면 볼륨이 초기화되는 현상",
+                contents: [
+                    "다음 음악으로 넘어갈 때마다 <b>설정해놓은 볼륨이 초기화</b> 되는 현상을 발견했습니다.",
+                    "이를 해결하기 위해 <b>다음 음악으로 넘어갈 때의 볼륨 수치를 변수에 저장</b>하고, 해당 볼륨을 다음 음악 재생 시 불러와 적용할 수 있도록 구현했습니다.",
+                ],
+            },
+        ],
+        images: [
+            { src: "./youtube/modal/page1.jpg", label: "메인 화면" },
+            { src: "./youtube/modal/page2.jpg", label: "둘러 보기" },
+            { src: "./youtube/modal/page3.jpg", label: "보관함" },
+            { src: "./youtube/modal/page4.jpg", label: "보관함 목록" },
+            { src: "./youtube/modal/page5.jpg", label: "뮤직 플레이어" },
+        ],
+    },
 };
