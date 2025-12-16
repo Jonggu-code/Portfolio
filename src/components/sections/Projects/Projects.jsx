@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
@@ -26,6 +26,18 @@ const Projects = () => {
     setOpenProjectId(null);
   };
 
+  useEffect(() => {
+    if (openProjectId) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [openProjectId]);
+
   return (
     <div ref={aboutRef} className={commonStyle.wrapper(isDark, 300)}>
       {openProjectId && (
@@ -39,8 +51,8 @@ const Projects = () => {
         >
           Projects
         </h1>
-        <div className="w-full flex justify-center">
-          <div className="w-max grid grid-cols-2 gap-4 ">
+        <div className="flex w-full justify-center">
+          <div className="grid w-max grid-cols-2 gap-4">
             {projects.map((item, i) => (
               <ProjectCard
                 key={item.id}
