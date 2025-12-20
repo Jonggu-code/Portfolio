@@ -52,7 +52,7 @@ const Projects = () => {
           Projects
         </h1>
         <div className="flex w-full justify-center">
-          <div className="grid w-max grid-cols-2 gap-4">
+          <div className="grid w-max grid-cols-2 gap-4 sm:w-full lg:grid-cols-3">
             {projects.map((item, i) => (
               <ProjectCard
                 key={item.id}

@@ -17,19 +17,14 @@ const NavMenu = ({
 }) => {
   return (
     <nav
-      className={`
-          headMenu w-svw flex items-center justify-center gap-[30px]
-          sm:w-2/4
-          ${isDark ? "text-white" : ""}`}
+      className={`headMenu flex w-full items-center justify-center gap-[30px] sm:w-2/4 ${isDark ? "text-white" : ""}`}
     >
       {menus.map((menu, i) => (
         <a
           key={menu.key}
           href={`#${menu.key}`}
           onClick={(e) => handleNav(e, sectionRefs, menu.key, scrollToSection)}
-          className={`hover:text-customBlue transition-colors duration-200 cursor-pointer 
-            ${isRender ? `opacity-0 fade-in delay-${3 + i}` : ""} 
-            ${activeSection === menu.key ? "text-customBlue" : " "}`}
+          className={`cursor-pointer transition-colors duration-200 hover:text-customBlue ${isRender ? `fade-in opacity-0 delay-${3 + i}` : ""} ${activeSection === menu.key ? "text-customBlue" : " "}`}
         >
           {menu.label}
         </a>

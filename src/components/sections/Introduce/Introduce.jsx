@@ -20,10 +20,12 @@ const Introduce = ({ isRender }) => {
   }, []);
 
   return (
-    <div className={`w-svw h-svh z-0 ${isDark ? "bg-customDark" : "bg-white"}`}>
+    <div
+      className={`z-0 h-svh w-full ${isDark ? "bg-customDark" : "bg-white"}`}
+    >
       {/* 전체 */}
       <div
-        className={`Introduce fixed top-0 left-0 ${isDark ? "Introduce_dark" : "Introduce_basic"} ${opacity === 0 ? "pointer-events-none" : "pointer-events-auto"}`}
+        className={`Introduce fixed left-1/2 top-0 -translate-x-1/2 ${isDark ? "Introduce_dark" : "Introduce_basic"} ${opacity === 0 ? "pointer-events-none" : "pointer-events-auto"}`}
         style={{ opacity }}
       >
         {/* 화면 하단 Front-end */}
@@ -31,30 +33,30 @@ const Introduce = ({ isRender }) => {
           ""
         ) : (
           <p
-            className={`absolute bottom-6 right-6 font-extrabold text-8xl transition-all duration-500 ${isRender ? "opacity-0 fade-in delay-back" : ""} z-10 ${isDark ? "text-gray-500/5" : "text-blue-950/5"}`}
+            className={`absolute -right-[30%] bottom-6 text-8xl font-extrabold transition-all duration-500 ${isRender ? "fade-in delay-back opacity-0" : ""} z-10 ${isDark ? "text-gray-500/5" : "text-blue-950/5"}`}
           >
             Front-End
           </p>
         )}
 
         {/* 브라우저 진입 시 Welcome */}
-        <h1 className="flex w-svw h-svh justify-center items-center text-5xl sm:text-8xl transition-all animate-slide-in-out">
+        <h1 className="animate-slide-in-out flex h-svh w-full items-center justify-center text-5xl transition-all sm:text-8xl">
           <span>Welcome !</span>
         </h1>
 
         {/* Intro 내부  */}
-        <div className="w-svw h-svh flex items-center justify-center">
+        <div className="flex h-svh w-full items-center justify-center">
           {/* Intro 내부 구분 박스 */}
-          <div className="font-sans flex flex-col gap-6 sm:gap-12 w-[320px] sm:w-[600px] h-[400px] sm:h-auto">
+          <div className="flex h-[400px] w-[320px] flex-col gap-6 font-sans sm:h-auto sm:w-[600px] sm:gap-12">
             {/* 이미지 & 옆 텍스트 */}
-            <div className="aspect-auto flex gap-5 sm:gap-8 items-end">
+            <div className="flex aspect-auto items-end gap-5 sm:gap-8">
               <img
-                className="w-2/5 max-w-[120px] sm:max-w-[300px] rounded-lg opacity-0 fade-in delay-10 object-cover object-top"
+                className="fade-in delay-10 w-2/5 max-w-[120px] rounded-lg object-cover object-top opacity-0 sm:max-w-[300px]"
                 src="./Profile_image.jpg"
                 alt="박종찬 프로필"
               />
               <h1
-                className={`opacity-0 text-xl sm:text-3xl w-auto h-max fade-in delay-11 font-normal break-keep flex flex-col sm:gap-1 ${isDark ? "text-white" : "text-gray-600"}`}
+                className={`fade-in delay-11 flex h-max w-auto flex-col break-keep text-xl font-normal opacity-0 sm:gap-1 sm:text-3xl ${isDark ? "text-white" : "text-gray-600"}`}
               >
                 <span>안녕하세요.</span>
                 <span className="font-extrabold text-slate-800">
@@ -67,14 +69,14 @@ const Introduce = ({ isRender }) => {
             </div>
 
             {/* 이미지 하단 메인 텍스트 */}
-            <div className="flex flex-col gap-4 sm:gap-6 text-lg sm:text-2xl">
+            <div className="flex flex-col gap-4 text-lg sm:gap-6 sm:text-2xl">
               <h4
-                className={`opacity-0 break-keep fade-in delay-12 ${isDark ? "text-gray-400" : "text-gray-600"} sm:leading-10`}
+                className={`fade-in delay-12 break-keep opacity-0 ${isDark ? "text-gray-400" : "text-gray-600"} sm:leading-10`}
               >
                 기술은 사람을 위한 것이라는 믿음으로 사용자를 이해하고 <br />더
                 나은 경험을 설계하는데에 집중하며 최선을 다합니다.
               </h4>
-              <h5 className="text-customBlue opacity-0 font-bold break-keep fade-in delay-13 sm:leading-10">
+              <h5 className="fade-in delay-13 break-keep font-bold text-customBlue opacity-0 sm:leading-10">
                 마치 사랑하는 사람에게 코딩으로 만든 소프트웨어 꽃다발을
                 선물하는 마음으로.
               </h5>

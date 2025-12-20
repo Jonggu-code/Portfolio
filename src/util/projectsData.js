@@ -30,6 +30,7 @@ export const projects = [
             "React와 Tailwind를 활용했고, 컴포넌트 관계성과 Hooks 숙련도가 상승했습니다.",
         ],
         features: "스크롤 반응형, 다크모드",
+        skills: ["React", "Vite", "Tailwind", "Node.js"],
     },
     {
         id: "matmap",

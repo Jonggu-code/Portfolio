@@ -2,7 +2,7 @@ import { lightBgList } from "./styleList";
 
 const commonStyle = {
     wrapper: (isDark, bgNumber) =>
-        `relative w-svw p-6 h-max flex justify-center
+        `relative w-full p-6 h-max flex justify-center
         ${isDark ? "bg-gradient-to-b from-slate-800 to-customDark text-white" : `${lightBgList[bgNumber]} text-basicFont`}
         `,
     subWrapper: `max-w-[1000px] w-full`,
