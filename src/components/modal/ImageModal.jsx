@@ -15,10 +15,22 @@ const ImageModal = ({ images, startIndex, onClose }) => {
   const firstImage = currentIndex === 0;
   const lastImage = currentIndex === images.length - 1;
 
+  const MIN_SCALE = 1;
+  const MAX_SCALE = 4;
+  const BASE_SCALE = 1;
+
   const resetTransform = () => {
     setScale(1);
     x.set(0);
     y.set(0);
+  };
+
+  const toggleScale = () => {
+    if (scale === 1) {
+      setScale(3);
+    } else {
+      resetTransform();
+    }
   };
 
   const nextImage = () => {
@@ -47,23 +59,34 @@ const ImageModal = ({ images, startIndex, onClose }) => {
     resetTransform();
   };
 
-  const toggleScale = () => {
-    if (scale === 1) {
-      setScale(3);
-    } else {
-      resetTransform();
-    }
+  const zoomIn = () => {
+    setScale((prev) => Math.min(prev + BASE_SCALE, MAX_SCALE));
+  };
+
+  const zoomOut = () => {
+    setScale((prev) => {
+      const next = Math.max(prev - BASE_SCALE, MIN_SCALE);
+      if (next == MIN_SCALE) {
+        x.set(0);
+        y.set(0);
+      }
+      return next;
+    });
   };
 
   const getDragBounds = () => {
-    if (!imgRef.current) return { left: 0, right: 0, top: 0, bottom: 0 };
+    const img = imgRef.current;
 
-    const rect = imgRef.current.getBoundingClientRect();
+    if (!img) return { left: 0, right: 0, top: 0, bottom: 0 };
+
+    const baseWidth = img.offsetWidth;
+    const baseheight = img.offsetHeight;
+
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 
-    const xBound = Math.max(0, (rect.width * scale - vw) / 2);
-    const yBound = Math.max(0, (rect.height * scale - vh) / 2);
+    const xBound = Math.max(0, (baseWidth * scale - vw) / 2);
+    const yBound = Math.max(0, (baseheight * scale - vh) / 1.8);
 
     return {
       left: -xBound,
@@ -114,31 +137,37 @@ const ImageModal = ({ images, startIndex, onClose }) => {
   }, []);
 
   const chevronStyle =
-    "absolute top-[50%] flex h-10 w-10 -translate-y-[50%] items-center justify-center rounded-full bg-black/40 z-50";
+    "absolute top-[42%] flex w-8 h-8 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-slate-400/70 z-50";
 
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
-      onClick={onClose}
+      onClick={(e) => {
+        e.stopPropagation();
+        onClose();
+      }}
     >
+      {/* 왼쪽 버튼 */}
       <button
-        className={`${chevronStyle} left-4`}
+        className={`${chevronStyle} left-2 sm:left-6`}
         onClick={(e) => {
           e.stopPropagation();
           prevImage();
         }}
       >
-        <img src="/vector/leftchevron.svg" alt="다음 사진" className="w-6" />
+        <img src="/vector/leftchevron.svg" alt="다음 사진" className="w-1/2" />
       </button>
+      {/* 오른쪽 버튼 */}
       <button
-        className={`${chevronStyle} right-4`}
+        className={`${chevronStyle} right-2 sm:right-6`}
         onClick={(e) => {
           e.stopPropagation();
           nextImage();
         }}
       >
-        <img src="/vector/rightchevron.svg" alt="다음 사진" className="w-6" />
+        <img src="/vector/rightchevron.svg" alt="다음 사진" className="w-1/2" />
       </button>
+      {/* 이미지 박스 */}
       <div onClick={(e) => e.stopPropagation()}>
         <AnimatePresence custom={direction} mode="wait">
           <motion.img
@@ -161,11 +190,35 @@ const ImageModal = ({ images, startIndex, onClose }) => {
             onDragEnd={handleDragEnd}
             onDoubleClick={toggleScale}
             style={{ scale, x, y, touchAction: "none" }}
-            className="max-h-[80vh] cursor-grab"
+            className="relative -top-10 max-h-[75vh] cursor-grab"
           />
         </AnimatePresence>
 
-        <div className="absolute bottom-2 left-1/2 flex w-max max-w-[90%] -translate-x-1/2 flex-col items-center gap-2">
+        <div className="absolute bottom-2 left-1/2 flex w-max max-w-[90%] -translate-x-1/2 flex-col items-center gap-2 sm:bottom-4">
+          {/* 이미지 조절 버튼박스 */}
+          <div className="flex gap-2 text-white">
+            <button
+              onClick={zoomIn}
+              className="rounded bg-slate-500/80 px-3 py-1"
+            >
+              +
+            </button>
+            <p className="rounded bg-slate-500/40 px-3 py-1">
+              {Math.round(scale * 100)} %
+            </p>
+            <button
+              onClick={zoomOut}
+              className="rounded bg-slate-500/80 px-3 py-1"
+            >
+              −
+            </button>
+            <button
+              onClick={() => resetTransform()}
+              className="rounded bg-slate-500/80 px-3 py-1"
+            >
+              ↺
+            </button>
+          </div>
           {/* 썸네일 이미지 박스 */}
           <div className="flex w-full gap-2 rounded-lg bg-slate-500/80 p-2">
             {images.map((img, idx) => (

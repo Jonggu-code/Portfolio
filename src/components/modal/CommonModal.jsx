@@ -36,7 +36,7 @@ const CommonModal = ({ projectId, onClose }) => {
       )}
 
       {/* 메인 콘텐츠 박스 */}
-      <div className="no-scrollbar h-dvh w-[calc(100%-40px)] max-w-[1000px] overflow-scroll pb-10">
+      <div className="no-scrollbar h-dvh w-[calc(100%-40px)] max-w-[1000px] overflow-scroll pb-10 text-sm sm:text-lg">
         <div
           className={`flex h-max animate-modalIn flex-wrap justify-center rounded-xl bg-white text-center opacity-0`}
           onClick={(e) => e.stopPropagation()}
@@ -67,8 +67,10 @@ const CommonModal = ({ projectId, onClose }) => {
                 ))}
               </Swiper>
             </div>
-            <h2 className="mb-3 text-2xl font-bold">{data.title}</h2>
-            <h3 className="text-sm">{data.date}</h3>
+            <h2 className="mb-3 text-2xl font-bold sm:mb-5 sm:text-4xl">
+              {data.title}
+            </h2>
+            <h3 className="sm:text-lg">{data.date}</h3>
           </div>
 
           {/* 컨텐츠 메인 박스 */}
@@ -76,7 +78,7 @@ const CommonModal = ({ projectId, onClose }) => {
             {/* 프로젝트 개요 */}
             <div className="summary">
               <h1 className={modalStyle.title}>📌 프로젝트 개요</h1>
-              <div className="flex flex-col gap-3 break-keep text-sm leading-6">
+              <div className="flex flex-col gap-3 break-keep text-sm leading-6 sm:text-base sm:leading-8">
                 {data.summary.map((item, idx) => (
                   <p key={idx} dangerouslySetInnerHTML={{ __html: item }}></p>
                 ))}
@@ -86,7 +88,7 @@ const CommonModal = ({ projectId, onClose }) => {
             {/* 개발 환경 및 사용 기술 */}
             <div className="skills">
               <h1 className={modalStyle.title}>⚙️ 개발 환경 및 사용 기술</h1>
-              <div className="flex flex-col gap-2 text-xs">
+              <div className="flex flex-col gap-2 text-xs sm:gap-3 sm:text-base">
                 {data.skills.map((item, idx) => (
                   <code key={idx}>- {item}</code>
                 ))}
@@ -145,26 +147,26 @@ const CommonModal = ({ projectId, onClose }) => {
             </div>
 
             {/* 이미지 미리보기 박스 */}
-            <div className="imagePreviewBox">
-              <h1 className={modalStyle.title}>
-                📋 작업 이미지
-                <p className="text-xs font-thin text-gray-400">
-                  이미지를 클릭해 원본 이미지 파일을 확인할 수 있습니다.
-                </p>
-              </h1>
-              <ul className="grid grid-cols-2 gap-2 text-center">
+            <div className="imagePreviewBox text-xs sm:text-base">
+              <h1 className={modalStyle.title}>📋 작업 이미지</h1>
+              <p className="mb-4 font-thin text-gray-400">
+                이미지를 클릭해 원본 이미지 파일을 확인할 수 있습니다.
+              </p>
+              <ul className="grid h-max grid-cols-2 gap-2 text-center sm:grid-cols-3 lg:grid-cols-4">
                 {data.images.map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex flex-col justify-between gap-1 rounded-lg bg-gray-200 p-1"
+                    className="flex cursor-pointer flex-col justify-between gap-1 rounded-lg bg-gray-200 p-1"
                     onClick={() => setSelectedImageIndex(idx)}
                   >
-                    <img
-                      src={item.src}
-                      alt={item.label}
-                      className="h-20 cursor-pointer rounded-md object-cover object-top transition hover:opacity-80"
-                    />
-                    <span className="text-xs">{item.label}</span>
+                    <div className="h-16 w-full overflow-hidden rounded-md sm:h-28">
+                      <img
+                        src={item.src}
+                        alt={item.label}
+                        className="object-cover transition hover:opacity-80"
+                      />
+                    </div>
+                    <span>{item.label}</span>
                   </li>
                 ))}
               </ul>
