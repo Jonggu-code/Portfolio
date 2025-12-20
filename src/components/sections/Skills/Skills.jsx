@@ -5,6 +5,8 @@ import commonStyle from "../../styles/commonStyle";
 import Core from "./items/Core";
 import Backend from "./items/Backend";
 import Tool from "./items/Tool";
+import Styling from "./items/Styling";
+import Interation from "./items/Interaction";
 
 const Skills = () => {
   const { isDark } = useContext(DarkModeContext);
@@ -20,11 +22,10 @@ const Skills = () => {
         >
           Skills
         </h1>
-        {/* Core Skills 박스 */}
         <Core isDark={isDark} isScrolled={isScrolled} />
-        {/* Back End 박스 */}
+        <Styling isDark={isDark} isScrolled={isScrolled} />
+        <Interation isDark={isDark} isScrolled={isScrolled} />
         <Backend isDark={isDark} isScrolled={isScrolled} />
-        {/* tools 박스 */}
         <Tool isDark={isDark} isScrolled={isScrolled} />
       </div>
     </div>

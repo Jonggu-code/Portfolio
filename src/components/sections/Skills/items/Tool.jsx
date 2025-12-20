@@ -5,17 +5,20 @@ const Tool = ({ isDark, isScrolled }) => {
   const toolList = [
     { src: "./logo/vscode.png", name: "VSCode" },
     { src: "./logo/intellij.png", name: "IntelliJ" },
-    { src: "./logo/notion.png", name: "Notion" },
+    { src: "./logo/ajax.png", name: "AJAX" },
+    { src: "./logo/axios.png", name: "Axios" },
+    { src: "./logo/msw.png", name: "MSW" },
     { src: "./logo/githublogo.svg", name: "Github" },
-    { src: "./logo/figmalogo.svg", name: "Figma" },
     { src: "./logo/vercellogo.svg", name: "Vercel" },
+    { src: "./logo/notion.png", name: "Notion" },
+    { src: "./logo/figmalogo.svg", name: "Figma" },
     { src: "./logo/photo.png", name: "Adobe PhotoShop" },
     { src: "./logo/illust.png", name: "Adobe Illustrator" },
   ];
   return (
     <div
       className={skillsStyle.wrapper(isScrolled)}
-      style={{ animationDelay: "400ms" }}
+      style={{ animationDelay: "600ms" }}
     >
       <h1 className={commonStyle.subTitle(isDark)}>Tools</h1>
       <ul className={skillsStyle.list}>

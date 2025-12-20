@@ -59,11 +59,14 @@ const Introduce = ({ isRender }) => {
                 className={`fade-in delay-11 flex h-max w-auto flex-col break-keep text-xl font-normal opacity-0 sm:gap-1 sm:text-3xl ${isDark ? "text-white" : "text-gray-600"}`}
               >
                 <span>안녕하세요.</span>
-                <span className="font-extrabold text-slate-800">
+                <b className={isDark ? "text-customBlue" : "text-basicFont"}>
                   프론트엔드 개발자
-                </span>
+                </b>
                 <span>
-                  <strong className="text-slate-800">박종찬</strong> 입니다.
+                  <b className={isDark ? "text-customBlue" : "text-basicFont"}>
+                    박종찬
+                  </b>{" "}
+                  입니다.
                 </span>
               </h1>
             </div>

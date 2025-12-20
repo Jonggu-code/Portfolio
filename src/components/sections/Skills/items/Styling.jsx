@@ -1,25 +1,16 @@
 import commonStyle from "../../../styles/commonStyle";
 import skillsStyle from "../../../styles/skillsStyle";
 
-const Core = ({ isDark, isScrolled }) => {
-  const coreList = [
-    { src: "./logo/html.png", name: "HTML" },
-    { src: "./logo/javascript.png", name: "Javascript" },
-    { src: "./logo/react.png", name: "React" },
-    { src: "./logo/vite.png", name: "Vite" },
-    { src: "./logo/typescriptlogo.svg", name: "Typescript" },
-  ];
+const Styling = ({ isDark, isScrolled }) => {
+  const styleList = [{ src: "./logo/tailwind.png", name: "Tailwind" }];
   return (
     <div
       className={skillsStyle.wrapper(isScrolled)}
-      style={{ animationDelay: "200ms" }}
+      style={{ animationDelay: "300ms" }}
     >
-      <div className={commonStyle.subTitle(isDark)}>
-        <span>Core Skills</span>
-      </div>
-      {/* 아이콘 나열 ul/li */}
+      <h1 className={commonStyle.subTitle(isDark)}>Styling</h1>
       <ul className={skillsStyle.list}>
-        {coreList.map((item, i) => (
+        {styleList.map((item, i) => (
           <li key={i} className={skillsStyle.item}>
             <div className={skillsStyle.iconBox(isDark)}>
               <img
@@ -36,4 +27,4 @@ const Core = ({ isDark, isScrolled }) => {
   );
 };
 
-export default Core;
+export default Styling;

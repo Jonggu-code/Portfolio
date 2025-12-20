@@ -9,7 +9,7 @@ const Backend = ({ isDark, isScrolled }) => {
   return (
     <div
       className={skillsStyle.wrapper(isScrolled)}
-      style={{ animationDelay: "300ms" }}
+      style={{ animationDelay: "500ms" }}
     >
       <h1 className={commonStyle.subTitle(isDark)}>Backend (DB)</h1>
       <ul className={skillsStyle.list}>

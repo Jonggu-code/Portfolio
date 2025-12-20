@@ -1,25 +1,19 @@
 import commonStyle from "../../../styles/commonStyle";
 import skillsStyle from "../../../styles/skillsStyle";
 
-const Core = ({ isDark, isScrolled }) => {
-  const coreList = [
-    { src: "./logo/html.png", name: "HTML" },
-    { src: "./logo/javascript.png", name: "Javascript" },
-    { src: "./logo/react.png", name: "React" },
-    { src: "./logo/vite.png", name: "Vite" },
-    { src: "./logo/typescriptlogo.svg", name: "Typescript" },
+const Interation = ({ isDark, isScrolled }) => {
+  const styleList = [
+    { src: "./logo/css.png", name: "CSS" },
+    { src: "./logo/framermotionlogo.svg", name: "Motion" },
   ];
   return (
     <div
       className={skillsStyle.wrapper(isScrolled)}
-      style={{ animationDelay: "200ms" }}
+      style={{ animationDelay: "400ms" }}
     >
-      <div className={commonStyle.subTitle(isDark)}>
-        <span>Core Skills</span>
-      </div>
-      {/* 아이콘 나열 ul/li */}
+      <h1 className={commonStyle.subTitle(isDark)}>UI / Interation</h1>
       <ul className={skillsStyle.list}>
-        {coreList.map((item, i) => (
+        {styleList.map((item, i) => (
           <li key={i} className={skillsStyle.item}>
             <div className={skillsStyle.iconBox(isDark)}>
               <img
@@ -36,4 +30,4 @@ const Core = ({ isDark, isScrolled }) => {
   );
 };
 
-export default Core;
+export default Interation;
