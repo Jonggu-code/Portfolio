@@ -108,28 +108,34 @@ export const modalData = {
         ],
         troubleShooting: [
             {
-                title: "Notion API 활용 불가능으로 Modal 창 직접 제작",
+                title: "Motion 활용 Drag & Drop 상태 동기화 불안정",
                 contents: [
-                    "Notion API를 활용해 모달창을 구성하려 했으나, 불러오는 과정에서 <b>버전 충돌과 Notion API Key 오류</b> 로 인해 프로젝트 상세 내용을 원할하게 불러오지 못하는 문제가 발생했습니다.",
-                    "이를 해결하기 위해 Notion API를 활용하지 않고, <b>직접 프로젝트 상세 내용을 전달할 수 있는 모달창을 제작</b>했습니다.",
+                    "순서를 변경할 때 <b>todos</b> 상태 업데이트와 <b>localStorage</b> 저장이 동시에 일어나며 순서가 꼬이거나 중복 저장되는 문제가 발생했습니다.",
+                    "<b>onReorder</b> 이벤트를 기반으로 useEffect를 통해 순서 변경 후 한 번만 storage로 동기화하도록 설정하여 안정화했습니다.",
                 ],
             },
             {
-                title: "프로젝트 Modal 창 이벤트 오류로 로직 수정",
+                title: "TodoItem 삭제 시 리스트 애니메이션 효과",
                 contents: [
-                    "<b>프로젝트 모달창에서 각 Toggle 항목을 클릭했을 때 제대로 동작하지 않는 오류</b>가 있었고, 렌더링 시 해당 기능을 하는 <code>UseEffect</code> 가 제대로 동작하지 않는 문제를 발견하였습니다.",
-                    "각 기능을 <code>handleToggleClick</code>,<code>handleImageClick</code> 함수로 분리하여 이벤트 리스너를 추가할 때 동일한 함수를 사용하도록 수정했습니다.",
-                    "또한, 언마운트 시 이벤트 리스너를 제거하여 <b>불필요한 메모리 누수를 방지하고 성능을 최적화</b> 하였습니다.",
+                    "아이템 삭제 시 리스트 높이값이 변경됨에 따른 애니메이션을 transition으로 주려 했으나 단순히 아이템 삭제가 아닌 컴포넌트 언마운트의 개념이기 때문에 적용이 불가능했습니다.",
+                    "Motion의 <b>AnimatePresence</b>를 활용해 exit 값을 할당해 부드러운 애니메이션을 구현했습니다.",
+                    ,
+                ],
+            },
+            {
+                title: "필터(Filter) & 할 일 검색(Search) 동시 적용 오류",
+                contents: [
+                    "필터(전체/미완료/완료)값과 검색이 동시에 적용될 때 조건 충돌 밑 타입 에러가 발생했습니다.",
+                    "filter.ts 에서 FilterType을 상수 기반으로 통합하고, <code>filteredTodos = filterTodos(todos, filter, search)</code> 구조로 명확히 분리했습니다.",
+                    "필터 값 -> 검색 순으로 조건이 안정적으로 되도록 재설계 했습니다.",
                 ],
             },
         ],
         images: [
-            { src: "./portfolio/page1.jpg", label: "자기 소개" },
-            { src: "./portfolio/page2.jpg", label: "About Me" },
-            { src: "./portfolio/page3.jpg", label: "Skills" },
-            { src: "./portfolio/page4.jpg", label: "Project" },
-            { src: "./portfolio/page5.jpg", label: "Project Detail" },
-            { src: "./portfolio/page6.jpg", label: "Contact" },
+            { src: "./todoapp/page1.JPG", label: "메인 화면" },
+            { src: "./todoapp/page2.JPG", label: "할일 체크" },
+            { src: "./todoapp/page3.JPG", label: "삭제 모달창" },
+            { src: "./todoapp/page4.JPG", label: "할일 검색 및 수정" },
         ],
     },
     portfolio: {
