@@ -1,15 +1,9 @@
-.swiper {
-    padding-bottom: 32px;
-}
 .swiper-pagination-bullet {
     width: 6px !important;
     height: 6px !important;
     background-color: #bbb;
     opacity: 0.6;
     transition: 0.3s ease;
-}
-.swiper-pagination {
-    bottom: 0px; /* 필요에 따라 위치를 위아래로 조정 */
 }
 .swiper-pagination-container {
     width: 100%;

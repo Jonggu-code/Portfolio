@@ -1,9 +1,9 @@
+import "../styles/swiperStyle.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "../styles/swiperStyle.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import ImageModal from "./ImageModal";
@@ -21,6 +21,15 @@ const CommonModal = ({ projectId, onClose }) => {
   const handleCloseImageModal = () => {
     setSelectedImageIndex(null);
   };
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  });
 
   return (
     <div
@@ -57,12 +66,16 @@ const CommonModal = ({ projectId, onClose }) => {
                 }}
                 pagination={{ clickable: true }}
                 loop
-                speed={1000}
+                speed={2000}
+                className="h-[45dvw] max-h-[500px] !pb-8 sm:!pb-10"
               >
                 {/* 각 슬라이드 구성 */}
                 {data.slides.map((item, idx) => (
-                  <SwiperSlide key={idx} className="overflow-hidden rounded-lg">
-                    <img src={item.src} alt={item.alt} />
+                  <SwiperSlide
+                    key={idx}
+                    className="!flex !items-start !justify-center overflow-hidden rounded-lg"
+                  >
+                    <img src={item.src} alt={item.alt} className="rounded-lg" />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -78,7 +91,7 @@ const CommonModal = ({ projectId, onClose }) => {
             {/* 프로젝트 개요 */}
             <div className="summary">
               <h1 className={modalStyle.title}>📌 프로젝트 개요</h1>
-              <div className="flex flex-col gap-3 break-keep text-sm leading-6 sm:text-base sm:leading-8">
+              <div className="flex flex-col gap-3 break-keep text-sm leading-6 sm:text-base sm:leading-6">
                 {data.summary.map((item, idx) => (
                   <p key={idx} dangerouslySetInnerHTML={{ __html: item }}></p>
                 ))}
@@ -128,6 +141,7 @@ const CommonModal = ({ projectId, onClose }) => {
                 <ToggleItem
                   key={idx}
                   title={item.title}
+                  status={item.status}
                   contents={item.contents}
                 />
               ))}

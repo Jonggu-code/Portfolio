@@ -1,5 +1,137 @@
 export const modalData = {
-    todoapp: {},
+    todoapp: {
+        title: "To-Do App",
+        date: "2025. 11. 13 ~ 2025. 11. 20",
+        color: "bg-lime-600",
+        summary: [
+            "React + Typescript 기반에서 상태 관리, 커스텀 훅, 아키텍처 설계를 종합적으로 경험하기 위해 제작했습니다.",
+            "단순 CRUD를 넘어서, <b>“하나의 작은 웹앱”을 혼자서 처음부터 끝까지 설계하는 경험</b>을 목표로 했습니다.",
+        ],
+        skills: ["React", "Typescript", "Vite", "Motion", "TailwindCSS"],
+        slides: [
+            { src: "./todoapp/page1.png", alt: "todoapp Page 1" },
+            { src: "./todoapp/page2.png", alt: "todoapp Page 2" },
+        ],
+        links: [
+            {
+                href: "https://github.com/Jonggu-code/TodoApp",
+                img: "/logo/githublogo.svg",
+                alt: "Github Link",
+                label: "Github",
+            },
+            {
+                href: "https://todo-app-xi-peach.vercel.app/",
+                img: "/logo/linkbtn.svg",
+                alt: "Project Link",
+                label: "Link",
+            },
+            {
+                href: "https://velog.io/@00whdcks/posts",
+                img: "/logo/veloglogo.svg",
+                alt: "Velog Link",
+                label: "Velog",
+            },
+        ],
+        FeaturesList: [
+            {
+                title: "Todo 추가 / 삭제 / 완료 체크 (로컬스토리지)",
+                contents: [
+                    "Todo의 상태를 state와 로컬 스토리지로 관리해 추가, 삭제, 완료 체크를 합니다.",
+                    "브라우저를 종료해도 이전에 남겼던 할일들은 기록에 남아 계속 표시됩니다.",
+                ],
+            },
+            {
+                title: "필터링 (전체 / 미완료 / 완료)",
+                contents: [
+                    "할일의 상태별로 볼 수 있는 필터링 기능을 구현했습니다.",
+                ],
+            },
+            {
+                title: "Enter 입력 및 자동 포커스",
+                contents: [
+                    "브라우저 진입 시 할 일 입력창(input)에 자동 포커스되며 엔터(Enter)입력을 지원합니다.",
+                    "input창엔 빈칸은 입력할 수 없는 유효성 검사가 진행되며, 빈칸 입력 시 알림창을 띄웁니다.",
+                ],
+            },
+            {
+                title: "알림, 모달창 구현",
+                contents: [
+                    "할 일 삭제, 빈칸 입력 시 띄우는 알림창과 모달창을 구현했습니다.",
+                    "사용자의 입력 형태에 따른 적절한 UI 구성으로 사용자 경험을 높이고자 했습니다.",
+                ],
+            },
+            {
+                title: "브라우저 진입 시 로딩 UI 구현",
+                contents: [
+                    "브라우저 진입 시 서버 상태에 따른 기본 로딩창을 구현했습니다.",
+                ],
+            },
+            {
+                title: "Motion 활용 드래그 & 드롭 정렬",
+                contents: [
+                    "React 라이브러리인 Motion을 활용하여 Reorder 기반의 아이템 정렬 기능을 구현했습니다.",
+                ],
+            },
+        ],
+        addFeaturesList: [
+            {
+                title: "다크 모드",
+                status: "planned",
+                contents: [
+                    "사용자 환경에 따라 테마를 전환할 수 있도록 구현할 계획입니다.",
+                    "테마 상태는 로컬스토리지에 저장하여 페이지 새로고침 및 재접속 시에도 유지되도록 처리할 예정입니다.",
+                ],
+            },
+            {
+                title: "전역 상태 관리 적용 (Zustand or Jotai)",
+                status: "planned",
+                contents: [
+                    "유저 인증 정보, 테마 상태, 공통 UI 상태 등을 전역 상태로 관리하여 props drilling 문제를 해소 할 것입니다.",
+                    "컴포넌트 간 의존성을 줄이고, 상태 변경 흐름을 명확하게 관리할 수 있도록 구조를 재설계 해 볼 생각입니다.",
+                ],
+            },
+            {
+                title: "백엔드 연결 버전 제작 (Express or Supabase)",
+                status: "planned",
+                contents: [
+                    "프론트엔드 중심 구조에서 벗어나 실제 API 기반 데이터 흐름을 경험할 수 있도록 백엔드 연동을 진행해 볼 예정입니다.",
+                    "CRUD 기능을 포함한 API 통신을 구현하고, 비동기 처리 및 에러 핸들링 구조를 명확히 구성 할 계획입니다.",
+                ],
+            },
+            {
+                title: "테스트 코드 도입 (React Testing Library)",
+                status: "planned",
+                contents: [
+                    "주요 컴포넌트 및 사용자 인터랙션에 대해 단위 테스트를 작성하여 기능 안정성을 확보 할 것입니다.",
+                ],
+            },
+        ],
+        troubleShooting: [
+            {
+                title: "Notion API 활용 불가능으로 Modal 창 직접 제작",
+                contents: [
+                    "Notion API를 활용해 모달창을 구성하려 했으나, 불러오는 과정에서 <b>버전 충돌과 Notion API Key 오류</b> 로 인해 프로젝트 상세 내용을 원할하게 불러오지 못하는 문제가 발생했습니다.",
+                    "이를 해결하기 위해 Notion API를 활용하지 않고, <b>직접 프로젝트 상세 내용을 전달할 수 있는 모달창을 제작</b>했습니다.",
+                ],
+            },
+            {
+                title: "프로젝트 Modal 창 이벤트 오류로 로직 수정",
+                contents: [
+                    "<b>프로젝트 모달창에서 각 Toggle 항목을 클릭했을 때 제대로 동작하지 않는 오류</b>가 있었고, 렌더링 시 해당 기능을 하는 <code>UseEffect</code> 가 제대로 동작하지 않는 문제를 발견하였습니다.",
+                    "각 기능을 <code>handleToggleClick</code>,<code>handleImageClick</code> 함수로 분리하여 이벤트 리스너를 추가할 때 동일한 함수를 사용하도록 수정했습니다.",
+                    "또한, 언마운트 시 이벤트 리스너를 제거하여 <b>불필요한 메모리 누수를 방지하고 성능을 최적화</b> 하였습니다.",
+                ],
+            },
+        ],
+        images: [
+            { src: "./portfolio/page1.jpg", label: "자기 소개" },
+            { src: "./portfolio/page2.jpg", label: "About Me" },
+            { src: "./portfolio/page3.jpg", label: "Skills" },
+            { src: "./portfolio/page4.jpg", label: "Project" },
+            { src: "./portfolio/page5.jpg", label: "Project Detail" },
+            { src: "./portfolio/page6.jpg", label: "Contact" },
+        ],
+    },
     portfolio: {
         title: "Portfolio",
         date: "2025. 01. 03 ~ 개발 진행 중",
@@ -74,12 +206,14 @@ export const modalData = {
         addFeaturesList: [
             {
                 title: "반응형 웹 디자인",
+                status: "done",
                 contents: [
-                    "현재 PC 환경에 최적화된 디자인으로 제작되었으나, 모바일 환경에서도 최적화된 디자인을 제공할 수 있도록 반응형 웹 디자인을추가할 예정입니다.",
+                    "현재 PC 환경에 최적화된 디자인으로 제작되었으나, 모바일 환경에서도 최적화된 디자인을 제공할 수 있도록 반응형 웹 디자인을 추가할 예정입니다.",
                 ],
             },
             {
                 title: "Project 박스 레이아웃 변경",
+                status: "done",
                 contents: [
                     "현재는 각 프로젝트가 큰 박스 형태로 제공하고 있으나, 프로젝트가 추가되면 화면이 길어지는 단점이 있습니다.",
                     "전체적인 레이아웃을 변경해 각 프로젝트들을 더 간략한 박스 형태로 변경하고, 모달창을 통해 내용을 파악할 수 있도록 변경할 예정입니다.",
@@ -87,6 +221,7 @@ export const modalData = {
             },
             {
                 title: "교육 수료 현황(Education), 경력 사항(Career) 추가",
+                status: "done",
                 contents: [
                     "피드백을 통해 교육 수료 현황과 경력 사항이 있어야 한다는 사실을 깨닫고, 추가할 예정입니다.",
                 ],
@@ -218,12 +353,14 @@ export const modalData = {
         addFeaturesList: [
             {
                 title: "반응형 웹 디자인",
+                status: "planned",
                 contents: [
                     "현재 PC 환경에 최적화된 디자인으로 제작되었으나, 모바일 환경에서도 최적화된 디자인을 제공할 수 있도록 반응형 웹 디자인을추가할 예정입니다.",
                 ],
             },
             {
                 title: "React 마이그레이션",
+                status: "planned",
                 contents: [
                     "현재 Tomcat을 활용한 로컬 서버를 활용한 데이터 전달과 백엔드가 구성되어 있어 정상적인 구동이 되지 않습니다.",
                     "리액트를 활용하여 데이터는 하드코딩으로 변경하고, 로컬스토리지를 활용한 로그인 기능 구성으로 직접 컨텐츠를 경험해볼 수 있도록 마이그레이션 할 예정입니다.",
@@ -333,6 +470,7 @@ export const modalData = {
         addFeaturesList: [
             {
                 title: "React 마이그레이션",
+                status: "planned",
                 contents: [
                     "현재 기본 Javascript 와 JQuery 를 사용해 개발했으나 <b>React 를 활용한 마이그레이션을</b>진행할 예정입니다.",
                     "플레이리스트 추가, 유저 로그인 기능 등을 구현해 볼 예정입니다.",
@@ -340,12 +478,14 @@ export const modalData = {
             },
             {
                 title: "모바일 반응형",
+                status: "planned",
                 contents: [
                     "현재 데스크탑 화면에 최적화된 반응형 웹 디자인을 제공하고 있으나, 모바일 환경에 최적화된 반응형 웹 디자인을 추가할 예정입니다.",
                 ],
             },
             {
                 title: "음악 검색 기능 추가",
+                status: "planned",
                 contents: [
                     "현재는 로컬스토리지에 저장된 음악 데이터만을 불러와 재생할 수 있으나, 검색창을 통해 음악을 검색할 수 있도록 추가할 예정입니다.",
                     "React 로 마이그레이션 할 시, <code>filter()</code> 메서드를 활용해 간단한 검색기능이 구현 가능할 것이라 생각합니다.",

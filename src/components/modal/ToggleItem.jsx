@@ -1,22 +1,50 @@
 import { useContext, useState } from "react";
-import { IsMobileContext } from "../../hooks/IsMobileContext";
 
-const ToggleItem = ({ title, contents, variant }) => {
+const ToggleItem = ({ title, contents, variant, status }) => {
   const [open, setOpen] = useState(false);
-  const isMobile = useContext(IsMobileContext);
+
+  const statusMap = {
+    done: {
+      label: "완료",
+      textColor: "text-blue-500",
+      bgColor: "!bg-blue-200",
+      hover: "hover:!bg-blue-300",
+    },
+    progress: {
+      label: "진행 중",
+      textColor: "text-green-500",
+      bgColor: "!bg-green-200",
+      hover: "hover:!bg-green-300",
+    },
+    planned: {
+      label: "예정",
+      textColor: "text-yellow-500",
+      bgColor: "!bg-amber-100",
+      hover: "hover:!bg-amber-200",
+    },
+  };
 
   return (
     <div className="mb-1 text-xs sm:text-base">
       <div
-        className={`flex h-max w-full cursor-pointer bg-gray-200 p-2 transition-all duration-200 ${open ? "bg-gray-300" : ""} ${isMobile ? "" : "hover:bg-gray-300"}`}
+        className={`flex h-max w-full cursor-pointer bg-gray-200 ${statusMap[status]?.bgColor} p-2 transition-all duration-200 ${open ? "bg-gray-300" : ""} hover:bg-gray-300 ${statusMap[status]?.hover}`}
         onClick={() => setOpen((prev) => !prev)}
       >
         <p
-          className={`h-max transition-all duration-200 ${open ? "rotate-90" : ""}`}
+          className={`flex items-center text-[10px] transition-all duration-200 sm:text-xs ${open ? "rotate-90" : ""}`}
         >
           ▶
         </p>
-        <b className="ml-3">{title}</b>
+        <b
+          className={`mx-3 ${status === "done" ? "text-gray-500 line-through" : ""}`}
+        >
+          {title}
+        </b>
+        <span
+          className={`flex items-center break-keep font-bold ${statusMap[status]?.textColor}`}
+        >
+          {statusMap[status]?.label}
+        </span>
       </div>
 
       <div
