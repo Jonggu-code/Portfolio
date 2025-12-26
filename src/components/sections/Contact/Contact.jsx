@@ -66,7 +66,7 @@ const Contact = () => {
         </p>
 
         {/* 텍스트 박스 */}
-        <div className="mb-12 flex flex-col gap-5 text-center text-base sm:mb-20 sm:text-xl">
+        <div className="mb-10 flex flex-col gap-5 text-center text-base sm:mb-20 sm:text-xl">
           <p className={textAnimate} style={{ animationDelay: "400ms" }}>
             실사용을 고려한 UI와 유지보수 가능한 코드를 통해 꾸준히 성장하는
             개발자가 되겠습니다.
