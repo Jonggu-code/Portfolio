@@ -1,9 +1,7 @@
-import { lightBgList } from "./styleList";
-
 const commonStyle = {
     wrapper: (isDark, bgNumber) =>
-        `relative w-full p-6 h-max flex justify-center
-        ${isDark ? "bg-gradient-to-b from-slate-800 to-customDark text-white" : `${lightBgList[bgNumber]} text-basicFont`}
+        `relative w-full px-6 py-10 h-max flex justify-center
+        ${isDark ? "bg-gradient-to-b from-slate-800 to-customDark text-white" : `bg-blue-${bgNumber} text-basicFont`}
         `,
     subWrapper: `max-w-[1000px] w-full`,
     mainTitle: (isScrolled) =>

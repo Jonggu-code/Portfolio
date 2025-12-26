@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../../hooks/DarkModeContext";
 import { IsMobileContext } from "../../../hooks/IsMobileContext";
-import "./Introduce.css";
 
 const Introduce = ({ isRender }) => {
   const [opacity, setOpacity] = useState(1);
@@ -21,11 +20,11 @@ const Introduce = ({ isRender }) => {
 
   return (
     <div
-      className={`z-0 h-svh w-full ${isDark ? "bg-customDark" : "bg-white"}`}
+      className={`z-0 h-dvh w-full ${isDark ? "bg-customDark" : "bg-white"}`}
     >
       {/* 전체 */}
       <div
-        className={`Introduce fixed left-1/2 top-0 -translate-x-1/2 ${isDark ? "Introduce_dark" : "Introduce_basic"} ${opacity === 0 ? "pointer-events-none" : "pointer-events-auto"}`}
+        className={`fixed left-1/2 top-0 -translate-x-1/2 ${opacity === 0 ? "pointer-events-none" : "pointer-events-auto"}`}
         style={{ opacity }}
       >
         {/* 화면 하단 Front-end */}
@@ -40,7 +39,7 @@ const Introduce = ({ isRender }) => {
         )}
 
         {/* 브라우저 진입 시 Welcome */}
-        <h1 className="animate-slide-in-out flex h-svh w-full items-center justify-center text-5xl transition-all sm:text-8xl">
+        <h1 className="flex h-svh w-full animate-slideInOut items-center justify-center text-5xl transition-all sm:text-8xl">
           <span>Welcome !</span>
         </h1>
 

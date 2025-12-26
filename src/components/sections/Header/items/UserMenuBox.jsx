@@ -41,13 +41,7 @@ const UserMenuBox = ({
   return (
     <div
       ref={menuRef}
-      className={`userMenuBox overflow-hidden transition-all duration-300 ease-in-out
-            ${isRender ? "opacity-0 fade-in delay-7" : ""} 
-            ${isHamberActive ? "h-[220px]" : "h-0"} 
-            ${isDark ? "bg-slate-700/50" : "bg-slate-200/50"}
-             fixed bottom-[75px] right-[16px] px-3 rounded-lg
-            sm:top-[55px] sm:right-[12px] 
-           lg:relative lg:flex lg:transition-none lg:gap-6 lg:justify-between lg:p-0 lg:top-0 lg:left-0 lg:flex-nowrap lg:shadow-none lg:h-max lg:bg-inherit`}
+      className={`userMenuBox overflow-hidden transition-all duration-300 ease-in-out ${isRender ? "fade-in delay-7 opacity-0" : ""} ${isHamberActive ? "h-[220px]" : "h-0"} ${isDark ? "bg-slate-700/50" : "bg-slate-200/50"} fixed bottom-[75px] right-[16px] rounded-lg px-3 sm:right-[16px] sm:top-[55px] lg:relative lg:left-0 lg:top-0 lg:flex lg:h-max lg:flex-nowrap lg:justify-between lg:gap-6 lg:bg-inherit lg:p-0 lg:shadow-none lg:transition-none`}
     >
       {iconList.map((item) => (
         <a
@@ -55,11 +49,7 @@ const UserMenuBox = ({
           href={item.href}
           title={item.title}
           target={item.href.startsWith("http") ? "_blank" : undefined}
-          className={`transition-colors duration-200 hover:text-customBlue
-            ${isDark ? "text-white" : "text-slate-800"}
-            ${isRender ? `opacity-0 fade-in delay-${item.delay}` : ""}
-            w-8 h-8 flex justify-center items-center mb-5 lg:mb-0
-            ${item.key === "email" ? "mt-3 lg:m-0" : ""}`} // 슬라이딩 애니메이션을 위해 어쩔 수 없는 선택..
+          className={`transition-colors duration-200 hover:text-customBlue ${isDark ? "text-white" : "text-slate-800"} ${isRender ? `fade-in opacity-0 delay-${item.delay}` : ""} mb-5 flex h-8 w-8 items-center justify-center lg:mb-0 ${item.key === "email" ? "mt-3 lg:m-0" : ""}`} // 슬라이딩 애니메이션을 위해 어쩔 수 없는 선택..
           onClick={item.onClick}
         >
           {item.icon}
@@ -67,10 +57,7 @@ const UserMenuBox = ({
       ))}
       {/* 다크모드 버튼 */}
       <div
-        className={`transition-colors duration-200 hover:text-customBlue
-              ${isDark ? "text-white" : "text-slate-800"}
-              ${isRender ? "opacity-0 fade-in delay-10" : ""}
-              w-8 h-8 flex justify-center items-center mb-5 lg:mb-0 cursor-pointer`}
+        className={`transition-colors duration-200 hover:text-customBlue ${isDark ? "text-white" : "text-slate-800"} ${isRender ? "fade-in delay-10 opacity-0" : ""} mb-5 flex h-8 w-8 cursor-pointer items-center justify-center lg:mb-0`}
         onClick={toggleDarkMode}
       >
         <ModeIcon isDark={isDark} />

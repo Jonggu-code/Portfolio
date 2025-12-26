@@ -61,6 +61,7 @@ const Projects = () => {
                   openModal(item.id);
                 }}
                 isScrolled={isScrolled}
+                isDark={isDark}
                 delay={(i + 2) * 100}
               />
             ))}

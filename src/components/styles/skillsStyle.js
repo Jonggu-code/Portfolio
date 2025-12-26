@@ -1,4 +1,12 @@
 // styles/skills/coreStyle.js
+const lightBgList = {
+    50: "bg-blue-50",
+    100: "bg-blue-100",
+    200: "bg-blue-200",
+    300: "bg-blue-300",
+    400: "bg-blue-400",
+};
+
 const skillsStyle = {
     wrapper: (isScrolled) =>
         `opacity-0 w-auto h-max mb-10 ${isScrolled ? "animate-skillsIn" : ""}`,
