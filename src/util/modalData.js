@@ -1,5 +1,144 @@
 export const modalData = {
     todoapp: {
+        title: "MarkAtlas (마크아틀라스)",
+        date: "2025. 12. 08 ~ 2025. 12. 13",
+        color: "bg-lime-600",
+        summary: [
+            "React + Typescript 기반에서 상태 관리, 커스텀 훅, 아키텍처 설계를 종합적으로 경험하기 위해 제작했습니다.",
+            "단순 CRUD를 넘어서, <b>“하나의 작은 웹앱”을 혼자서 처음부터 끝까지 설계하는 경험</b>을 목표로 했습니다.",
+        ],
+        skills: ["React", "Typescript", "Vite", "Motion", "TailwindCSS"],
+        slides: [
+            { src: "./todoapp/page1.png", alt: "todoapp Page 1" },
+            { src: "./todoapp/page2.png", alt: "todoapp Page 2" },
+        ],
+        links: [
+            {
+                href: "https://github.com/Jonggu-code/TodoApp",
+                img: "/logo/githublogo.svg",
+                alt: "Github Link",
+                label: "Github",
+            },
+            {
+                href: "https://todo-app-xi-peach.vercel.app/",
+                img: "/logo/linkbtn.svg",
+                alt: "Project Link",
+                label: "Link",
+            },
+            {
+                href: "https://velog.io/@00whdcks/posts",
+                img: "/logo/veloglogo.svg",
+                alt: "Velog Link",
+                label: "Velog",
+            },
+        ],
+        FeaturesList: [
+            {
+                title: "Todo 추가 / 삭제 / 완료 체크 (로컬스토리지)",
+                contents: [
+                    "Todo의 상태를 state와 로컬 스토리지로 관리해 추가, 삭제, 완료 체크를 합니다.",
+                    "브라우저를 종료해도 이전에 남겼던 할일들은 기록에 남아 계속 표시됩니다.",
+                ],
+            },
+            {
+                title: "필터링 (전체 / 미완료 / 완료)",
+                contents: [
+                    "할일의 상태별로 볼 수 있는 필터링 기능을 구현했습니다.",
+                ],
+            },
+            {
+                title: "Enter 입력 및 자동 포커스",
+                contents: [
+                    "브라우저 진입 시 할 일 입력창(input)에 자동 포커스되며 엔터(Enter)입력을 지원합니다.",
+                    "input창엔 빈칸은 입력할 수 없는 유효성 검사가 진행되며, 빈칸 입력 시 알림창을 띄웁니다.",
+                ],
+            },
+            {
+                title: "알림, 모달창 구현",
+                contents: [
+                    "할 일 삭제, 빈칸 입력 시 띄우는 알림창과 모달창을 구현했습니다.",
+                    "사용자의 입력 형태에 따른 적절한 UI 구성으로 사용자 경험을 높이고자 했습니다.",
+                ],
+            },
+            {
+                title: "브라우저 진입 시 로딩 UI 구현",
+                contents: [
+                    "브라우저 진입 시 서버 상태에 따른 기본 로딩창을 구현했습니다.",
+                ],
+            },
+            {
+                title: "Motion 활용 드래그 & 드롭 정렬",
+                contents: [
+                    "React 라이브러리인 Motion을 활용하여 Reorder 기반의 아이템 정렬 기능을 구현했습니다.",
+                ],
+            },
+        ],
+        addFeaturesList: [
+            {
+                title: "다크 모드",
+                status: "planned",
+                contents: [
+                    "사용자 환경에 따라 테마를 전환할 수 있도록 구현할 계획입니다.",
+                    "테마 상태는 로컬스토리지에 저장하여 페이지 새로고침 및 재접속 시에도 유지되도록 처리할 예정입니다.",
+                ],
+            },
+            {
+                title: "전역 상태 관리 적용 (Zustand or Jotai)",
+                status: "planned",
+                contents: [
+                    "유저 인증 정보, 테마 상태, 공통 UI 상태 등을 전역 상태로 관리하여 props drilling 문제를 해소 할 것입니다.",
+                    "컴포넌트 간 의존성을 줄이고, 상태 변경 흐름을 명확하게 관리할 수 있도록 구조를 재설계 해 볼 생각입니다.",
+                ],
+            },
+            {
+                title: "백엔드 연결 버전 제작 (Express or Supabase)",
+                status: "planned",
+                contents: [
+                    "프론트엔드 중심 구조에서 벗어나 실제 API 기반 데이터 흐름을 경험할 수 있도록 백엔드 연동을 진행해 볼 예정입니다.",
+                    "CRUD 기능을 포함한 API 통신을 구현하고, 비동기 처리 및 에러 핸들링 구조를 명확히 구성 할 계획입니다.",
+                ],
+            },
+            {
+                title: "테스트 코드 도입 (React Testing Library)",
+                status: "planned",
+                contents: [
+                    "주요 컴포넌트 및 사용자 인터랙션에 대해 단위 테스트를 작성하여 기능 안정성을 확보 할 것입니다.",
+                ],
+            },
+        ],
+        troubleShooting: [
+            {
+                title: "Motion 활용 Drag & Drop 상태 동기화 불안정",
+                contents: [
+                    "순서를 변경할 때 <b>todos</b> 상태 업데이트와 <b>localStorage</b> 저장이 동시에 일어나며 순서가 꼬이거나 중복 저장되는 문제가 발생했습니다.",
+                    "<b>onReorder</b> 이벤트를 기반으로 useEffect를 통해 순서 변경 후 한 번만 storage로 동기화하도록 설정하여 안정화했습니다.",
+                ],
+            },
+            {
+                title: "TodoItem 삭제 시 리스트 애니메이션 효과",
+                contents: [
+                    "아이템 삭제 시 리스트 높이값이 변경됨에 따른 애니메이션을 transition으로 주려 했으나 단순히 아이템 삭제가 아닌 컴포넌트 언마운트의 개념이기 때문에 적용이 불가능했습니다.",
+                    "Motion의 <b>AnimatePresence</b>를 활용해 exit 값을 할당해 부드러운 애니메이션을 구현했습니다.",
+                    ,
+                ],
+            },
+            {
+                title: "필터(Filter) & 할 일 검색(Search) 동시 적용 오류",
+                contents: [
+                    "필터(전체/미완료/완료)값과 검색이 동시에 적용될 때 조건 충돌 밑 타입 에러가 발생했습니다.",
+                    "filter.ts 에서 FilterType을 상수 기반으로 통합하고, <code>filteredTodos = filterTodos(todos, filter, search)</code> 구조로 명확히 분리했습니다.",
+                    "필터 값 -> 검색 순으로 조건이 안정적으로 되도록 재설계 했습니다.",
+                ],
+            },
+        ],
+        images: [
+            { src: "./todoapp/page1.JPG", label: "메인 화면" },
+            { src: "./todoapp/page2.JPG", label: "할일 체크" },
+            { src: "./todoapp/page3.JPG", label: "삭제 모달창" },
+            { src: "./todoapp/page4.JPG", label: "할일 검색 및 수정" },
+        ],
+    },
+    todoapp: {
         title: "To-Do App",
         date: "2025. 11. 13 ~ 2025. 11. 20",
         color: "bg-lime-600",

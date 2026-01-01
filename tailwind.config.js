@@ -1,7 +1,4 @@
-const { transform } = require("framer-motion");
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
     content: [
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}", // Vite에서 사용하는 파일 확장자를 모두 포함

@@ -1,5 +1,18 @@
 export const projects = [
     {
+        id: "markatlas",
+        title: "MarkAtlas (마크아틀라스)",
+        subtitle: "다국가 상표 데이터를 통합해 탐색하는 React SPA",
+        date: "2025. 12",
+        description: [
+            "React를 활용하여 다국가 데이터를 검색하는 어플리케이션을 만들어봤습니다.",
+            "React query로 상태관리를 진행하고 MSW를 활용해 실제 서버 연동을 고려하여 제작하였습니다.",
+        ],
+        features: "Framer-Motion 활용 드래그&드롭, 로컬스토리지 저장",
+        skills: ["React", "Axios", "React Query", "Vite"],
+        modal: "markatlas",
+    },
+    {
         id: "todoapp",
         title: "Todo App",
         subtitle: "TS 활용 TodoApp 토이프로젝트",
@@ -10,11 +23,6 @@ export const projects = [
         ],
         features: "Framer-Motion 활용 드래그&드롭, 로컬스토리지 저장",
         skills: ["Typescript", "Vite", "Tailwind", "Node.js"],
-        slides: [
-            "./portfolio/page1.jpg",
-            "./portfolio/page2.jpg",
-            "./portfolio/page3.jpg",
-        ],
         github: "https://github.com/Jonggu-code/TodoApp",
         link: "https://todo-app-xi-peach.vercel.app/",
         modal: "todoapp",
@@ -43,16 +51,6 @@ export const projects = [
         ],
         features: "반응형 웹페이지, 카카오맵 API 활용, 카테고리별 맛집 검색",
         skills: ["HTML", "CSS", "Javascript", "JQuery"],
-        slides: [
-            "./Matmap/index.png",
-            "./Matmap/detail.jpg",
-            "./Matmap/detail2.jpg",
-            "./Matmap/rankpage.png",
-            "./Matmap/mypage.png",
-            "./Matmap/review.png",
-        ],
-        github: "https://github.com/Jonggu-code/MatMap_portfolio",
-        link: "https://jonggu-code.github.io/MatMap_portfolio/HTML,CSS,JS/index.html",
     },
     {
         id: "youtube",
@@ -65,13 +63,5 @@ export const projects = [
         ],
         features: "반응형 웹페이지, 미디어 제어, 로컬스토리지 활용",
         skills: ["HTML", "CSS", "Javascript", "JQuery"],
-        slides: [
-            "./youtube/index.jpg",
-            "./youtube/storage.jpg",
-            "./youtube/playlist.jpg",
-            "./youtube/playpage.jpg",
-        ],
-        github: "https://github.com/Jonggu-code/Portfolio_youtube",
-        link: "https://jonggu-code.github.io/Portfolio_youtube/246.%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A41(%EC%9C%A0%ED%8A%9C%EB%B8%8C).html",
     },
 ];
