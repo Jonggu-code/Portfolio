@@ -144,10 +144,8 @@ export const modalData = {
         ],
 
         images: [
-            { src: "./todoapp/page1.JPG", label: "메인 화면" },
-            { src: "./todoapp/page2.JPG", label: "할일 체크" },
-            { src: "./todoapp/page3.JPG", label: "삭제 모달창" },
-            { src: "./todoapp/page4.JPG", label: "할일 검색 및 수정" },
+            { src: "./markatlas/page1.JPG", label: "메인 화면" },
+            { src: "./markatlas/page2.JPG", label: "모달창" },
         ],
     },
     todoapp: {
