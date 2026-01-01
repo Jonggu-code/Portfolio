@@ -1,26 +1,33 @@
 export const modalData = {
-    todoapp: {
+    markatlas: {
         title: "MarkAtlas (마크아틀라스)",
         date: "2025. 12. 08 ~ 2025. 12. 13",
-        color: "bg-lime-600",
+        color: "bg-blue-600",
         summary: [
-            "React + Typescript 기반에서 상태 관리, 커스텀 훅, 아키텍처 설계를 종합적으로 경험하기 위해 제작했습니다.",
-            "단순 CRUD를 넘어서, <b>“하나의 작은 웹앱”을 혼자서 처음부터 끝까지 설계하는 경험</b>을 목표로 했습니다.",
+            "React 기반에서 다국가 상표 데이터 통합 / 검색 UX / 확장 가능한 아키텍처 설계를 종합적으로 경험하기 위해 더미 데이터를 활용하여 제작한 프로젝트입니다.",
+            "MSW 기반으로 서버 상황을 사전에 검증하며, 실제 서비스 연동을 전제로 한 구조로 설계했습니다.",
         ],
-        skills: ["React", "Typescript", "Vite", "Motion", "TailwindCSS"],
+        skills: [
+            "React",
+            "React Query",
+            "Vite",
+            "Axios",
+            "TailwindCSS",
+            "MSW (Mock Service Worker)",
+        ],
         slides: [
-            { src: "./todoapp/page1.png", alt: "todoapp Page 1" },
-            { src: "./todoapp/page2.png", alt: "todoapp Page 2" },
+            { src: "./markatlas/page1.JPG", alt: "markatlas Page 1" },
+            { src: "./markatlas/page2.JPG", alt: "markatlas Page 2" },
         ],
         links: [
             {
-                href: "https://github.com/Jonggu-code/TodoApp",
+                href: "https://github.com/Jonggu-code/MarkAtlas",
                 img: "/logo/githublogo.svg",
                 alt: "Github Link",
                 label: "Github",
             },
             {
-                href: "https://todo-app-xi-peach.vercel.app/",
+                href: "https://mark-atlas.vercel.app/",
                 img: "/logo/linkbtn.svg",
                 alt: "Project Link",
                 label: "Link",
@@ -34,103 +41,108 @@ export const modalData = {
         ],
         FeaturesList: [
             {
-                title: "Todo 추가 / 삭제 / 완료 체크 (로컬스토리지)",
+                title: "다국가 상표 데이터 조회",
                 contents: [
-                    "Todo의 상태를 state와 로컬 스토리지로 관리해 추가, 삭제, 완료 체크를 합니다.",
-                    "브라우저를 종료해도 이전에 남겼던 할일들은 기록에 남아 계속 표시됩니다.",
+                    "다국가 상표 데이터를 조회할 수 있는 기능을 구현했습니다.",
+                    "국가별로 상이한 API 응답 구조를 공통 데이터 포맷으로 변환해 사용합니다.",
                 ],
             },
             {
-                title: "필터링 (전체 / 미완료 / 완료)",
+                title: "조건 기반 검색 및 필터링",
                 contents: [
-                    "할일의 상태별로 볼 수 있는 필터링 기능을 구현했습니다.",
+                    "등록 상태, 출원번호, 출원일자 조건을 기반으로 상표를 검색할 수 있습니다.",
+                    "언어 기준 정렬(ㄱ-ㅎ / A-Z)을 지원해 가독성을 높였습니다.",
                 ],
             },
             {
-                title: "Enter 입력 및 자동 포커스",
+                title: "즐겨찾기 기능",
                 contents: [
-                    "브라우저 진입 시 할 일 입력창(input)에 자동 포커스되며 엔터(Enter)입력을 지원합니다.",
-                    "input창엔 빈칸은 입력할 수 없는 유효성 검사가 진행되며, 빈칸 입력 시 알림창을 띄웁니다.",
+                    "관심 있는 상표를 즐겨찾기로 등록할 수 있습니다.",
+                    "즐겨찾기 상태는 클라이언트 전역 상태로 관리됩니다.",
                 ],
             },
             {
-                title: "알림, 모달창 구현",
+                title: "상표 상세 정보 모달",
                 contents: [
-                    "할 일 삭제, 빈칸 입력 시 띄우는 알림창과 모달창을 구현했습니다.",
-                    "사용자의 입력 형태에 따른 적절한 UI 구성으로 사용자 경험을 높이고자 했습니다.",
+                    "목록에서 상표 선택 시 상세 정보를 모달로 확인할 수 있습니다.",
+                    "리스트 화면을 유지한 상태에서 추가 정보를 확인할 수 있도록 구성했습니다.",
                 ],
             },
             {
-                title: "브라우저 진입 시 로딩 UI 구현",
+                title: "무한스크롤 기반 목록 조회",
                 contents: [
-                    "브라우저 진입 시 서버 상태에 따른 기본 로딩창을 구현했습니다.",
+                    "<code>IntersectionObserver</code>를 활용해 무한스크롤 방식으로 데이터를 로드합니다.",
+                    "초기 로딩 이후 자연스럽게 다음 데이터를 탐색할 수 있도록 UX를 설계했습니다.",
                 ],
             },
             {
-                title: "Motion 활용 드래그 & 드롭 정렬",
+                title: "로딩 · 에러 · Empty State 처리",
                 contents: [
-                    "React 라이브러리인 Motion을 활용하여 Reorder 기반의 아이템 정렬 기능을 구현했습니다.",
+                    "서버 상태에 따라 로딩, 에러, 결과 없음 화면을 분기 처리했습니다.",
+                    "사용자가 현재 상태를 직관적으로 인지할 수 있도록 UI를 구성했습니다.",
                 ],
             },
         ],
+
         addFeaturesList: [
             {
-                title: "다크 모드",
+                title: "로그인 기능 및 사용자별 즐겨찾기 관리",
                 status: "planned",
                 contents: [
-                    "사용자 환경에 따라 테마를 전환할 수 있도록 구현할 계획입니다.",
-                    "테마 상태는 로컬스토리지에 저장하여 페이지 새로고침 및 재접속 시에도 유지되도록 처리할 예정입니다.",
+                    "사용자 인증을 통해 개인화된 즐겨찾기 기능을 제공할 계획입니다.",
+                    "로그인 상태에 따라 기능 접근을 제어하도록 확장할 예정입니다.",
                 ],
             },
             {
-                title: "전역 상태 관리 적용 (Zustand or Jotai)",
+                title: "실제 서버 API 연동",
                 status: "planned",
                 contents: [
-                    "유저 인증 정보, 테마 상태, 공통 UI 상태 등을 전역 상태로 관리하여 props drilling 문제를 해소 할 것입니다.",
-                    "컴포넌트 간 의존성을 줄이고, 상태 변경 흐름을 명확하게 관리할 수 있도록 구조를 재설계 해 볼 생각입니다.",
+                    "MSW 기반 Mock 환경에서 실제 서버 API로 전환할 계획입니다.",
+                    "비동기 데이터 처리 및 에러 핸들링 구조를 유지한 채 확장할 예정입니다.",
                 ],
             },
             {
-                title: "백엔드 연결 버전 제작 (Express or Supabase)",
+                title: "검색 조건 확장 및 UI/UX 개선",
                 status: "planned",
                 contents: [
-                    "프론트엔드 중심 구조에서 벗어나 실제 API 기반 데이터 흐름을 경험할 수 있도록 백엔드 연동을 진행해 볼 예정입니다.",
-                    "CRUD 기능을 포함한 API 통신을 구현하고, 비동기 처리 및 에러 핸들링 구조를 명확히 구성 할 계획입니다.",
+                    "검색 조건이 추가되더라도 직관적인 사용이 가능하도록 UI를 개선할 계획입니다.",
+                    "필터 영역과 결과 영역의 가시성을 함께 고려해 UX를 고도화할 예정입니다.",
                 ],
             },
             {
                 title: "테스트 코드 도입 (React Testing Library)",
                 status: "planned",
                 contents: [
-                    "주요 컴포넌트 및 사용자 인터랙션에 대해 단위 테스트를 작성하여 기능 안정성을 확보 할 것입니다.",
+                    "주요 검색 로직과 UI 인터랙션에 대한 테스트 코드를 작성할 예정입니다.",
+                    "기능 안정성과 유지보수성을 높이는 것을 목표로 합니다.",
                 ],
             },
         ],
+
         troubleShooting: [
             {
-                title: "Motion 활용 Drag & Drop 상태 동기화 불안정",
+                title: "다국가 API 응답 스키마 통합 설계",
                 contents: [
-                    "순서를 변경할 때 <b>todos</b> 상태 업데이트와 <b>localStorage</b> 저장이 동시에 일어나며 순서가 꼬이거나 중복 저장되는 문제가 발생했습니다.",
-                    "<b>onReorder</b> 이벤트를 기반으로 useEffect를 통해 순서 변경 후 한 번만 storage로 동기화하도록 설정하여 안정화했습니다.",
+                    "국가별로 서로 다른 상표 데이터 응답 구조로 인해 UI와 로직에서 분기 처리가 복잡해지는 문제가 있었습니다.",
+                    "API 응답 직후 공통 데이터 포맷으로 변환하는 유틸 로직을 도입해 이후 로직에서는 국가 구분 없이 동일한 구조로 처리하도록 개선했습니다.",
                 ],
             },
             {
-                title: "TodoItem 삭제 시 리스트 애니메이션 효과",
+                title: "무한스크롤 초기 마운트 시 observer 미동작 문제",
                 contents: [
-                    "아이템 삭제 시 리스트 높이값이 변경됨에 따른 애니메이션을 transition으로 주려 했으나 단순히 아이템 삭제가 아닌 컴포넌트 언마운트의 개념이기 때문에 적용이 불가능했습니다.",
-                    "Motion의 <b>AnimatePresence</b>를 활용해 exit 값을 할당해 부드러운 애니메이션을 구현했습니다.",
-                    ,
+                    "<code>IntersectionObserver</code>가 초기 렌더 시 정상적으로 동작하지 않는 문제가 발생했습니다.",
+                    "observer 등록 시점과 DOM 렌더 타이밍을 분리하기 위해 로직을 커스텀 훅(useInfiniteScroll)으로 재구성하여 문제를 해결했습니다.",
                 ],
             },
             {
-                title: "필터(Filter) & 할 일 검색(Search) 동시 적용 오류",
+                title: "배포 환경에서 MSW 초기화 타이밍으로 인한 API 에러",
                 contents: [
-                    "필터(전체/미완료/완료)값과 검색이 동시에 적용될 때 조건 충돌 밑 타입 에러가 발생했습니다.",
-                    "filter.ts 에서 FilterType을 상수 기반으로 통합하고, <code>filteredTodos = filterTodos(todos, filter, search)</code> 구조로 명확히 분리했습니다.",
-                    "필터 값 -> 검색 순으로 조건이 안정적으로 되도록 재설계 했습니다.",
+                    "배포 환경에서 React Query의 첫 요청이 MSW 초기화 이전에 발생해 404 에러 상태가 고정되는 문제가 있었습니다.",
+                    "MSW 초기화를 await한 이후에만 React 앱을 렌더링하도록 구조를 변경해 첫 요청부터 정상적으로 mock 응답을 받을 수 있도록 개선했습니다.",
                 ],
             },
         ],
+
         images: [
             { src: "./todoapp/page1.JPG", label: "메인 화면" },
             { src: "./todoapp/page2.JPG", label: "할일 체크" },
