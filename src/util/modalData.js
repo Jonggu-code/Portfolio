@@ -15,8 +15,10 @@ export const modalData = {
             "localStorage",
         ],
         slides: [
-            { src: "./kanban/page1.JPG", alt: "Kanban Board Desktop" },
-            { src: "./kanban/page2.JPG", alt: "Kanban Board Mobile" },
+            { src: "./kanban/page1.JPG", alt: "Kanban Board Page1" },
+            { src: "./kanban/page2.JPG", alt: "Kanban Board Page2" },
+            { src: "./kanban/page3.JPG", alt: "Kanban Board Page3" },
+            { src: "./kanban/page4.JPG", alt: "Kanban Board Page4" },
         ],
         links: [
             {
