@@ -1,4 +1,164 @@
 export const modalData = {
+    kanbantask: {
+        title: "Kanban Task Manager (칸반 태스크 매니저)",
+        date: "2025. 01. 15 ~ 2025. 01. 18",
+        color: "bg-indigo-600",
+        summary: [
+            "React 기반 드래그 앤 드롭 칸반 보드로, 태스크 상태 관리와 필터링/검색 기능을 갖춘 생산성 도구입니다.",
+            "커스텀 훅을 통한 관심사 분리, localStorage 자동 동기화, 반응형 UI를 구현하며 실무 수준의 상태 관리 패턴을 경험했습니다.",
+        ],
+        skills: [
+            "React 19",
+            "Vite",
+            "TailwindCSS",
+            "@hello-pangea/dnd",
+            "localStorage",
+        ],
+        slides: [
+            { src: "./kanban/page1.JPG", alt: "Kanban Board Desktop" },
+            { src: "./kanban/page2.JPG", alt: "Kanban Board Mobile" },
+        ],
+        links: [
+            {
+                href: "https://github.com/Jonggu-code/kanban-task-manager",
+                img: "/logo/githublogo.svg",
+                alt: "Github Link",
+                label: "Github",
+            },
+            {
+                href: "https://jonggu-code.github.io/kanban-task-manager/",
+                img: "/logo/linkbtn.svg",
+                alt: "Project Link",
+                label: "Link",
+            },
+            {
+                href: "https://velog.io/@00whdcks/posts",
+                img: "/logo/veloglogo.svg",
+                alt: "Velog Link",
+                label: "Velog",
+            },
+        ],
+        FeaturesList: [
+            {
+                title: "드래그 앤 드롭 칸반 보드",
+                contents: [
+                    "<code>@hello-pangea/dnd</code> 라이브러리를 활용해 직관적인 드래그 앤 드롭 UI를 구현했습니다.",
+                    "태스크를 드래그하여 '할 일 → 진행 중 → 완료' 상태를 자유롭게 변경할 수 있습니다.",
+                ],
+            },
+            {
+                title: "태스크 CRUD 및 자동 저장",
+                contents: [
+                    "태스크 생성, 수정, 삭제 기능을 제공하며 모든 변경사항이 localStorage에 자동 저장됩니다.",
+                    "브라우저를 새로고침하거나 재방문해도 데이터가 유지됩니다.",
+                ],
+            },
+            {
+                title: "검색 및 필터링 시스템",
+                contents: [
+                    "검색어, 우선순위, 상태 조건을 조합한 다중 필터링 기능을 구현했습니다.",
+                    "디바운싱(300ms)을 적용해 타이핑 중 불필요한 필터링 연산을 방지했습니다.",
+                ],
+            },
+            {
+                title: "반응형 UI (Mobile-First)",
+                contents: [
+                    "데스크톱에서는 3컬럼 칸반 보드, 모바일에서는 탭 기반 UI로 전환됩니다.",
+                    "모바일에서 드래그 대신 상태 변경 드롭다운을 제공해 터치 UX를 최적화했습니다.",
+                ],
+            },
+            {
+                title: "다크모드 지원",
+                contents: [
+                    "시스템 테마 자동 감지 및 수동 전환 기능을 제공합니다.",
+                    "Tailwind CSS의 <code>dark:</code> 클래스를 활용해 일관된 다크 테마를 적용했습니다.",
+                ],
+            },
+            {
+                title: "키보드 단축키",
+                contents: [
+                    "<code>Ctrl/⌘ + Alt + N</code>으로 새 태스크 추가, <code>/</code> 또는 <code>Ctrl/⌘ + K</code>로 검색 포커스 등 단축키를 지원합니다.",
+                    "마우스 없이도 빠르게 앱을 조작할 수 있어 생산성을 높였습니다.",
+                ],
+            },
+        ],
+
+        addFeaturesList: [
+            {
+                title: "REST API 연동",
+                status: "planned",
+                contents: [
+                    "현재 localStorage 기반 저장소를 실제 서버 API로 전환할 계획입니다.",
+                    "낙관적 업데이트(Optimistic Update)를 적용해 즉각적인 UI 반응성을 유지할 예정입니다.",
+                ],
+            },
+            {
+                title: "다중 사용자 협업 기능",
+                status: "planned",
+                contents: [
+                    "WebSocket을 활용한 실시간 동기화로 여러 사용자가 동시에 보드를 편집할 수 있도록 확장할 계획입니다.",
+                    "태스크별 담당자 배정 기능을 추가할 예정입니다.",
+                ],
+            },
+            {
+                title: "대용량 데이터 최적화",
+                status: "planned",
+                contents: [
+                    "태스크가 수백 개 이상일 경우를 대비해 <code>react-window</code> 기반 가상 스크롤링을 도입할 계획입니다.",
+                    "페이지네이션 또는 무한 스크롤 방식을 검토 중입니다.",
+                ],
+            },
+            {
+                title: "테스트 코드 도입",
+                status: "planned",
+                contents: [
+                    "Jest와 React Testing Library를 활용한 단위/통합 테스트를 작성할 예정입니다.",
+                    "커스텀 훅(useTasks, useTaskFilter 등)의 동작을 검증하는 것을 목표로 합니다.",
+                ],
+            },
+        ],
+
+        troubleShooting: [
+            {
+                title: "드래그 앤 드롭 시 CSS transform 충돌",
+                contents: [
+                    "DnD 라이브러리가 드래그 시 <code>transform</code>을 사용하는데, 카드의 hover 애니메이션에도 <code>transform: translateY</code>를 적용해 위치 계산이 틀어지는 문제가 발생했습니다.",
+                    "Draggable 래퍼에는 애니메이션을 적용하지 않고, 내부 콘텐츠 요소에만 hover 효과를 적용해 충돌을 해결했습니다.",
+                ],
+            },
+            {
+                title: "검색 시 성능 저하 문제",
+                contents: [
+                    "검색어 입력 시마다 필터링이 실행되어 타이핑이 버벅이는 현상이 있었습니다.",
+                    "<code>useDebouncedValue</code> 커스텀 훅을 구현해 300ms 디바운싱을 적용, 타이핑이 끝난 후에만 필터링이 실행되도록 개선했습니다.",
+                ],
+            },
+            {
+                title: "localStorage 접근 실패 시 앱 크래시",
+                contents: [
+                    "시크릿 모드나 저장소 용량 초과 시 localStorage 접근이 실패하면서 앱이 멈추는 문제가 있었습니다.",
+                    "모든 localStorage 작업을 try-catch로 감싸고, 실패 시 초기 샘플 데이터로 fallback하도록 에러 핸들링을 강화했습니다.",
+                ],
+            },
+            {
+                title: "모바일에서 드래그 앤 드롭 사용성 문제",
+                contents: [
+                    "모바일 화면에서 3컬럼 레이아웃을 그대로 사용하기가 제한적이였고, 그에 따른 UI변화와 드래그 앤 드롭으로 상태 변경이 불가능한 문제를 해결하기 위한 해결책이 필요했습니다.",
+                    "모바일에서는 탭 기반 UI로 전환하고, 드래그 대신 상태 변경 드롭다운을 제공해 터치 환경에 최적화했습니다.",
+                ],
+            },
+        ],
+
+        images: [
+            { src: "./kanban/page1.JPG", label: "데스크톱 칸반 보드" },
+            { src: "./kanban/page2.JPG", label: "태스크 생성 모달" },
+            { src: "./kanban/page3.JPG", label: "태스크 세부정보 모달" },
+            { src: "./kanban/page4.JPG", label: "검색결과 없을 시 기본화면" },
+            { src: "./kanban/page5.JPG", label: "다크모드" },
+            { src: "./kanban/page6.JPG", label: "단축키 모달" },
+            { src: "./kanban/page7.JPG", label: "모바일 탭 UI" },
+        ],
+    },
     markatlas: {
         title: "MarkAtlas (마크아틀라스)",
         date: "2025. 12. 08 ~ 2025. 12. 13",

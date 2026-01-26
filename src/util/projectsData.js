@@ -1,8 +1,21 @@
 export const projects = [
     {
+        id: "kanbantask",
+        title: "칸반 태스크 매니저",
+        subtitle: "React 기반 드래그 앤 드롭 칸반 보드",
+        date: "2026. 01",
+        description: [
+            "React 기반 드래그 앤 드롭 칸반 보드로, 태스크 상태 관리와 필터링/검색 기능을 갖춘 생산성 도구입니다.",
+            "커스텀 훅을 통한 관심사 분리, localStorage 자동 동기화, 반응형 UI를 구현하며 실무 수준의 상태 관리 패턴을 경험했습니다.",
+        ],
+        features: "hello-pangea 기반 드래그&드롭, 로컬스토리지 저장",
+        skills: ["React", "Vite", "TailwindCSS"],
+        modal: "kanbantask",
+    },
+    {
         id: "markatlas",
         title: "MarkAtlas (마크아틀라스)",
-        subtitle: "다국가 상표 데이터를 통합해 탐색하는 React SPA",
+        subtitle: "React 기반 다국가 상표 데이터 조회 SPA",
         date: "2025. 12",
         description: [
             "React를 활용하여 다국가 데이터를 검색하는 어플리케이션을 만들어봤습니다.",
