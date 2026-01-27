@@ -46,11 +46,17 @@ const Projects = () => {
 
       <div className={commonStyle.subWrapper}>
         <h1
-          className={commonStyle.mainTitle(isScrolled)}
+          className={`${commonStyle.mainTitle(isScrolled)} !mb-3 sm:!mb-4`}
           style={{ animationDelay: `100ms` }}
         >
           Projects
         </h1>
+        <h2
+          className={`${isScrolled ? "animate-textIn" : ""} mb-4 ml-1 text-sm text-gray-500 sm:mb-5 sm:text-base`}
+          style={{ animationDelay: "100ms" }}
+        >
+          카드를 클릭해 프로젝트의 상세정보 및 링크를 확인하실 수 있습니다.
+        </h2>
         <div className="flex w-full justify-center">
           <div className="grid w-max grid-cols-2 gap-4 sm:w-full lg:grid-cols-3">
             {projects.map((item, i) => (
